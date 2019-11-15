@@ -1,16 +1,26 @@
 PODS:
-  - YelpAPI (3.0.0)
+  - Alamofire (4.9.1)
+  - SDWebImage (5.3.1):
+    - SDWebImage/Core (= 5.3.1)
+  - SDWebImage/Core (5.3.1)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - YelpAPI
+  - Alamofire
+  - SDWebImage
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
-    - YelpAPI
+    - Alamofire
+    - SDWebImage
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
-  YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  SDWebImage: 7137d57385fb632129838c1e6ab9528a22c666cc
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: fc7c13665ccceb8c29c35d9361dad8f554b6540b
+PODFILE CHECKSUM: 731e956391d4b8d7b48f240a41c3c65d1768242a
 
 COCOAPODS: 1.8.4

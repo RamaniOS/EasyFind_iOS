@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,7 +48,6 @@
 				E2301A51AE9A1782C12B5686 /* Pods-EasyFind.debug.xcconfig */,
 				9B5D738FCE8DABCF3B3EC10A /* Pods-EasyFind.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,8 +87,16 @@
 				BCCC5AD9237EFA3900BE939E /* Assets.xcassets */,
 				BCCC5ADB237EFA3900BE939E /* LaunchScreen.storyboard */,
 				BCCC5ADE237EFA3900BE939E /* Info.plist */,
+				BCCC5AE4237EFD7500BE939E /* MISC */,
 			);
 			path = EasyFind;
+			sourceTree = "<group>";
+		};
+		BCCC5AE4237EFD7500BE939E /* MISC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MISC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +369,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramanpreet.EasyFind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -380,6 +388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramanpreet.EasyFind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
