@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odH-oP-gWv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -20,12 +20,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9U-zb-yuJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2465" y="9"/>
+            <point key="canvasLocation" x="1635" y="9"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="Ba1-kd-PW2">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="QiX-OS-7TF" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="QiX-OS-7TF" customClass="SignUpVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="21Q-tl-EGg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="779.71014492753625" y="8.7053571428571423"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="ich-Eu-bVO">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="odH-oP-gWv" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="odH-oP-gWv" customClass="SignInVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fui-rO-zXf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -424,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojZ-7X-WVj" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="9"/>
+            <point key="canvasLocation" x="-43" y="9"/>
         </scene>
     </scenes>
     <resources>
