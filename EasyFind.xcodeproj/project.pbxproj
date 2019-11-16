@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A3B094EB8041C8E027BB4C4 /* Pods_EasyFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; };
 		184F3DB623806B040093DB47 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F3DB523806B040093DB47 /* MenuVC.swift */; };
-		18C2BF922380693E00C8669A /* AdditionalView in Resources */ = {isa = PBXBuildFile; fileRef = 18C2BF912380693E00C8669A /* AdditionalView */; };
+		184F3DB923807F620093DB47 /* SignUpM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F3DB823807F620093DB47 /* SignUpM.swift */; };
+		184F3DBC238081410093DB47 /* Pods_EasyFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; };
+		184F3DBD238081410093DB47 /* Pods_EasyFind.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18C2BF9523806A8700C8669A /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9423806A8700C8669A /* SigninVC.swift */; };
 		18C2BF9723806A9900C8669A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9623806A9900C8669A /* SignUpVC.swift */; };
 		BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23D2C3237F780B00604AD5 /* BaseBusiness.swift */; };
@@ -36,9 +37,24 @@
 		BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AEE237F0A4C00BE939E /* YelpManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		184F3DBE238081410093DB47 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				184F3DBD238081410093DB47 /* Pods_EasyFind.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		184F3DB523806B040093DB47 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
-		18C2BF912380693E00C8669A /* AdditionalView */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AdditionalView; path = View/AdditionalView; sourceTree = "<group>"; };
+		184F3DB823807F620093DB47 /* SignUpM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpM.swift; sourceTree = "<group>"; };
+		184F3DBF238082040093DB47 /* StoryTwo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryTwo.storyboard; sourceTree = "<group>"; };
 		18C2BF9423806A8700C8669A /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		18C2BF9623806A9900C8669A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9B5D738FCE8DABCF3B3EC10A /* Pods-EasyFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFind.release.xcconfig"; path = "Target Support Files/Pods-EasyFind/Pods-EasyFind.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3B094EB8041C8E027BB4C4 /* Pods_EasyFind.framework in Frameworks */,
+				184F3DBC238081410093DB47 /* Pods_EasyFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,8 +109,8 @@
 		18C2BF932380698D00C8669A /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				18C2BF9423806A8700C8669A /* SigninVC.swift */,
 				18C2BF9623806A9900C8669A /* SignUpVC.swift */,
+				18C2BF9423806A8700C8669A /* SigninVC.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -165,7 +181,6 @@
 				BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */,
 				BCCC5AE7237F096D00BE939E /* Model */,
 				BCCC5AE8237F096D00BE939E /* View */,
-				18C2BF912380693E00C8669A /* AdditionalView */,
 				BCCC5AE6237F096D00BE939E /* Controller */,
 				BCCC5AE9237F096D00BE939E /* APIManager */,
 				BCCC5AED237F0A4100BE939E /* YelpManager */,
@@ -198,6 +213,7 @@
 		BCCC5AE7237F096D00BE939E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				184F3DB823807F620093DB47 /* SignUpM.swift */,
 				BC23D282237F635200604AD5 /* Yelp */,
 			);
 			path = Model;
@@ -206,6 +222,7 @@
 		BCCC5AE8237F096D00BE939E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				184F3DBF238082040093DB47 /* StoryTwo.storyboard */,
 				BCCC5AD6237EFA3800BE939E /* Main.storyboard */,
 				BCCC5AD9237EFA3900BE939E /* Assets.xcassets */,
 				BCCC5ADB237EFA3900BE939E /* LaunchScreen.storyboard */,
@@ -251,6 +268,7 @@
 				BCCC5ACA237EFA3800BE939E /* Frameworks */,
 				BCCC5ACB237EFA3800BE939E /* Resources */,
 				F1C80A93B3B6C274E54E8A91 /* [CP] Embed Pods Frameworks */,
+				184F3DBE238081410093DB47 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,7 +324,6 @@
 				BCCC5ADA237EFA3900BE939E /* Assets.xcassets in Resources */,
 				BCCC5AD8237EFA3800BE939E /* Main.storyboard in Resources */,
 				BC2728F8237FB4360020C271 /* Quicksand-Bold.ttf in Resources */,
-				18C2BF922380693E00C8669A /* AdditionalView in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +381,7 @@
 				BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */,
 				BC58883C237F7E2D00E02F3D /* Region.swift in Sources */,
 				BC588838237F7E2D00E02F3D /* Location.swift in Sources */,
+				184F3DB923807F620093DB47 /* SignUpM.swift in Sources */,
 				184F3DB623806B040093DB47 /* MenuVC.swift in Sources */,
 				BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */,
 				BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */,
