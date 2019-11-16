@@ -84,7 +84,7 @@ class EFSignUpVC: UIViewController {
             UIAlertAction in
             
             //
-            // self.navigateScreen(storyboard: "Main", controller: "MenuVC")
+            self.navigateScreen(storyboard: "Main", controller: "MenuVC")
             
         }
         
@@ -139,9 +139,7 @@ class EFSignUpVC: UIViewController {
                 if userN_tf.text == userDict["user_name"] as? String {
                     return false
                 }
-                
             }
-        
         }
         
         return true

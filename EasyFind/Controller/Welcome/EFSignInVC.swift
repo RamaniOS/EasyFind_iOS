@@ -90,7 +90,7 @@ class EFSignInVC: UIViewController {
             }else{
                 // check if its in userdefault...
                 if self.checkUserDefaults() {
-                    
+                    self.navigateScreen(storyboard: "Main", controller: "MenuVC")
                 }else{
                     self.showAlert(title: "EF", message: msg)
                 }
