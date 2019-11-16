@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AbstractViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    class var control: AbstractViewController {
+        return UIStoryboard.main.instantiateViewController(withIdentifier: String(describing: self)) as! AbstractViewController
+    }
 }
 
