@@ -55,15 +55,11 @@ class SignUpVC: UIViewController {
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
         //
-        if remembBtn.isSelected == true {
+    
             
             UserDefaults.standard.set(userN_tf.text, forKey: "user_name")
             UserDefaults.standard.set(passwd_tf.text, forKey: "password")
-        }else{
-            if let appDomain = Bundle.main.bundleIdentifier {
-                UserDefaults.standard.removePersistentDomain(forName: appDomain)
-             }
-        }
+        
         
         // check validation
         if self.checkTextFields() {
@@ -73,9 +69,9 @@ class SignUpVC: UIViewController {
             let msg = self.readDataInfoFromPlistFile().1
             if boolChk {
                 //
-                self.navigateScreen(storyboard: "Home", controller: "CustomerListVC")
+                self.navigateScreen(storyboard: "Main", controller: "CustomerListVC")
             }else{
-                self.showAlert(title: "NJ", message: msg)
+                self.showAlert(title: "EF", message: msg)
             }
         }
         
@@ -113,11 +109,19 @@ class SignUpVC: UIViewController {
     func checkTextFields() -> Bool {
         
         if userN_tf.text == "" {
-            self.showAlert(title: "NJ", message: "Username is required.")
+            self.showAlert(title: "EF", message: "Username is required.")
             return false
         }
         if passwd_tf.text == "" {
-            self.showAlert(title: "NJ", message: "Password is required.")
+            self.showAlert(title: "EF", message: "Password is required.")
+            return false
+        }
+        if confrPasswd_tf.text == "" {
+            self.showAlert(title: "EF", message: "Confirm Password is required.")
+            return false
+        }
+        if passwd_tf.text == confrPasswd_tf.text {
+            self.showAlert(title: "EF", message: "Password doesn't match with Confirm Password.")
             return false
         }
         
