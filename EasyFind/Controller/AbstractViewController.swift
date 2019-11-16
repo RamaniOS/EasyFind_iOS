@@ -14,9 +14,8 @@ class AbstractViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    class var control: AbstractController {
-        return (UIStoryboard.main.instantiateViewController(withIdentifier: String(describing: self)) as? AbstractController)!
+    class var control: AbstractViewController {
+        return UIStoryboard.main.instantiateViewController(withIdentifier: String(describing: self)) as! AbstractViewController
     }
-    
 }
 
