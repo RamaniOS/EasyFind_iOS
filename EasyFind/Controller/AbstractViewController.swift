@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AbstractViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        YelpManager.fetchYelpBusinesses(latitude: 6, longitude: 8)
     }
+    
+    class var control: AbstractController {
+        return (UIStoryboard.main.instantiateViewController(withIdentifier: String(describing: self)) as? AbstractController)!
+    }
+    
 }
 
