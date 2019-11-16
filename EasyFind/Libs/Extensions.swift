@@ -167,3 +167,14 @@ extension UIView {
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
     }
 }
+
+extension UIScreen {
+    
+    class var mainBounds: CGRect {
+        return main.bounds
+    }
+    
+    class var mainSize: CGSize {
+        return mainBounds.size
+    }
+}

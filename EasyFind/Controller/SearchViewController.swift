@@ -23,12 +23,21 @@ class SearchViewController: AbstractViewController {
     
     var items: [Businesses] = [] {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let `self` = self else { return }
+                self.tableView.reloadData()
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViews()
+    }
+    
+    private func initViews() {
+        title = "Business List"
+        navigationController?.navigationBar.prefersLargeTitles = true
         initTableView()
         fetchList()
     }
@@ -36,8 +45,6 @@ class SearchViewController: AbstractViewController {
     private func initTableView() {
         tableView.register(UINib(nibName: cellClass.reuseId, bundle: nil), forCellReuseIdentifier: cellClass.reuseId)
         tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableView.automaticDimension
     }
     
     private func fetchList() {
@@ -62,5 +69,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = (tableView.dequeueReusableCell(withIdentifier: cellClass.reuseId, for: indexPath) as? SearchTableViewCell)!
         cell.business = items[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellClass.cellHeight
     }
 }

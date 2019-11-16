@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SearchTableViewCell: UITableViewCell {
 
+    @IBOutlet weak private var imgView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
     class var reuseId: String {
@@ -20,6 +22,22 @@ class SearchTableViewCell: UITableViewCell {
         didSet {
             guard let business = business else { return }
             titleLabel.text = business.name
+            imgView.sd_setImage(with: business.imageURL)
         }
+    }
+    
+    static var aspect: CGFloat = 0.25
+    
+    class var aspectRatio: CGFloat {
+        get {
+            return aspect
+        }
+        set {
+            aspect = newValue
+        }
+    }
+    
+    class var cellHeight: CGFloat {
+        return UIScreen.mainSize.width * aspectRatio
     }
 }
