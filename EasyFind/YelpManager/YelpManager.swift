@@ -9,13 +9,18 @@ import Alamofire
 
 class YelpManager {
  
-    static func fetchYelpBusinesses(latitude: Double, longitude: Double) {
+    static func fetchYelpBusinesses(with location: String, completion: @escaping(_: BaseBusiness?) -> Void) {
         
-        let parameters: Parameters = ["location": "Brampton"]
+        let parameters: Parameters = ["location": location]
+        
         let url = URL(string: "https://api.yelp.com/v3/businesses/search")
         
         APIManager.requestWith(url!, parameters: parameters) { (base: BaseBusiness?) in
-            print(base?.total)
+            guard let baseModel = base else {
+                completion(nil)
+                return
+            }
+            completion(baseModel)
         }
     }
        
