@@ -8,7 +8,6 @@ target 'EasyFind' do
 	pod 'SVProgressHUD'
 	pod 'Alamofire'
 	pod 'SDWebImage'
-
   # Pods for EasyFind
 
 end
