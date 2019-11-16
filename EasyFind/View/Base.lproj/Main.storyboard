@@ -45,7 +45,7 @@
         <!--Sign UpVC-->
         <scene sceneID="Omt-VO-ppx">
             <objects>
-                <viewController storyboardIdentifier="SignUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vOD-sV-F2y" customClass="SignUpVC" customModule="EasyFind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFSignUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vOD-sV-F2y" customClass="EFSignUpVC" customModule="EasyFind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mOh-hl-igf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,7 @@
         <!--Sign InVC-->
         <scene sceneID="uIs-EB-XlU">
             <objects>
-                <viewController storyboardIdentifier="SignInVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IFN-SH-eAc" customClass="SignInVC" customModule="EasyFind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFSignInVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IFN-SH-eAc" customClass="EFSignInVC" customModule="EasyFind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pdd-Rp-a0f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

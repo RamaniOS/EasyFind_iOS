@@ -9,7 +9,7 @@
 import UIKit
 
 /// This is the signin class
-class SignInVC: UIViewController {
+class EFSignInVC: UIViewController {
     
     // MARK: - Properties
     @IBOutlet var upConta_view: UIView!
@@ -61,7 +61,7 @@ class SignInVC: UIViewController {
     
     @IBAction func noAccountBtnClicked(_ sender: Any) {
         //
-        self.navigateScreen(storyboard: "Main", controller: "SignUpVC")
+        self.navigateScreen(storyboard: "Main", controller: "EFSignUpVC")
     }
     
     @IBAction func signInBtnClicked(_ sender: Any) {
@@ -87,7 +87,6 @@ class SignInVC: UIViewController {
                 self.navigateScreen(storyboard: "Main", controller: "SignUpVC")
             }else{
                 // check if its in userdefault...
-                
                 if self.checkUserDefaults() {
                     
                 }else{
@@ -142,7 +141,17 @@ class SignInVC: UIViewController {
     
     func checkUserDefaults() -> Bool {
         
-        return true
+        if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray{
+            for dict in dictArr {
+                let userDict = dict as! NSDictionary
+                if userN_tf.text == userDict["user_name"] as? String && passwd_tf.text == userDict["password"] as? String {
+                    return true
+                }
+                
+            }
+        }
+                
+        return false
     }
     
     func readDataInfoFromPlistFile() -> (Bool, String) {
