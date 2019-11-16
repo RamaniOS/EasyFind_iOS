@@ -16,10 +16,12 @@ class SignUpVC: UIViewController {
     @IBOutlet var inConta_view: UIView!
     @IBOutlet var userN_view: UIView!
     @IBOutlet var passwd_view: UIView!
+    @IBOutlet var confirmPasswd_view: UIView!
     @IBOutlet var remembBtn: UIButton!
     @IBOutlet var signInBtn: UIButton!
     @IBOutlet var userN_tf: UITextField!
     @IBOutlet var passwd_tf: UITextField!
+    @IBOutlet var confrPasswd_tf: UITextField!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -51,15 +53,7 @@ class SignUpVC: UIViewController {
         self.showAlert(title: "Password:", message: "c0773774")
     }
     
-    @IBAction func rememberBtnClicked(_ sender: UIButton) {
-        if sender.isSelected == false {
-            sender.isSelected = true
-        }else{
-            sender.isSelected = false
-        }
-    }
-    
-    @IBAction func signInBtnClicked(_ sender: Any) {
+    @IBAction func signUpBtnClicked(_ sender: Any) {
         //
         if remembBtn.isSelected == true {
             
@@ -107,6 +101,7 @@ class SignUpVC: UIViewController {
         //
         userN_view.addBorder(view: userN_view, radius: 7.0, width: 1, color: UIColor.lightGray.cgColor)
         passwd_view.addBorder(view: passwd_view, radius: 7.0, width: 1, color: UIColor.lightGray.cgColor)
+        confirmPasswd_view.addBorder(view: confirmPasswd_view, radius: 7.0, width: 1, color: UIColor.lightGray.cgColor)
         signInBtn.addBorder(view: signInBtn, radius: 7.0, width: 1, color: UIColor.lightGray.cgColor)
         //
         upConta_view.addShadow(view: upConta_view, color: UIColor.hexStringToUIColor(hex: "6D67FD").cgColor, offset: CGSize(width: 0, height: 3), opacity: 0.8, radius: 5)

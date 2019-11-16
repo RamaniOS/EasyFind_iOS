@@ -122,8 +122,8 @@
 		18C2BF932380698D00C8669A /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				18C2BF9623806A9900C8669A /* SignUpVC.swift */,
 				18C2BF9423806A8700C8669A /* SigninVC.swift */,
+				18C2BF9623806A9900C8669A /* SignUpVC.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";

@@ -127,30 +127,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAy-0H-tHy">
                                         <rect key="frame" x="20" y="170" width="344" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YX7-Wa-K3p">
-                                                <rect key="frame" x="8" y="0.0" width="286" height="50"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YX7-Wa-K3p">
+                                                <rect key="frame" x="8" y="0.0" width="328" height="50"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV1-qU-ycK">
-                                                <rect key="frame" x="298" y="0.0" width="42" height="50"/>
-                                                <state key="normal" image="infoIcon"/>
-                                                <connections>
-                                                    <action selector="passwdHintBtnClicked:" destination="QiX-OS-7TF" eventType="touchUpInside" id="vX9-sO-Gjp"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="YX7-Wa-K3p" firstAttribute="leading" secondItem="rAy-0H-tHy" secondAttribute="leading" constant="8" id="1z6-dr-IDs"/>
                                             <constraint firstAttribute="bottom" secondItem="YX7-Wa-K3p" secondAttribute="bottom" id="DUj-LM-gmU"/>
-                                            <constraint firstItem="cV1-qU-ycK" firstAttribute="leading" secondItem="YX7-Wa-K3p" secondAttribute="trailing" constant="4" id="MsB-QR-LIo"/>
-                                            <constraint firstItem="cV1-qU-ycK" firstAttribute="bottom" secondItem="DyP-kc-vdd" secondAttribute="bottom" id="Yie-uL-YpE"/>
-                                            <constraint firstItem="DyP-kc-vdd" firstAttribute="trailing" secondItem="cV1-qU-ycK" secondAttribute="trailing" constant="4" id="Zcw-Lo-KA7"/>
-                                            <constraint firstItem="cV1-qU-ycK" firstAttribute="top" secondItem="DyP-kc-vdd" secondAttribute="top" id="ckb-cG-bs2"/>
                                             <constraint firstAttribute="height" constant="50" id="dY1-c9-gwK"/>
                                             <constraint firstItem="YX7-Wa-K3p" firstAttribute="top" secondItem="rAy-0H-tHy" secondAttribute="top" id="mbK-Jr-ZEa"/>
-                                            <constraint firstAttribute="trailing" secondItem="YX7-Wa-K3p" secondAttribute="trailing" constant="50" id="qfV-EO-PR8"/>
+                                            <constraint firstAttribute="trailing" secondItem="YX7-Wa-K3p" secondAttribute="trailing" constant="8" id="qfV-EO-PR8"/>
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="DyP-kc-vdd"/>
                                     </view>
@@ -161,11 +150,11 @@
                                             <constraint firstAttribute="height" constant="50" id="KkW-C3-v7V"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="SIGN IN">
+                                        <state key="normal" title="SIGN UP">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="signInBtnClicked:" destination="QiX-OS-7TF" eventType="touchUpInside" id="RBl-7f-sCP"/>
+                                            <action selector="signUpBtnClicked:" destination="QiX-OS-7TF" eventType="touchUpInside" id="sSY-ZF-K23"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -206,6 +195,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Lz-Mg-DU7"/>
                     <connections>
+                        <outlet property="confirmPasswd_view" destination="rAy-0H-tHy" id="ne6-3D-5rL"/>
+                        <outlet property="confrPasswd_tf" destination="YX7-Wa-K3p" id="CZu-tw-rBV"/>
                         <outlet property="inConta_view" destination="aVU-2y-6zm" id="7iX-CH-dCi"/>
                         <outlet property="passwd_tf" destination="U6d-Ec-B28" id="j6p-qd-yn5"/>
                         <outlet property="passwd_view" destination="cwp-TQ-QKA" id="fUZ-Hk-zNC"/>
@@ -383,7 +374,7 @@
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" Please contact Nitin Jaswal (C0773774)">
+                                    <fragment content=" SignUp">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="17" name="HelveticaNeue"/>
