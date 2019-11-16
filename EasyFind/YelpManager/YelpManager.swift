@@ -9,9 +9,10 @@ import Alamofire
 
 class YelpManager {
  
-    static func fetchYelpBusinesses(with location: String, completion: @escaping(_: BaseBusiness?) -> Void) {
+    static func fetchYelpBusinesses(with offset: Int, location: String, completion: @escaping(_: BaseBusiness?) -> Void) {
         
-        let parameters: Parameters = ["location": location]
+        let parameters: Parameters = ["location": location,
+                                      "offset": offset]
         
         let url = URL(string: "https://api.yelp.com/v3/businesses/search")
         

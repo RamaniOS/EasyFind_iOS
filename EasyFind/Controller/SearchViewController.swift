@@ -12,12 +12,17 @@ class SearchViewController: AbstractViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var offset = 0
+    private var limit = 20
+    private var isPagesAvailable = false
+    
     var baseModel: BaseBusiness? = nil {
         didSet {
             guard let base = baseModel, base.businesses!.count > 0 else {
                 return
             }
-            items = base.businesses!
+            isPagesAvailable = base.total! > items.count
+            items.append(contentsOf: base.businesses!)
         }
     }
     
@@ -47,9 +52,14 @@ class SearchViewController: AbstractViewController {
         tableView.tableFooterView = UIView()
     }
     
+    private func requestForNextPage() {
+        offset += limit
+        fetchList()
+    }
+    
     private func fetchList() {
         weak var `self` = self
-        YelpManager.fetchYelpBusinesses(with: "Toronoto") { (baseModel) in
+        YelpManager.fetchYelpBusinesses(with: offset, location: "Toronoto") { (baseModel) in
             self?.baseModel = baseModel
         }
     }
@@ -70,6 +80,22 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.business = items[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if items.count > 0 {
+            let lastItemReached = indexPath.item == items.count - 1
+            if isPagesAvailable && lastItemReached {
+                DispatchQueue.main.async { [weak self] in
+                    guard let `self` = self else {
+                        return
+                    }
+                    self.requestForNextPage()
+                }
+            }
+        }
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellClass.cellHeight
