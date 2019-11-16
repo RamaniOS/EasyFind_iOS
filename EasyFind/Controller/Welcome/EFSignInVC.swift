@@ -71,9 +71,11 @@ class EFSignInVC: UIViewController {
             UserDefaults.standard.set(userN_tf.text, forKey: "user_name")
             UserDefaults.standard.set(passwd_tf.text, forKey: "password")
         }else{
-            if let appDomain = Bundle.main.bundleIdentifier {
-                UserDefaults.standard.removePersistentDomain(forName: appDomain)
-             }
+            UserDefaults.standard.removeObject(forKey: "user_name")
+            UserDefaults.standard.removeObject(forKey: "password")
+//            if let appDomain = Bundle.main.bundleIdentifier {
+//                UserDefaults.standard.removePersistentDomain(forName: appDomain)
+//            }
         }
         
         // check validation
@@ -141,7 +143,8 @@ class EFSignInVC: UIViewController {
     
     func checkUserDefaults() -> Bool {
         
-        if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray{
+        let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray
+        if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray {
             for dict in dictArr {
                 let userDict = dict as! NSDictionary
                 if userN_tf.text == userDict["user_name"] as? String && passwd_tf.text == userDict["password"] as? String {

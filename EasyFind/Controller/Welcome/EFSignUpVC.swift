@@ -40,12 +40,8 @@ class EFSignUpVC: UIViewController {
     }
     
     // MARK: - Action
-    @IBAction func userNHintBtnClicked(_ sender: Any) {
-        self.showAlert(title: "User Name:", message: "nitin")
-    }
-    
-    @IBAction func passwdHintBtnClicked(_ sender: Any) {
-        self.showAlert(title: "Password:", message: "c0773774")
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
@@ -88,7 +84,7 @@ class EFSignUpVC: UIViewController {
             UIAlertAction in
             
             //
-             self.navigateScreen(storyboard: "Main", controller: "MenuVC")
+            // self.navigateScreen(storyboard: "Main", controller: "MenuVC")
             
         }
         
@@ -136,7 +132,8 @@ class EFSignUpVC: UIViewController {
     
     func checkUserDefaults() -> Bool {
         
-        if let dictArr = UserDefaults.standard.value(forKey: "user_name") as? NSArray{
+        if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray {
+            
             for dict in dictArr {
                 let userDict = dict as! NSDictionary
                 if userN_tf.text == userDict["user_name"] as? String {
@@ -144,6 +141,7 @@ class EFSignUpVC: UIViewController {
                 }
                 
             }
+        
         }
         
         return true
