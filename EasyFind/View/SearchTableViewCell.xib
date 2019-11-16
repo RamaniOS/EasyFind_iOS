@@ -29,14 +29,14 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g10-oj-uQg">
                         <rect key="frame" x="15" y="15" width="124" height="161"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2l-9S-IqH">
-                        <rect key="frame" x="147" y="15" width="51.5" height="22"/>
-                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="19"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2l-9S-IqH">
+                        <rect key="frame" x="147" y="15" width="251" height="20.5"/>
+                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jua-vO-FU3" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="147" y="42" width="104" height="20"/>
+                        <rect key="frame" x="147" y="40.5" width="104" height="20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="tQe-mh-Ki6"/>
@@ -58,33 +58,43 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0z-k5-1JQ">
-                        <rect key="frame" x="263" y="42.5" width="43.5" height="19"/>
-                        <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="16"/>
+                        <rect key="frame" x="263" y="42.5" width="38" height="16"/>
+                        <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMo-86-4R0">
-                        <rect key="frame" x="147" y="67" width="269" height="18.5"/>
-                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                        <rect key="frame" x="147" y="65.5" width="269" height="16"/>
+                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swu-lo-QiO">
-                        <rect key="frame" x="147" y="90.5" width="269" height="18.5"/>
-                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                        <rect key="frame" x="147" y="86.5" width="269" height="16"/>
+                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Paq-4c-2nH">
-                        <rect key="frame" x="147" y="114" width="269" height="18.5"/>
-                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                        <rect key="frame" x="147" y="107.5" width="269" height="16"/>
+                        <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="En1-Dj-zGl">
+                        <rect key="frame" x="406" y="10.5" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="6kv-X8-u62"/>
+                            <constraint firstAttribute="width" secondItem="En1-Dj-zGl" secondAttribute="height" id="k9x-cR-zpm"/>
+                        </constraints>
+                        <state key="normal" image="UnFav"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e0z-k5-1JQ" secondAttribute="trailing" constant="8" id="0FE-Tq-aIC"/>
+                    <constraint firstItem="En1-Dj-zGl" firstAttribute="centerY" secondItem="h2l-9S-IqH" secondAttribute="centerY" id="1ed-LA-aTk"/>
                     <constraint firstItem="h2l-9S-IqH" firstAttribute="top" secondItem="g10-oj-uQg" secondAttribute="top" id="2oN-xb-zcT"/>
+                    <constraint firstItem="En1-Dj-zGl" firstAttribute="leading" secondItem="h2l-9S-IqH" secondAttribute="trailing" constant="8" id="3nW-Ys-L8V"/>
                     <constraint firstAttribute="bottom" secondItem="g10-oj-uQg" secondAttribute="bottom" constant="15" id="4Bx-6q-qBi"/>
                     <constraint firstItem="e0z-k5-1JQ" firstAttribute="leading" secondItem="jua-vO-FU3" secondAttribute="trailing" constant="12" id="7ja-yp-ilt"/>
                     <constraint firstAttribute="trailingMargin" secondItem="swu-lo-QiO" secondAttribute="trailing" constant="8" id="9GW-DM-rIG"/>
@@ -93,11 +103,11 @@
                     <constraint firstItem="Paq-4c-2nH" firstAttribute="leading" secondItem="h2l-9S-IqH" secondAttribute="leading" id="EWi-tx-eRO"/>
                     <constraint firstItem="qMo-86-4R0" firstAttribute="leading" secondItem="h2l-9S-IqH" secondAttribute="leading" id="IC9-hQ-1ah"/>
                     <constraint firstItem="e0z-k5-1JQ" firstAttribute="centerY" secondItem="jua-vO-FU3" secondAttribute="centerY" id="Lhf-Nd-2UH"/>
+                    <constraint firstAttribute="trailing" secondItem="En1-Dj-zGl" secondAttribute="trailing" constant="8" id="WXV-Zh-VMb"/>
                     <constraint firstItem="qMo-86-4R0" firstAttribute="top" secondItem="jua-vO-FU3" secondAttribute="bottom" constant="5" id="Wa8-jf-SvJ"/>
                     <constraint firstItem="g10-oj-uQg" firstAttribute="leading" secondItem="Ms0-fw-hSL" secondAttribute="leading" constant="15" id="Xnw-C0-VTb"/>
                     <constraint firstAttribute="trailingMargin" secondItem="qMo-86-4R0" secondAttribute="trailing" constant="8" id="ZEk-mn-B8f"/>
                     <constraint firstItem="g10-oj-uQg" firstAttribute="top" secondItem="Ms0-fw-hSL" secondAttribute="top" constant="15" id="ZXa-Gr-pkx"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h2l-9S-IqH" secondAttribute="trailing" constant="8" id="bnT-kq-FWq"/>
                     <constraint firstItem="swu-lo-QiO" firstAttribute="leading" secondItem="h2l-9S-IqH" secondAttribute="leading" id="dB4-xJ-rFg"/>
                     <constraint firstItem="g10-oj-uQg" firstAttribute="width" secondItem="Ms0-fw-hSL" secondAttribute="height" multiplier="0.65" id="deO-9B-1pu"/>
                     <constraint firstItem="swu-lo-QiO" firstAttribute="top" secondItem="qMo-86-4R0" secondAttribute="bottom" constant="5" id="fFd-sT-pf2"/>
@@ -119,4 +129,7 @@
             <point key="canvasLocation" x="159.42028985507247" y="173.77232142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="UnFav" width="17.5" height="17.5"/>
+    </resources>
 </document>
