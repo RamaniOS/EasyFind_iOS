@@ -21,6 +21,7 @@ class YelpManager {
                 completion(nil)
                 return
             }
+            _ = baseModel.businesses!.compactMap { $0.isFav = false }
             completion(baseModel)
         }
     }

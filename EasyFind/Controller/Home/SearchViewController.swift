@@ -22,6 +22,7 @@ class SearchViewController: AbstractViewController {
                 return
             }
             isPagesAvailable = base.total! > items.count
+            
             items.append(contentsOf: base.businesses!)
         }
     }
