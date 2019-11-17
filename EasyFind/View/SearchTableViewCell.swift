@@ -19,6 +19,7 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var addressLabel: UILabel!
     @IBOutlet weak private var priceLabel: UILabel!
+    @IBOutlet weak var favButton: UIButton!
     
     static var reuseId: String {
         return String(describing: self)
@@ -47,6 +48,7 @@ class SearchTableViewCell: UITableViewCell {
                 }
                 typesLabel.text = types
             }
+            
         }
     }
     
