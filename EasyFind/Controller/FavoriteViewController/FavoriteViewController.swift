@@ -33,6 +33,11 @@ class FavoriteViewController: AbstractViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         initTableView()
         fetchList()
+        addObserver()
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchList), name: .favRefreshKey, object: nil)
     }
     
     private func initTableView() {
@@ -40,12 +45,16 @@ class FavoriteViewController: AbstractViewController {
         tableView.tableFooterView = UIView()
     }
     
-    private func fetchList() {
+    @objc private func fetchList() {
         items = FavoriteStore.fetchAllFav
     }
     
     private var cellClass: SearchTableViewCell.Type {
         return SearchTableViewCell.self
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

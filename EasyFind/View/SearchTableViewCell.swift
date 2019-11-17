@@ -58,6 +58,7 @@ class SearchTableViewCell: UITableViewCell {
                 } else {
                     FavoriteStore.removeFromFav(with: business)
                 }
+                NotificationStore.refreshFav()
             }
         }
     }
