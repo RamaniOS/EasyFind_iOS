@@ -7,40 +7,131 @@
 //
 
 import UIKit
+import Cosmos
+import MessageUI
 
-class EFDetailScreenVC: UIViewController, UIScrollViewDelegate {
+class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageComposeViewControllerDelegate {
     
     // MARK: - Properties
     let imgArray = NSArray()
+    private var business: Businesses?
+    var baseModel: DetailM?
+       
+    @IBOutlet var restName: UILabel!
+    @IBOutlet var aliasLbl: UILabel!
+    @IBOutlet var ratinView: CosmosView!
+    @IBOutlet var priceLbl: UILabel!
+    
+    @IBOutlet var callBtn: UIButton!
+    @IBOutlet var msgBtn: UIButton!
+    @IBOutlet var addLbl: UILabel!
+    
+    class func control(with business: Businesses) -> EFDetailScreenVC {
+        let control = self.control as! EFDetailScreenVC
+        control.business = business
+        return control
+    }
+    
     @IBOutlet var slideScrollView: UIScrollView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        print(business?.id)
 
-        // Do any additional setup after loading the view.
+        populateData()
+        fetchList()
+     
     }
 
     // MARK: - Action
     @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func callBtnClicked(_ sender: Any) {
+        if let url = URL(string: "tel://\(business?.phone ?? ""))"), UIApplication.shared.canOpenURL(url){
+            if #available(iOS 10, *)
+            {
+                UIApplication.shared.open(url)
+            }
+            else
+            {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
+    @IBAction func msgBtnClicked(_ sender: Any) {
+        if MFMessageComposeViewController.canSendText() {
+            
+        
+            let messageVC = MFMessageComposeViewController()
+        
+        messageVC.body = "Type msg..."
+        messageVC.recipients = ["\(business?.phone ?? "")"]
+        messageVC.messageComposeDelegate = self
+        
+        self.present(messageVC, animated: false, completion: nil)
+        }
+        else{
+            print("NO SIM available")
+        }
+    }
+    
+    //
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
+    {
+        
+        switch (result) {
+        case .cancelled:
+            print("Message was cancelled")
+            self.dismiss(animated: true, completion: nil)
+        case .failed:
+            print("Message failed")
+            self.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("Message was sent")
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - Helper
+    private func fetchList() {
+        weak var `self` = self
+        YelpManager.fetchYelpBusinessesDetail(with: business?.id ?? "") { (baseModel) in
+                self?.baseModel = baseModel
+         
+            self!.loadTopBannerView()
+        }
+    }
+    
+    func populateData() {
+        restName.text = business?.name
+        aliasLbl.text = business?.alias
+        ratinView.rating = business?.rating ?? 0
+        priceLbl.text = business?.price
+        callBtn.setTitle(" Call \(business?.phone ?? "")", for: .normal)
+        addLbl.text = "\(business?.location?.address1 ?? "") \n\(business?.location?.city ?? "") \n\(business?.location?.state ?? ""), \(business?.location?.country ?? "") - \(business?.location?.zip_code ?? "")"
+    }
+    
     func loadTopBannerView() {
        
-       let pageCount : CGFloat = CGFloat(imgArray.count)
+       let pageCount = self.baseModel?.photos!.count
        
        slideScrollView.backgroundColor = UIColor.clear
        slideScrollView.delegate = self
        slideScrollView.isPagingEnabled = true
-       slideScrollView.contentSize = CGSize(width: slideScrollView.frame.size.width * pageCount, height: slideScrollView.frame.size.height)
+       slideScrollView.contentSize = CGSize(width: slideScrollView.frame.size.width * CGFloat(pageCount!), height: slideScrollView.frame.size.height)
        slideScrollView.showsHorizontalScrollIndicator = false
         
-        for i in 0..<Int(pageCount) {
+        for i in 0..<Int(pageCount!) {
             // set banner image...
-            let imageView = UIImageView(frame: CGRect(x: self.slideScrollView.frame.size.width * CGFloat(i), y: 0, width: self.slideScrollView.frame.size.width, height: self.slideScrollView.frame.size.height))
-            let bannerImage = (imgArray[i]as! NSDictionary)["image"] as? String ?? ""
-            //self.loadPic(strUrl: bannerImage, picView: imageView)
+            let imageView = UIImageView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.slideScrollView.frame.size.width, height: 298.0))
+            let bannerImage = self.baseModel?.photos![i] as? String ?? ""
+            self.loadPic(strUrl: bannerImage, picView: imageView)
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             self.slideScrollView.addSubview(imageView)

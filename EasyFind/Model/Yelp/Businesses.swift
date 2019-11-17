@@ -25,6 +25,7 @@ class Businesses : Codable {
 	let phone : String?
 	let display_phone : String?
 	let distance : Double?
+<<<<<<< HEAD
    
     var isFAV: Bool?
     var isFav: Bool? {
@@ -35,6 +36,7 @@ class Businesses : Codable {
             isFAV = newValue
         }
     }
+
     
     var imageURL: URL? {
         if let url = image_url {

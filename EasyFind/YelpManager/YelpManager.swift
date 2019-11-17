@@ -25,5 +25,20 @@ class YelpManager {
             completion(baseModel)
         }
     }
+    
+    static func fetchYelpBusinessesDetail(with id: String, completion: @escaping(_: DetailM?) -> Void) {
+        
+        let parameters: Parameters = ["locale": "en_US"]
+        
+        let url = URL(string: "https://api.yelp.com/v3/businesses/\(id)")
+        
+        APIManager.requestWith(url!, parameters: parameters) { (base: DetailM?) in
+            guard let baseModel = base else {
+                completion(nil)
+                return
+            }
+            completion(baseModel)
+        }
+    }
        
 }
