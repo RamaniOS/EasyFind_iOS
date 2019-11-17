@@ -22,7 +22,6 @@ class SearchViewController: AbstractViewController {
                 return
             }
             isPagesAvailable = base.total! > items.count
-            
             items.append(contentsOf: base.businesses!)
         }
     }
@@ -59,12 +58,14 @@ class SearchViewController: AbstractViewController {
             // here is your saved image:
             img_view.image = UIImage(data: oldImageData! as Data)
         }
-        
-        title_lbl.text = "Welcome \(Singelton.singObj.userInfoDict["user_name"] as! String)"
+        let welcome = "Welcome \(Singelton.singObj.userInfoDict["user_name"] as! String)"
+        title_lbl.text = welcome
         
         initTableView()
         fetchList()
         addObserver()
+        title = welcome
+        navigationController?.navigationBar.prefersLargeTitles = true
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
@@ -148,6 +149,12 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        guard let location = searchBar.text else { return }
+        weak var `self` = self
+        offset = 0
+        YelpManager.fetchYelpBusinesses(with: offset, location: location) { (baseModel) in
+            self?.items.removeAll()
+            self?.baseModel = baseModel
+        }
     }
 }
