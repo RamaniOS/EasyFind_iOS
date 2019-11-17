@@ -117,5 +117,6 @@ extension EFHomeVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(DetailViewController.control(with: items[indexPath.row]), animated: true)
     }
 }
