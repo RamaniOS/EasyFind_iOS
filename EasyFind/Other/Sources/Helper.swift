@@ -11,6 +11,20 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
+    ///
+    func loadPic(strUrl: String, picView: UIImageView){
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        picView.addSubview(activityIndicator)
+        activityIndicator.center = picView.center
+        activityIndicator.startAnimating()
+        
+        picView.sd_setImage(with: URL(string: strUrl), completed: nil)
+//        picView.sd_setImage(with: URL(string: strUrl), placeholderImage: UIImage(named: ""), options: .progressiveDownload, completed: {(_ image: UIImage?, _ error: Error?, _ cacheType: SDImageCacheType, _ imageURL: URL?) -> Void in
+//            activityIndicator.stopAnimating()
+//            activityIndicator.removeFromSuperview()
+//        })
+    }
 
     ///
     func showAlert(title: String, message: String) {

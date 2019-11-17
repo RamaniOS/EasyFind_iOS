@@ -25,7 +25,7 @@ struct Businesses : Codable {
 	let phone : String?
 	let display_phone : String?
 	let distance : Double?
-    var isFav = false
+    //var isFav = false
     
     var imageURL: URL? {
         if let url = image_url {
