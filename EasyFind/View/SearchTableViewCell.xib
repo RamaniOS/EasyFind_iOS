@@ -35,7 +35,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jua-vO-FU3" customClass="CosmosView" customModule="Cosmos">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jua-vO-FU3" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="147" y="41" width="104" height="20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -57,7 +57,7 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0z-k5-1JQ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0z-k5-1JQ">
                         <rect key="frame" x="263" y="43" width="34.5" height="16"/>
                         <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="14"/>
                         <nil key="textColor"/>
@@ -119,6 +119,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="addressLabel" destination="Paq-4c-2nH" id="OnD-p6-FA9"/>
+                <outlet property="favButton" destination="En1-Dj-zGl" id="LCb-iI-0tN"/>
                 <outlet property="imgView" destination="g10-oj-uQg" id="hwP-ac-8Mx"/>
                 <outlet property="priceLabel" destination="swu-lo-QiO" id="gkb-a2-JXT"/>
                 <outlet property="ratingLabel" destination="e0z-k5-1JQ" id="0VI-qI-tFR"/>
