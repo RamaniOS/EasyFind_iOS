@@ -11,7 +11,7 @@ import SDWebImage
 import Cosmos
 
 class SearchTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak private var typesLabel: UILabel!
     @IBOutlet weak private var starView: CosmosView!
     @IBOutlet weak private var ratingLabel: UILabel!
@@ -48,7 +48,18 @@ class SearchTableViewCell: UITableViewCell {
                 }
                 typesLabel.text = types
             }
-            
+            favButton.image = business.isFav! ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
+            favButton.actionBlock { [weak self] in
+                guard let `self` = self else { return }
+                business.isFav = !business.isFav!
+                self.favButton.image = business.isFav! ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
+                if business.isFav! {
+                    FavoriteStore.addToFav(with: business)
+                } else {
+                    FavoriteStore.removeFromFav(with: business)
+                }
+                NotificationStore.refreshFav()
+            }
         }
     }
     

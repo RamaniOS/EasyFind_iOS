@@ -30,7 +30,7 @@ class SearchViewController: AbstractViewController {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let `self` = self else { return }
-                self.tableView.reloadData()
+                self.reloadTable()
             }
         }
     }
@@ -39,6 +39,8 @@ class SearchViewController: AbstractViewController {
     @IBOutlet var title_lbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    let searchController = UISearchController(searchResultsController: nil)
+
     // MARK: -  Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +58,31 @@ class SearchViewController: AbstractViewController {
             // here is your saved image:
             img_view.image = UIImage(data: oldImageData! as Data)
         }
-        
-        title_lbl.text = "Welcome \(Singelton.singObj.userInfoDict["user_name"] as! String)"
+        let welcome = "Welcome \(Singelton.singObj.userInfoDict["user_name"] as! String)"
+        title_lbl.text = welcome
         
         initTableView()
         fetchList()
+        addObserver()
+        title = welcome
+        navigationController?.navigationBar.prefersLargeTitles = true
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTable), name: .favRefreshKey, object: nil)
+    }
+    
+    @objc private func reloadTable() {
+        tableView.reloadData()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func initTableView() {
@@ -118,5 +140,21 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(DetailViewController.control(with: items[indexPath.row]), animated: true)
+    }
+}
+
+/*
+ Manage search bar delegates
+ */
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let location = searchBar.text else { return }
+        weak var `self` = self
+        offset = 0
+        YelpManager.fetchYelpBusinesses(with: offset, location: location) { (baseModel) in
+            self?.items.removeAll()
+            self?.baseModel = baseModel
+        }
     }
 }

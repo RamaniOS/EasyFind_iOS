@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Businesses : Codable {
+class Businesses : Codable {
 	let id : String?
 	let alias : String?
 	let name : String?
@@ -25,7 +25,16 @@ struct Businesses : Codable {
 	let phone : String?
 	let display_phone : String?
 	let distance : Double?
-    var isFav = false
+   
+    var isFAV: Bool?
+    var isFav: Bool? {
+        get {
+            return isFAV
+        }
+        set {
+            isFAV = newValue
+        }
+    }
     
     var imageURL: URL? {
         if let url = image_url {
