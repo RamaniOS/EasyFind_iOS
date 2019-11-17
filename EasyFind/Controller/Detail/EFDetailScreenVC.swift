@@ -8,8 +8,9 @@
 
 import UIKit
 import Cosmos
+import MessageUI
 
-class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate  {
+class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageComposeViewControllerDelegate {
     
     // MARK: - Properties
     let imgArray = NSArray()
@@ -50,6 +51,53 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate  {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func callBtnClicked(_ sender: Any) {
+        if let url = URL(string: "tel://\(business?.phone ?? ""))"), UIApplication.shared.canOpenURL(url){
+            if #available(iOS 10, *)
+            {
+                UIApplication.shared.open(url)
+            }
+            else
+            {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
+    @IBAction func msgBtnClicked(_ sender: Any) {
+        if MFMessageComposeViewController.canSendText() {
+            
+        
+            let messageVC = MFMessageComposeViewController()
+        
+        messageVC.body = "Type msg..."
+        messageVC.recipients = ["\(business?.phone ?? "")"]
+        messageVC.messageComposeDelegate = self
+        
+        self.present(messageVC, animated: false, completion: nil)
+        }
+        else{
+            print("NO SIM available")
+        }
+    }
+    
+    //
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
+    {
+        
+        switch (result) {
+        case .cancelled:
+            print("Message was cancelled")
+            self.dismiss(animated: true, completion: nil)
+        case .failed:
+            print("Message failed")
+            self.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("Message was sent")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - Helper
     private func fetchList() {
         weak var `self` = self
@@ -63,7 +111,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate  {
     func populateData() {
         restName.text = business?.name
         aliasLbl.text = business?.alias
-        //ratinView: CosmosView!
+        ratinView.rating = business?.rating ?? 0
         priceLbl.text = business?.price
         callBtn.setTitle(" Call \(business?.phone ?? "")", for: .normal)
         addLbl.text = "\(business?.location?.address1 ?? "") \n\(business?.location?.city ?? "") \n\(business?.location?.state ?? ""), \(business?.location?.country ?? "") - \(business?.location?.zip_code ?? "")"
