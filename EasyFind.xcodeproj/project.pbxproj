@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		184F3DBC238081410093DB47 /* Pods_EasyFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; };
 		184F3DBD238081410093DB47 /* Pods_EasyFind.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18A57512238105C400E12E84 /* EFTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57511238105C400E12E84 /* EFTabBarVC.swift */; };
+		18A575142381065600E12E84 /* Singelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A575132381065600E12E84 /* Singelton.swift */; };
 		18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9423806A8700C8669A /* EFSignInVC.swift */; };
 		18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9623806A9900C8669A /* EFSignUpVC.swift */; };
 		18D53DBD238087BD00EDAFA6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DBC238087BD00EDAFA6 /* Helper.swift */; };
@@ -54,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18A57511238105C400E12E84 /* EFTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFTabBarVC.swift; sourceTree = "<group>"; };
+		18A575132381065600E12E84 /* Singelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singelton.swift; sourceTree = "<group>"; };
 		18C2BF9423806A8700C8669A /* EFSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignInVC.swift; sourceTree = "<group>"; };
 		18C2BF9623806A9900C8669A /* EFSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignUpVC.swift; sourceTree = "<group>"; };
 		18D53DBC238087BD00EDAFA6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -104,6 +108,9 @@
 		184F3DB423806AEA0093DB47 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				18A57511238105C400E12E84 /* EFTabBarVC.swift */,
+				BC58883F237F807000E02F3D /* SearchViewController.swift */,
+				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -234,8 +241,6 @@
 			children = (
 				18C2BF932380698D00C8669A /* Welcome */,
 				184F3DB423806AEA0093DB47 /* Home */,
-				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
-				BC58883F237F807000E02F3D /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 		BCCC5AE7237F096D00BE939E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18A575132381065600E12E84 /* Singelton.swift */,
 				BC23D282237F635200604AD5 /* Yelp */,
 			);
 			path = Model;
@@ -407,6 +413,7 @@
 				BC58883B237F7E2D00E02F3D /* Center.swift in Sources */,
 				18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */,
 				BCCC5AEC237F098900BE939E /* APIManager.swift in Sources */,
+				18A57512238105C400E12E84 /* EFTabBarVC.swift in Sources */,
 				BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */,
 				BC58883C237F7E2D00E02F3D /* Region.swift in Sources */,
 				BC588838237F7E2D00E02F3D /* Location.swift in Sources */,
@@ -425,6 +432,7 @@
 				BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */,
 				BC588839237F7E2D00E02F3D /* Businesses.swift in Sources */,
 				18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */,
+				18A575142381065600E12E84 /* Singelton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

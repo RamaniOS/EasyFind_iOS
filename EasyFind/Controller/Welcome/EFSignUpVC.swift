@@ -102,7 +102,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
                     try imageData!.write(to: URL(fileURLWithPath: path), options: .atomic)
                     
                     if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray {
-                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "current_loc" : currLoc, "user_img": relativePath] as [String : Any]
+                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "lat" : "\(currLoc.coordinate.latitude)", "long" : "\(currLoc.coordinate.longitude)", "user_img": relativePath] as [String : Any]
                         passDict = newDict as NSDictionary
                         var newArr = NSMutableArray()
                         newArr = dictArr.mutableCopy() as! NSMutableArray
@@ -110,7 +110,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
                         UserDefaults.standard.set(newArr, forKey: "singnup_arr")
                         
                     }else {
-                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "user_img": relativePath] as [String : Any]
+                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "lat" : "\(currLoc.coordinate.latitude)", "long" : "\(currLoc.coordinate.longitude)", "user_img": relativePath] as [String : Any]
                         passDict = newDict as NSDictionary
                         let dictArr = NSMutableArray()
                         dictArr.add(newDict)
@@ -135,14 +135,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
     }
     
     // MARK: - Helper
-    func documentsPathForFileName(name: String) -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true);
-        let path = paths[0] as String;
-        let fullPath = path.appending(name)//stringByAppendingPathComponent(name)
 
-        return fullPath
-    }
-    
     func signUpCompleted() {
         //
         let alertController = UIAlertController(title: "EF", message: "SignUp Successfully Done.", preferredStyle: .alert)
@@ -151,8 +144,8 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
             
             //
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-            vc.userInfoDict = self.passDict
+            let vc = storyboard.instantiateViewController(withIdentifier: "EFTabBarVC") as! EFTabBarVC
+            Singelton.singObj.userInfoDict = self.passDict
             
             self.navigationController?.pushViewController(vc, animated: true)
             

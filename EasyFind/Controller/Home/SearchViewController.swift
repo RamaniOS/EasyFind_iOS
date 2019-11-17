@@ -1,5 +1,5 @@
 //
-//  SearchViewController.swift
+//  EFHomeVC.swift
 //  EasyFind
 //
 //  Created by Ramanpreet Singh on 2019-11-15.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class SearchViewController: AbstractViewController {
+class EFHomeVC: AbstractViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    
+    // MARK: - Properties
     var userInfoDict = NSDictionary()
     private var offset = 0
     private var limit = 20
@@ -36,14 +35,30 @@ class SearchViewController: AbstractViewController {
         }
     }
     
+    @IBOutlet var img_view: UIImageView!
+    @IBOutlet var title_lbl: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: -  Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
     }
     
+    // MARK: - Helpers
     private func initViews() {
-        title = "Business List"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        //
+        let possibleOldImagePath = Singelton.singObj.userInfoDict["user_img"] as? String
+        if let oldImagePath = possibleOldImagePath {
+            let oldFullPath = self.documentsPathForFileName(name: oldImagePath)
+            let oldImageData = NSData(contentsOfFile: oldFullPath)
+            // here is your saved image:
+            img_view.image = UIImage(data: oldImageData! as Data)
+        }
+        
+        title_lbl.text = "Welcome \(Singelton.singObj.userInfoDict["user_name"] as! String)"
+        
         initTableView()
         fetchList()
     }
@@ -70,7 +85,7 @@ class SearchViewController: AbstractViewController {
     }
 }
 
-extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
+extension EFHomeVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
