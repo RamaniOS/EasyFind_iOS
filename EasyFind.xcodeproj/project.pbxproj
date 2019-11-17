@@ -114,10 +114,8 @@
 			children = (
 				18A57511238105C400E12E84 /* EFTabBarVC.swift */,
 				BC58883F237F807000E02F3D /* SearchViewController.swift */,
-<<<<<<< HEAD
 				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
-=======
->>>>>>> master
+
 			);
 			path = Home;
 			sourceTree = "<group>";
