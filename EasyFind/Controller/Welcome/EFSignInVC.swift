@@ -87,8 +87,8 @@ class EFSignInVC: UIViewController {
             if self.checkUserDefaults() {
                 //
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-                vc.userInfoDict = passDict
+                let vc = storyboard.instantiateViewController(withIdentifier: "EFTabBarVC") as! EFTabBarVC
+                Singelton.singObj.userInfoDict = passDict
                 
                 self.navigationController?.pushViewController(vc, animated: true)
             }else{

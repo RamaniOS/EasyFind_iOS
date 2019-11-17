@@ -57,5 +57,13 @@ extension UIViewController {
         return newImage!
     }
 
+    ///
+    func documentsPathForFileName(name: String) -> String {
+           let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true);
+           let path = paths[0] as String;
+           let fullPath = path.appending(name)//stringByAppendingPathComponent(name)
+
+           return fullPath
+       }
 
 }
