@@ -40,6 +40,8 @@ class SearchViewController: AbstractViewController {
     @IBOutlet var title_lbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    let searchController = UISearchController(searchResultsController: nil)
+
     // MARK: -  Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,11 @@ class SearchViewController: AbstractViewController {
         initTableView()
         fetchList()
         addObserver()
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     private func addObserver() {
@@ -132,5 +139,15 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(DetailViewController.control(with: items[indexPath.row]), animated: true)
+    }
+}
+
+/*
+ Manage search bar delegates
+ */
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
     }
 }
