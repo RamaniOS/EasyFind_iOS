@@ -166,6 +166,15 @@ extension UIView {
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
     }
+    
+    func actionBlock(_ closure: @escaping() -> ()) {
+        let sleeve = ClosureSleeve(closure)
+        let recognizer = UITapGestureRecognizer(target: sleeve, action: #selector(ClosureSleeve.invoke))
+        addGestureRecognizer(recognizer)
+        isUserInteractionEnabled = true
+        
+        objc_setAssociatedObject(self, String(format: "[%d]", arc4random()), sleeve, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+    }
 }
 
 extension UIScreen {
@@ -176,5 +185,17 @@ extension UIScreen {
     
     class var mainSize: CGSize {
         return mainBounds.size
+    }
+}
+
+class ClosureSleeve {
+    let closure: ()->()
+    
+    init (_ closure: @escaping ()->()) {
+        self.closure = closure
+    }
+    
+    @objc func invoke () {
+        closure()
     }
 }
