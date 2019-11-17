@@ -14,6 +14,7 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var aboutUsButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var callUsButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
         Helper.applyGradient(to: aboutUsButton)
         Helper.applyGradient(to: emailButton)
         Helper.applyGradient(to: callUsButton)
+        Helper.applyGradient(to: logoutButton)
     }
     // MARK: - Action
 
@@ -60,5 +62,8 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
     // MFMailComposeViewControllerDelegate
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func logoutButtonClicked(_ sender: Any) {
     }
 }
