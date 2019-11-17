@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A3B094EB8041C8E027BB4C4 /* Pods_EasyFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; };
+		184F3DBC238081410093DB47 /* Pods_EasyFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; };
+		184F3DBD238081410093DB47 /* Pods_EasyFind.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9423806A8700C8669A /* EFSignInVC.swift */; };
+		18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9623806A9900C8669A /* EFSignUpVC.swift */; };
+		18D53DBD238087BD00EDAFA6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DBC238087BD00EDAFA6 /* Helper.swift */; };
+		18D53DC723808A0000EDAFA6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DC2238089FF00EDAFA6 /* UIViewExtension.swift */; };
+		18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DC323808A0000EDAFA6 /* UIFloatExtension.swift */; };
+		18D53DC923808A0000EDAFA6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DC423808A0000EDAFA6 /* UIColorExtension.swift */; };
 		BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23D2C3237F780B00604AD5 /* BaseBusiness.swift */; };
 		BC2728F8237FB4360020C271 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC2728F5237FB4360020C271 /* Quicksand-Bold.ttf */; };
 		BC2728F9237FB4360020C271 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC2728F6237FB4360020C271 /* Quicksand-Regular.ttf */; };
@@ -32,7 +39,27 @@
 		BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AEE237F0A4C00BE939E /* YelpManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		184F3DBE238081410093DB47 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				184F3DBD238081410093DB47 /* Pods_EasyFind.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		18C2BF9423806A8700C8669A /* EFSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignInVC.swift; sourceTree = "<group>"; };
+		18C2BF9623806A9900C8669A /* EFSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignUpVC.swift; sourceTree = "<group>"; };
+		18D53DBC238087BD00EDAFA6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		18D53DC2238089FF00EDAFA6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		18D53DC323808A0000EDAFA6 /* UIFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFloatExtension.swift; sourceTree = "<group>"; };
+		18D53DC423808A0000EDAFA6 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9B5D738FCE8DABCF3B3EC10A /* Pods-EasyFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFind.release.xcconfig"; path = "Target Support Files/Pods-EasyFind/Pods-EasyFind.release.xcconfig"; sourceTree = "<group>"; };
 		BC23D2C3237F780B00604AD5 /* BaseBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBusiness.swift; sourceTree = "<group>"; };
 		BC2728F5237FB4360020C271 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
@@ -67,13 +94,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3B094EB8041C8E027BB4C4 /* Pods_EasyFind.framework in Frameworks */,
+				184F3DBC238081410093DB47 /* Pods_EasyFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184F3DB423806AEA0093DB47 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18C2BF932380698D00C8669A /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				18C2BF9423806A8700C8669A /* EFSignInVC.swift */,
+				18C2BF9623806A9900C8669A /* EFSignUpVC.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		18D53DBA2380875300EDAFA6 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				18D53DBE238087C100EDAFA6 /* Sources */,
+				18D53DBB2380876800EDAFA6 /* Extensions */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		18D53DBB2380876800EDAFA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18D53DC423808A0000EDAFA6 /* UIColorExtension.swift */,
+				18D53DC323808A0000EDAFA6 /* UIFloatExtension.swift */,
+				18D53DC2238089FF00EDAFA6 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18D53DBE238087C100EDAFA6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				18D53DBC238087BD00EDAFA6 /* Helper.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		4C586B01725E0E6DE7AEC78C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,14 +208,12 @@
 			children = (
 				BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */,
 				BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */,
-				BCCC5AD6237EFA3800BE939E /* Main.storyboard */,
-				BCCC5AD9237EFA3900BE939E /* Assets.xcassets */,
-				BCCC5ADB237EFA3900BE939E /* LaunchScreen.storyboard */,
 				BCCC5AE7237F096D00BE939E /* Model */,
 				BCCC5AE8237F096D00BE939E /* View */,
 				BCCC5AE6237F096D00BE939E /* Controller */,
 				BCCC5AE9237F096D00BE939E /* APIManager */,
 				BCCC5AED237F0A4100BE939E /* YelpManager */,
+				18D53DBA2380875300EDAFA6 /* Other */,
 				BCCC5AEA237F096D00BE939E /* Libs */,
 				BCCC5AE4237EFD7500BE939E /* MISC */,
 				BC2728F4237FB4360020C271 /* Fonts */,
@@ -164,6 +232,8 @@
 		BCCC5AE6237F096D00BE939E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18C2BF932380698D00C8669A /* Welcome */,
+				184F3DB423806AEA0093DB47 /* Home */,
 				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
 				BC58883F237F807000E02F3D /* SearchViewController.swift */,
 			);
@@ -181,6 +251,9 @@
 		BCCC5AE8237F096D00BE939E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BCCC5AD6237EFA3800BE939E /* Main.storyboard */,
+				BCCC5AD9237EFA3900BE939E /* Assets.xcassets */,
+				BCCC5ADB237EFA3900BE939E /* LaunchScreen.storyboard */,
 				BC588841237F819000E02F3D /* SearchTableViewCell.swift */,
 				BC588843237F819C00E02F3D /* SearchTableViewCell.xib */,
 			);
@@ -223,6 +296,7 @@
 				BCCC5ACA237EFA3800BE939E /* Frameworks */,
 				BCCC5ACB237EFA3800BE939E /* Resources */,
 				F1C80A93B3B6C274E54E8A91 /* [CP] Embed Pods Frameworks */,
+				184F3DBE238081410093DB47 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,20 +405,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC58883B237F7E2D00E02F3D /* Center.swift in Sources */,
+				18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */,
 				BCCC5AEC237F098900BE939E /* APIManager.swift in Sources */,
 				BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */,
 				BC58883C237F7E2D00E02F3D /* Region.swift in Sources */,
 				BC588838237F7E2D00E02F3D /* Location.swift in Sources */,
+				18D53DBD238087BD00EDAFA6 /* Helper.swift in Sources */,
 				BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */,
 				BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */,
 				BCCC5AD5237EFA3800BE939E /* AbstractViewController.swift in Sources */,
 				BC588840237F807000E02F3D /* SearchViewController.swift in Sources */,
 				BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */,
+				18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */,
+				18D53DC923808A0000EDAFA6 /* UIColorExtension.swift in Sources */,
 				BC58883E237F7FFA00E02F3D /* Extensions.swift in Sources */,
 				BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */,
 				BC58883A237F7E2D00E02F3D /* Categories.swift in Sources */,
+				18D53DC723808A0000EDAFA6 /* UIViewExtension.swift in Sources */,
 				BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */,
 				BC588839237F7E2D00E02F3D /* Businesses.swift in Sources */,
+				18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/EasyFind/Misc/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,7 +580,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -510,6 +591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/EasyFind/Misc/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,7 +600,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

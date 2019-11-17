@@ -12,6 +12,7 @@ class SearchViewController: AbstractViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var userInfoDict = NSDictionary()
     private var offset = 0
     private var limit = 20
     private var isPagesAvailable = false
