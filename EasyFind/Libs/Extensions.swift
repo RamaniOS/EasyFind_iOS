@@ -199,3 +199,24 @@ class ClosureSleeve {
         closure()
     }
 }
+
+extension UIButton {
+    
+    var image: UIImage! {
+        get {
+            return image(for: .normal)!
+        }
+        set {
+            setImage(newValue, for: .normal)
+        }
+    }
+    
+    var title: String? {
+        get {
+            return title(for: .normal)
+        }
+        set {
+            setTitle(newValue, for: .normal)
+        }
+    }
+}
