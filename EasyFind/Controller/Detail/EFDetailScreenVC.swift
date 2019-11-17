@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate  {
     
@@ -15,6 +16,15 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate  {
     private var business: Businesses?
     var baseModel: DetailM?
        
+    @IBOutlet var restName: UILabel!
+    @IBOutlet var aliasLbl: UILabel!
+    @IBOutlet var ratinView: CosmosView!
+    @IBOutlet var priceLbl: UILabel!
+    
+    @IBOutlet var callBtn: UIButton!
+    @IBOutlet var msgBtn: UIButton!
+    @IBOutlet var addLbl: UILabel!
+    
     class func control(with business: Businesses) -> EFDetailScreenVC {
         let control = self.control as! EFDetailScreenVC
         control.business = business
@@ -30,6 +40,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate  {
         
         print(business?.id)
 
+        populateData()
         fetchList()
      
     }
@@ -47,7 +58,15 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate  {
          
             self!.loadTopBannerView()
         }
-
+    }
+    
+    func populateData() {
+        restName.text = business?.name
+        aliasLbl.text = business?.alias
+        //ratinView: CosmosView!
+        priceLbl.text = business?.price
+        callBtn.setTitle(" Call \(business?.phone ?? "")", for: .normal)
+        addLbl.text = "\(business?.location?.address1 ?? "") \n\(business?.location?.city ?? "") \n\(business?.location?.state ?? ""), \(business?.location?.country ?? "") - \(business?.location?.zip_code ?? "")"
     }
     
     func loadTopBannerView() {
@@ -57,12 +76,12 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate  {
        slideScrollView.backgroundColor = UIColor.clear
        slideScrollView.delegate = self
        slideScrollView.isPagingEnabled = true
-        slideScrollView.contentSize = CGSize(width: slideScrollView.frame.size.width * CGFloat(pageCount!), height: slideScrollView.frame.size.height)
+       slideScrollView.contentSize = CGSize(width: slideScrollView.frame.size.width * CGFloat(pageCount!), height: slideScrollView.frame.size.height)
        slideScrollView.showsHorizontalScrollIndicator = false
         
         for i in 0..<Int(pageCount!) {
             // set banner image...
-            let imageView = UIImageView(frame: CGRect(x: self.slideScrollView.frame.size.width * CGFloat(i), y: 0, width: self.slideScrollView.frame.size.width, height: self.slideScrollView.frame.size.height))
+            let imageView = UIImageView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.slideScrollView.frame.size.width, height: 298.0))
             let bannerImage = self.baseModel?.photos![i] as? String ?? ""
             self.loadPic(strUrl: bannerImage, picView: imageView)
             imageView.contentMode = .scaleAspectFill
