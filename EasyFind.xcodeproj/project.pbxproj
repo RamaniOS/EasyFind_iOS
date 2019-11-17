@@ -22,6 +22,7 @@
 		BC2728F8237FB4360020C271 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC2728F5237FB4360020C271 /* Quicksand-Bold.ttf */; };
 		BC2728F9237FB4360020C271 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC2728F6237FB4360020C271 /* Quicksand-Regular.ttf */; };
 		BC2728FA237FB4360020C271 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC2728F7237FB4360020C271 /* Quicksand-Light.ttf */; };
+		BC51F7992381CF6A00AD50E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51F7982381CF6A00AD50E2 /* DetailViewController.swift */; };
 		BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588831237F7E2D00E02F3D /* Coordinates.swift */; };
 		BC588838237F7E2D00E02F3D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588832237F7E2D00E02F3D /* Location.swift */; };
 		BC588839237F7E2D00E02F3D /* Businesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588833237F7E2D00E02F3D /* Businesses.swift */; };
@@ -71,6 +72,7 @@
 		BC2728F5237FB4360020C271 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		BC2728F6237FB4360020C271 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		BC2728F7237FB4360020C271 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		BC51F7982381CF6A00AD50E2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BC588831237F7E2D00E02F3D /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		BC588832237F7E2D00E02F3D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		BC588833237F7E2D00E02F3D /* Businesses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Businesses.swift; sourceTree = "<group>"; };
@@ -112,7 +114,10 @@
 			children = (
 				18A57511238105C400E12E84 /* EFTabBarVC.swift */,
 				BC58883F237F807000E02F3D /* SearchViewController.swift */,
+<<<<<<< HEAD
 				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
+=======
+>>>>>>> master
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -202,6 +207,22 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BC51F7962381CF1C00AD50E2 /* AbstarctViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
+			);
+			path = AbstarctViewController;
+			sourceTree = "<group>";
+		};
+		BC51F7972381CF3000AD50E2 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC51F7982381CF6A00AD50E2 /* DetailViewController.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
 		BCCC5AC4237EFA3800BE939E = {
 			isa = PBXGroup;
 			children = (
@@ -249,8 +270,10 @@
 		BCCC5AE6237F096D00BE939E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18C2BF932380698D00C8669A /* Welcome */,
+				BC51F7962381CF1C00AD50E2 /* AbstarctViewController */,
+				BC51F7972381CF3000AD50E2 /* DetailViewController */,
 				184F3DB423806AEA0093DB47 /* Home */,
+				18C2BF932380698D00C8669A /* Welcome */,
 				18E514702381C9F2003FB8C9 /* Detail */,
 			);
 			path = Controller;
@@ -437,6 +460,7 @@
 				BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */,
 				18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */,
 				18D53DC923808A0000EDAFA6 /* UIColorExtension.swift in Sources */,
+				BC51F7992381CF6A00AD50E2 /* DetailViewController.swift in Sources */,
 				BC58883E237F7FFA00E02F3D /* Extensions.swift in Sources */,
 				BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */,
 				BC58883A237F7E2D00E02F3D /* Categories.swift in Sources */,
