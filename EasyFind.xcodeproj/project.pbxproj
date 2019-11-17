@@ -33,9 +33,9 @@
 		BC588840237F807000E02F3D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58883F237F807000E02F3D /* SearchViewController.swift */; };
 		BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588841237F819000E02F3D /* SearchTableViewCell.swift */; };
 		BC588844237F819C00E02F3D /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC588843237F819C00E02F3D /* SearchTableViewCell.xib */; };
+		BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBBC1E2381DC0200339FFC /* AbstractViewController.swift */; };
 		BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */; };
 		BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */; };
-		BCCC5AD5237EFA3800BE939E /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */; };
 		BCCC5AD8237EFA3800BE939E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCC5AD6237EFA3800BE939E /* Main.storyboard */; };
 		BCCC5ADA237EFA3900BE939E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCC5AD9237EFA3900BE939E /* Assets.xcassets */; };
 		BCCC5ADD237EFA3900BE939E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCC5ADB237EFA3900BE939E /* LaunchScreen.storyboard */; };
@@ -83,10 +83,10 @@
 		BC58883F237F807000E02F3D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BC588841237F819000E02F3D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		BC588843237F819C00E02F3D /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		BCBBBC1E2381DC0200339FFC /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		BCCC5ACD237EFA3800BE939E /* EasyFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		BCCC5AD7237EFA3800BE939E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCCC5AD9237EFA3900BE939E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCCC5ADC237EFA3900BE939E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,8 +114,6 @@
 			children = (
 				18A57511238105C400E12E84 /* EFTabBarVC.swift */,
 				BC58883F237F807000E02F3D /* SearchViewController.swift */,
-				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
-
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -208,7 +206,7 @@
 		BC51F7962381CF1C00AD50E2 /* AbstarctViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
+				BCBBBC1E2381DC0200339FFC /* AbstractViewController.swift */,
 			);
 			path = AbstarctViewController;
 			sourceTree = "<group>";
@@ -453,7 +451,6 @@
 				18D53DBD238087BD00EDAFA6 /* Helper.swift in Sources */,
 				BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */,
 				BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */,
-				BCCC5AD5237EFA3800BE939E /* AbstractViewController.swift in Sources */,
 				BC588840237F807000E02F3D /* SearchViewController.swift in Sources */,
 				BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */,
 				18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */,
@@ -464,6 +461,7 @@
 				BC58883A237F7E2D00E02F3D /* Categories.swift in Sources */,
 				18D53DC723808A0000EDAFA6 /* UIViewExtension.swift in Sources */,
 				BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */,
+				BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */,
 				BC588839237F7E2D00E02F3D /* Businesses.swift in Sources */,
 				18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */,
 				18A575142381065600E12E84 /* Singelton.swift in Sources */,
