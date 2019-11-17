@@ -23,21 +23,40 @@
             </objects>
             <point key="canvasLocation" x="603" y="678"/>
         </scene>
-        <!--Favourite-->
+        <!--Favorite View Controller-->
         <scene sceneID="XQr-vr-6rB">
             <objects>
-                <viewController id="p2T-Oz-blG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteViewController" id="p2T-Oz-blG" customClass="FavoriteViewController" customModule="EasyFind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dlu-ss-T3f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h7g-QW-ien">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="p2T-Oz-blG" id="wHQ-pX-ros"/>
+                                    <outlet property="delegate" destination="p2T-Oz-blG" id="uOE-JX-0BG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="h7g-QW-ien" firstAttribute="top" secondItem="64w-fW-ndh" secondAttribute="top" id="6kv-PI-Lig"/>
+                            <constraint firstItem="64w-fW-ndh" firstAttribute="trailing" secondItem="h7g-QW-ien" secondAttribute="trailing" id="SPj-5U-FVj"/>
+                            <constraint firstItem="64w-fW-ndh" firstAttribute="bottom" secondItem="h7g-QW-ien" secondAttribute="bottom" id="uNu-eg-9WJ"/>
+                            <constraint firstItem="h7g-QW-ien" firstAttribute="leading" secondItem="64w-fW-ndh" secondAttribute="leading" id="uc1-FK-Y6O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="64w-fW-ndh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favourite" image="favTabIcon" id="1xt-vT-sdc"/>
+                    <navigationItem key="navigationItem" id="d2Q-Xo-rDl"/>
+                    <connections>
+                        <outlet property="tableView" destination="h7g-QW-ien" id="lZt-vK-PbG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yc0-ZD-BF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="603" y="-9"/>
+            <point key="canvasLocation" x="1513.0434782608697" y="-9.375"/>
         </scene>
         <!--Tab BarVC-->
         <scene sceneID="OAZ-hP-u5I">
@@ -50,7 +69,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="GC0-rd-cf4"/>
-                        <segue destination="p2T-Oz-blG" kind="relationship" relationship="viewControllers" id="4z3-4i-s94"/>
+                        <segue destination="2aS-en-h1H" kind="relationship" relationship="viewControllers" id="4z3-4i-s94"/>
                         <segue destination="CqA-ii-KoN" kind="relationship" relationship="viewControllers" id="cGr-jc-pWx"/>
                     </connections>
                 </tabBarController>
@@ -654,6 +673,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxi-Tn-dy4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2868" y="114"/>
+        </scene>
+        <!--Favourite-->
+        <scene sceneID="lgi-Vw-c3z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2aS-en-h1H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourite" image="favTabIcon" id="1xt-vT-sdc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wZ8-T3-nFL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p2T-Oz-blG" kind="relationship" relationship="rootViewController" id="w88-Kd-xuy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hTp-7X-1yj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602.89855072463774" y="-9.375"/>
         </scene>
     </scenes>
     <resources>

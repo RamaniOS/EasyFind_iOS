@@ -33,6 +33,7 @@
 		BC588840237F807000E02F3D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58883F237F807000E02F3D /* SearchViewController.swift */; };
 		BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588841237F819000E02F3D /* SearchTableViewCell.swift */; };
 		BC588844237F819C00E02F3D /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC588843237F819C00E02F3D /* SearchTableViewCell.xib */; };
+		BCB84EF32381EE740033B397 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB84EF22381EE740033B397 /* FavoriteViewController.swift */; };
 		BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBBC1E2381DC0200339FFC /* AbstractViewController.swift */; };
 		BCBBBC222381E77F00339FFC /* FavoriteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBBC212381E77F00339FFC /* FavoriteStore.swift */; };
 		BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */; };
@@ -84,6 +85,7 @@
 		BC58883F237F807000E02F3D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BC588841237F819000E02F3D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		BC588843237F819C00E02F3D /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		BCB84EF22381EE740033B397 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		BCBBBC1E2381DC0200339FFC /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		BCBBBC212381E77F00339FFC /* FavoriteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStore.swift; sourceTree = "<group>"; };
 		BCCC5ACD237EFA3800BE939E /* EasyFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,14 @@
 			path = DetailViewController;
 			sourceTree = "<group>";
 		};
+		BCB84EF12381EE220033B397 /* FavoriteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BCB84EF22381EE740033B397 /* FavoriteViewController.swift */,
+			);
+			path = FavoriteViewController;
+			sourceTree = "<group>";
+		};
 		BCBBBC202381E76A00339FFC /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +289,7 @@
 			children = (
 				BC51F7962381CF1C00AD50E2 /* AbstarctViewController */,
 				BC51F7972381CF3000AD50E2 /* DetailViewController */,
+				BCB84EF12381EE220033B397 /* FavoriteViewController */,
 				184F3DB423806AEA0093DB47 /* Home */,
 				18C2BF932380698D00C8669A /* Welcome */,
 				18E514702381C9F2003FB8C9 /* Detail */,
@@ -473,6 +484,7 @@
 				BC58883A237F7E2D00E02F3D /* Categories.swift in Sources */,
 				18D53DC723808A0000EDAFA6 /* UIViewExtension.swift in Sources */,
 				BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */,
+				BCB84EF32381EE740033B397 /* FavoriteViewController.swift in Sources */,
 				BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */,
 				BC588839237F7E2D00E02F3D /* Businesses.swift in Sources */,
 				18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */,
