@@ -95,24 +95,34 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
         if self.checkTextFields() {
             // check if its in userdefault...
             if self.checkUserDefaults() {
-                if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray {
-                    let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "current_loc" : currLoc, "user_img": img_view.image ?? nil] as [String : Any]
-                    passDict = newDict as NSDictionary
-                    var newArr = NSMutableArray()
-                    newArr = dictArr.mutableCopy() as! NSMutableArray
-                    newArr.add(newDict)
-                    UserDefaults.standard.set(newArr, forKey: "singnup_arr")
+                do {
+                    let imageData = img_view.image!.jpegData(compressionQuality: 1)
+                    let relativePath = "image_\(NSDate.timeIntervalSinceReferenceDate).jpg"
+                    let path = self.documentsPathForFileName(name: relativePath)
+                    try imageData!.write(to: URL(fileURLWithPath: path), options: .atomic)
                     
-                }else {
-                    let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "user_img": img_view.image ?? nil] as [String : Any]
-                    passDict = newDict as NSDictionary
-                    let dictArr = NSMutableArray()
-                    dictArr.add(newDict)
-                    UserDefaults.standard.set(dictArr, forKey: "singnup_arr")
+                    if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray {
+                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "current_loc" : currLoc, "user_img": relativePath] as [String : Any]
+                        passDict = newDict as NSDictionary
+                        var newArr = NSMutableArray()
+                        newArr = dictArr.mutableCopy() as! NSMutableArray
+                        newArr.add(newDict)
+                        UserDefaults.standard.set(newArr, forKey: "singnup_arr")
+                        
+                    }else {
+                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "user_img": relativePath] as [String : Any]
+                        passDict = newDict as NSDictionary
+                        let dictArr = NSMutableArray()
+                        dictArr.add(newDict)
+                        UserDefaults.standard.set(dictArr, forKey: "singnup_arr")
+                        
+                    }
                     
+                    //
+                    signUpCompleted()
+                } catch {
+                    print(error.localizedDescription)
                 }
-               
-                signUpCompleted()
                 
             }else{
                 self.showAlert(title: "EF", message: "User Name Already Exists.")
@@ -125,6 +135,14 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
     }
     
     // MARK: - Helper
+    func documentsPathForFileName(name: String) -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true);
+        let path = paths[0] as String;
+        let fullPath = path.appending(name)//stringByAppendingPathComponent(name)
+
+        return fullPath
+    }
+    
     func signUpCompleted() {
         //
         let alertController = UIAlertController(title: "EF", message: "SignUp Successfully Done.", preferredStyle: .alert)
