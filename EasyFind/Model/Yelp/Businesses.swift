@@ -25,7 +25,6 @@ class Businesses : Codable {
 	let phone : String?
 	let display_phone : String?
 	let distance : Double?
-<<<<<<< HEAD
    
     var isFAV: Bool?
     var isFav: Bool? {
