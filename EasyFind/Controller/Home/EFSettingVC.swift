@@ -11,12 +11,20 @@ import MessageUI
 
 class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
 
+    @IBOutlet weak var aboutUsButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var callUsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initViews()
     }
     
+    private func initViews() {
+        Helper.applyGradient(to: aboutUsButton)
+        Helper.applyGradient(to: emailButton)
+        Helper.applyGradient(to: callUsButton)
+    }
     // MARK: - Action
 
     @IBAction func callUsBtnClicked(_ sender: Any) {
