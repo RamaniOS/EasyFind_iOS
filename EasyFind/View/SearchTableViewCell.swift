@@ -11,7 +11,7 @@ import SDWebImage
 import Cosmos
 
 class SearchTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak private var typesLabel: UILabel!
     @IBOutlet weak private var starView: CosmosView!
     @IBOutlet weak private var ratingLabel: UILabel!
