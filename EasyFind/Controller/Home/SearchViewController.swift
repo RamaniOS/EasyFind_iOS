@@ -1,5 +1,5 @@
 //
-//  EFHomeVC.swift
+//  SearchViewController.swift
 //  EasyFind
 //
 //  Created by Ramanpreet Singh on 2019-11-15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EFHomeVC: AbstractViewController {
+class SearchViewController: AbstractViewController {
     
     // MARK: - Properties
     var userInfoDict = NSDictionary()
@@ -85,7 +85,7 @@ class EFHomeVC: AbstractViewController {
     }
 }
 
-extension EFHomeVC: UITableViewDataSource, UITableViewDelegate {
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
