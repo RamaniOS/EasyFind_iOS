@@ -13,6 +13,7 @@
 		18A575142381065600E12E84 /* Singelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A575132381065600E12E84 /* Singelton.swift */; };
 		18C216E02381E409001C36AB /* DetailM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C216DF2381E409001C36AB /* DetailM.swift */; };
 		18C216E62381FD44001C36AB /* EFSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C216E52381FD44001C36AB /* EFSettingVC.swift */; };
+		18C216E823820606001C36AB /* EFAboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C216E723820606001C36AB /* EFAboutUsVC.swift */; };
 		18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9423806A8700C8669A /* EFSignInVC.swift */; };
 		18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9623806A9900C8669A /* EFSignUpVC.swift */; };
 		18D53DBD238087BD00EDAFA6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DBC238087BD00EDAFA6 /* Helper.swift */; };
@@ -67,6 +68,7 @@
 		18A575132381065600E12E84 /* Singelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singelton.swift; sourceTree = "<group>"; };
 		18C216DF2381E409001C36AB /* DetailM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailM.swift; sourceTree = "<group>"; };
 		18C216E52381FD44001C36AB /* EFSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSettingVC.swift; sourceTree = "<group>"; };
+		18C216E723820606001C36AB /* EFAboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAboutUsVC.swift; sourceTree = "<group>"; };
 		18C2BF9423806A8700C8669A /* EFSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignInVC.swift; sourceTree = "<group>"; };
 		18C2BF9623806A9900C8669A /* EFSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignUpVC.swift; sourceTree = "<group>"; };
 		18D53DBC238087BD00EDAFA6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				18E514712381CB4E003FB8C9 /* EFDetailScreenVC.swift */,
+				18C216E723820606001C36AB /* EFAboutUsVC.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -473,11 +476,8 @@
 			files = (
 				18E514722381CB4E003FB8C9 /* EFDetailScreenVC.swift in Sources */,
 				BC58883B237F7E2D00E02F3D /* Center.swift in Sources */,
-
 				BCB84EF52381F1140033B397 /* NotificationStore.swift in Sources */,
-
 				18C216E02381E409001C36AB /* DetailM.swift in Sources */,
-
 				18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */,
 				BCBBBC222381E77F00339FFC /* FavoriteStore.swift in Sources */,
 				BCCC5AEC237F098900BE939E /* APIManager.swift in Sources */,
@@ -490,6 +490,7 @@
 				BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */,
 				BC588840237F807000E02F3D /* SearchViewController.swift in Sources */,
 				BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */,
+				18C216E823820606001C36AB /* EFAboutUsVC.swift in Sources */,
 				18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */,
 				18D53DC923808A0000EDAFA6 /* UIColorExtension.swift in Sources */,
 				BC51F7992381CF6A00AD50E2 /* DetailViewController.swift in Sources */,
