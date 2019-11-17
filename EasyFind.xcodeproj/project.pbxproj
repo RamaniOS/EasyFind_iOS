@@ -113,12 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				18A57511238105C400E12E84 /* EFTabBarVC.swift */,
-<<<<<<< HEAD
 				BC58883F237F807000E02F3D /* SearchViewController.swift */,
-=======
-				BC58883F237F807000E02F3D /* EFHomeVC.swift */,
-				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
->>>>>>> NitinJaswal
 			);
 			path = Home;
 			sourceTree = "<group>";
