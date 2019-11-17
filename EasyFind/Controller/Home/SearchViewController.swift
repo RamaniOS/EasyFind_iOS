@@ -31,7 +31,7 @@ class SearchViewController: AbstractViewController {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let `self` = self else { return }
-                self.tableView.reloadData()
+                self.reloadTable()
             }
         }
     }
@@ -62,6 +62,19 @@ class SearchViewController: AbstractViewController {
         
         initTableView()
         fetchList()
+        addObserver()
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTable), name: .favRefreshKey, object: nil)
+    }
+    
+    @objc private func reloadTable() {
+        tableView.reloadData()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func initTableView() {
