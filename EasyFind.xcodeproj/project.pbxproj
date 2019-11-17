@@ -17,6 +17,7 @@
 		18D53DC723808A0000EDAFA6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DC2238089FF00EDAFA6 /* UIViewExtension.swift */; };
 		18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DC323808A0000EDAFA6 /* UIFloatExtension.swift */; };
 		18D53DC923808A0000EDAFA6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DC423808A0000EDAFA6 /* UIColorExtension.swift */; };
+		18E514722381CB4E003FB8C9 /* EFDetailScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E514712381CB4E003FB8C9 /* EFDetailScreenVC.swift */; };
 		BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23D2C3237F780B00604AD5 /* BaseBusiness.swift */; };
 		BC2728F8237FB4360020C271 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC2728F5237FB4360020C271 /* Quicksand-Bold.ttf */; };
 		BC2728F9237FB4360020C271 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC2728F6237FB4360020C271 /* Quicksand-Regular.ttf */; };
@@ -28,7 +29,7 @@
 		BC58883B237F7E2D00E02F3D /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588835237F7E2D00E02F3D /* Center.swift */; };
 		BC58883C237F7E2D00E02F3D /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588836237F7E2D00E02F3D /* Region.swift */; };
 		BC58883E237F7FFA00E02F3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58883D237F7FFA00E02F3D /* Extensions.swift */; };
-		BC588840237F807000E02F3D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58883F237F807000E02F3D /* SearchViewController.swift */; };
+		BC588840237F807000E02F3D /* EFHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58883F237F807000E02F3D /* EFHomeVC.swift */; };
 		BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588841237F819000E02F3D /* SearchTableViewCell.swift */; };
 		BC588844237F819C00E02F3D /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC588843237F819C00E02F3D /* SearchTableViewCell.xib */; };
 		BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		18D53DC2238089FF00EDAFA6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		18D53DC323808A0000EDAFA6 /* UIFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFloatExtension.swift; sourceTree = "<group>"; };
 		18D53DC423808A0000EDAFA6 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		18E514712381CB4E003FB8C9 /* EFDetailScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFDetailScreenVC.swift; sourceTree = "<group>"; };
 		9B5D738FCE8DABCF3B3EC10A /* Pods-EasyFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFind.release.xcconfig"; path = "Target Support Files/Pods-EasyFind/Pods-EasyFind.release.xcconfig"; sourceTree = "<group>"; };
 		BC23D2C3237F780B00604AD5 /* BaseBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBusiness.swift; sourceTree = "<group>"; };
 		BC2728F5237FB4360020C271 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		BC588835237F7E2D00E02F3D /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
 		BC588836237F7E2D00E02F3D /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		BC58883D237F7FFA00E02F3D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		BC58883F237F807000E02F3D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BC58883F237F807000E02F3D /* EFHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFHomeVC.swift; sourceTree = "<group>"; };
 		BC588841237F819000E02F3D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		BC588843237F819C00E02F3D /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		BCCC5ACD237EFA3800BE939E /* EasyFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				18A57511238105C400E12E84 /* EFTabBarVC.swift */,
-				BC58883F237F807000E02F3D /* SearchViewController.swift */,
+				BC58883F237F807000E02F3D /* EFHomeVC.swift */,
 				BCCC5AD4237EFA3800BE939E /* AbstractViewController.swift */,
 			);
 			path = Home;
@@ -149,6 +151,14 @@
 				18D53DBC238087BD00EDAFA6 /* Helper.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		18E514702381C9F2003FB8C9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				18E514712381CB4E003FB8C9 /* EFDetailScreenVC.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		4C586B01725E0E6DE7AEC78C /* Pods */ = {
@@ -241,6 +251,7 @@
 			children = (
 				18C2BF932380698D00C8669A /* Welcome */,
 				184F3DB423806AEA0093DB47 /* Home */,
+				18E514702381C9F2003FB8C9 /* Detail */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -410,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E514722381CB4E003FB8C9 /* EFDetailScreenVC.swift in Sources */,
 				BC58883B237F7E2D00E02F3D /* Center.swift in Sources */,
 				18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */,
 				BCCC5AEC237F098900BE939E /* APIManager.swift in Sources */,
@@ -421,7 +433,7 @@
 				BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */,
 				BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */,
 				BCCC5AD5237EFA3800BE939E /* AbstractViewController.swift in Sources */,
-				BC588840237F807000E02F3D /* SearchViewController.swift in Sources */,
+				BC588840237F807000E02F3D /* EFHomeVC.swift in Sources */,
 				BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */,
 				18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */,
 				18D53DC923808A0000EDAFA6 /* UIColorExtension.swift in Sources */,
