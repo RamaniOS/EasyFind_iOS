@@ -1,4 +1,4 @@
-//// 
+//
 //  EFHomeVC.swift
 //  EasyFind
 //
