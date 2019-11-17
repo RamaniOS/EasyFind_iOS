@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180D8E56238097C70042B939 /* DataInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180D8E55238097C70042B939 /* DataInfo.plist */; };
-		184F3DB623806B040093DB47 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F3DB523806B040093DB47 /* MenuVC.swift */; };
 		184F3DBC238081410093DB47 /* Pods_EasyFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; };
 		184F3DBD238081410093DB47 /* Pods_EasyFind.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9423806A8700C8669A /* EFSignInVC.swift */; };
@@ -56,8 +54,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		180D8E55238097C70042B939 /* DataInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataInfo.plist; sourceTree = "<group>"; };
-		184F3DB523806B040093DB47 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		18C2BF9423806A8700C8669A /* EFSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignInVC.swift; sourceTree = "<group>"; };
 		18C2BF9623806A9900C8669A /* EFSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignUpVC.swift; sourceTree = "<group>"; };
 		18D53DBC238087BD00EDAFA6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -108,7 +104,6 @@
 		184F3DB423806AEA0093DB47 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				184F3DB523806B040093DB47 /* MenuVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -144,7 +139,6 @@
 		18D53DBE238087C100EDAFA6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				180D8E55238097C70042B939 /* DataInfo.plist */,
 				18D53DBC238087BD00EDAFA6 /* Helper.swift */,
 			);
 			path = Sources;
@@ -357,7 +351,6 @@
 				BC2728FA237FB4360020C271 /* Quicksand-Light.ttf in Resources */,
 				BCCC5ADA237EFA3900BE939E /* Assets.xcassets in Resources */,
 				BCCC5AD8237EFA3800BE939E /* Main.storyboard in Resources */,
-				180D8E56238097C70042B939 /* DataInfo.plist in Resources */,
 				BC2728F8237FB4360020C271 /* Quicksand-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +410,6 @@
 				BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */,
 				BC58883C237F7E2D00E02F3D /* Region.swift in Sources */,
 				BC588838237F7E2D00E02F3D /* Location.swift in Sources */,
-				184F3DB623806B040093DB47 /* MenuVC.swift in Sources */,
 				18D53DBD238087BD00EDAFA6 /* Helper.swift in Sources */,
 				BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */,
 				BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */,

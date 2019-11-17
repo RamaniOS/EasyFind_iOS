@@ -12,6 +12,8 @@ import UIKit
 class EFSignInVC: UIViewController {
     
     // MARK: - Properties
+    var passDict = NSDictionary()
+    
     @IBOutlet var upConta_view: UIView!
     @IBOutlet var inConta_view: UIView!
     @IBOutlet var userN_view: UIView!
@@ -81,20 +83,18 @@ class EFSignInVC: UIViewController {
         // check validation
         if self.checkTextFields() {
             
-            // check plist
-            let boolChk = self.readDataInfoFromPlistFile().0
-            let msg = self.readDataInfoFromPlistFile().1
-            if boolChk {
+            // check if its in userdefault...
+            if self.checkUserDefaults() {
                 //
-                self.navigateScreen(storyboard: "Main", controller: "SignUpVC")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+                vc.userInfoDict = passDict
+                
+                self.navigationController?.pushViewController(vc, animated: true)
             }else{
-                // check if its in userdefault...
-                if self.checkUserDefaults() {
-                    self.navigateScreen(storyboard: "Main", controller: "MenuVC")
-                }else{
-                    self.showAlert(title: "EF", message: msg)
-                }
+                self.showAlert(title: "EF", message: "Invalid Info")
             }
+          
         }
         
     }
@@ -138,19 +138,22 @@ class EFSignInVC: UIViewController {
             return false
         }
         
+        
         return true
     }
     
     func checkUserDefaults() -> Bool {
         
-        let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray
         if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray {
             for dict in dictArr {
                 let userDict = dict as! NSDictionary
                 if userN_tf.text == userDict["user_name"] as? String && passwd_tf.text == userDict["password"] as? String {
+                    
+                    //
+                    passDict = dict as! NSDictionary
+                    
                     return true
                 }
-                
             }
         }
                 
