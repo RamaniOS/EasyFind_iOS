@@ -741,14 +741,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmZ-rF-bHf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmZ-rF-bHf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLz-wh-nna">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="298" id="vzH-Rh-Lp1"/>
+                                    <constraint firstAttribute="bottom" secondItem="BLz-wh-nna" secondAttribute="bottom" id="7wC-X4-cEm"/>
+                                    <constraint firstAttribute="trailing" secondItem="BLz-wh-nna" secondAttribute="trailing" id="8BX-Yu-QVT"/>
+                                    <constraint firstItem="BLz-wh-nna" firstAttribute="top" secondItem="zmZ-rF-bHf" secondAttribute="top" id="N9M-Em-nO6"/>
+                                    <constraint firstItem="BLz-wh-nna" firstAttribute="height" secondItem="zmZ-rF-bHf" secondAttribute="height" id="NqN-gr-lQE"/>
+                                    <constraint firstItem="BLz-wh-nna" firstAttribute="width" secondItem="zmZ-rF-bHf" secondAttribute="width" id="c1B-1e-0iD"/>
+                                    <constraint firstItem="BLz-wh-nna" firstAttribute="leading" secondItem="zmZ-rF-bHf" secondAttribute="leading" id="iQy-mf-Hep"/>
+                                    <constraint firstAttribute="height" constant="300" id="vzH-Rh-Lp1"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="hNb-FC-imJ"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="vFG-mS-ftr"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-Tq-eyw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="45"/>
@@ -774,10 +784,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujf-E0-E1v">
-                                <rect key="frame" x="0.0" y="298" width="414" height="564"/>
+                                <rect key="frame" x="0.0" y="300" width="414" height="562"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnr-iv-dao">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="564"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DB-6c-lcZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>

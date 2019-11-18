@@ -16,7 +16,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     let imgArray = NSArray()
     private var business: Businesses?
     var baseModel: DetailM?
-       
+    
     @IBOutlet var restName: UILabel!
     @IBOutlet var aliasLbl: UILabel!
     @IBOutlet var ratinView: CosmosView!
@@ -37,25 +37,21 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        print(business?.id)
-
         populateData()
         fetchList()
-     
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
+    
     // MARK: - Action
     @IBAction func backBtnClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -77,14 +73,14 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     @IBAction func msgBtnClicked(_ sender: Any) {
         if MFMessageComposeViewController.canSendText() {
             
-        
+            
             let messageVC = MFMessageComposeViewController()
-        
-        messageVC.body = "Type msg..."
-        messageVC.recipients = ["\(business?.phone ?? "")"]
-        messageVC.messageComposeDelegate = self
-        
-        self.present(messageVC, animated: false, completion: nil)
+            
+            messageVC.body = "Type msg..."
+            messageVC.recipients = ["\(business?.phone ?? "")"]
+            messageVC.messageComposeDelegate = self
+            
+            self.present(messageVC, animated: false, completion: nil)
         }
         else{
             print("NO SIM available")
@@ -95,7 +91,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
     {
         
-        switch (result) {
+        switch result {
         case .cancelled:
             print("Message was cancelled")
             self.dismiss(animated: true, completion: nil)
@@ -105,6 +101,8 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
         case .sent:
             print("Message was sent")
             self.dismiss(animated: true, completion: nil)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -112,8 +110,8 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     private func fetchList() {
         weak var `self` = self
         YelpManager.fetchYelpBusinessesDetail(with: business?.id ?? "") { (baseModel) in
-                self?.baseModel = baseModel
-         
+            self?.baseModel = baseModel
+            
             self!.loadTopBannerView()
         }
     }
@@ -128,24 +126,25 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     }
     
     func loadTopBannerView() {
-       
-       let pageCount = self.baseModel?.photos!.count
-       
-       slideScrollView.backgroundColor = UIColor.clear
-       slideScrollView.delegate = self
-       slideScrollView.isPagingEnabled = true
-       slideScrollView.contentSize = CGSize(width: slideScrollView.frame.size.width * CGFloat(pageCount!), height: slideScrollView.frame.size.height)
-       slideScrollView.showsHorizontalScrollIndicator = false
+        
+        let pageCount = self.baseModel?.photos!.count
+        
+        slideScrollView.backgroundColor = UIColor.clear
+        slideScrollView.delegate = self
+        slideScrollView.isPagingEnabled = true
+        slideScrollView.contentSize = CGSize(width: slideScrollView.frame.size.width * CGFloat(pageCount!), height: slideScrollView.frame.size.height)
+        slideScrollView.showsHorizontalScrollIndicator = false
+        slideScrollView.bounces = false
         
         for i in 0..<Int(pageCount!) {
             // set banner image...
-            let imageView = UIImageView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.slideScrollView.frame.size.width, height: 298.0))
-            let bannerImage = self.baseModel?.photos![i] as? String ?? ""
+            let imageView = UIImageView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.slideScrollView.frame.size.width, height: 300.0))
+            let bannerImage = self.baseModel?.photos![i] ?? ""
             self.loadPic(strUrl: bannerImage, picView: imageView)
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             self.slideScrollView.addSubview(imageView)
-        
+            view.layoutIfNeeded()
         }
     }
     
@@ -160,9 +159,5 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
             slideToX = 0
         }
         self.slideScrollView.scrollRectToVisible(CGRect(x: slideToX, y: 0, width: pageWidth, height: self.slideScrollView.frame.height), animated: true)
-    
     }
-    
-    
-    
 }
