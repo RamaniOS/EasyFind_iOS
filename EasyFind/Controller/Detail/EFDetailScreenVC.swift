@@ -21,7 +21,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     @IBOutlet var aliasLbl: UILabel!
     @IBOutlet var ratinView: CosmosView!
     @IBOutlet var priceLbl: UILabel!
-    
+    @IBOutlet weak var favButton: UIButton!
     @IBOutlet var callBtn: UIButton!
     @IBOutlet var msgBtn: UIButton!
     @IBOutlet var addLbl: UILabel!
@@ -39,7 +39,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
         super.viewDidLoad()
         populateData()
         fetchList()
-        
+        favButton.image = business!.isFav! ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -633,7 +633,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0k-1e-ood">
-                                        <rect key="frame" x="219" y="165" width="145" height="30"/>
+                                        <rect key="frame" x="202" y="165" width="162" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="oOf-WY-JoU"/>
                                         </constraints>
@@ -843,13 +843,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sy-YX-mRF">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sy-YX-mRF">
                                                         <rect key="frame" x="361" y="1.5" width="45" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="C0E-d4-OBT"/>
                                                             <constraint firstAttribute="width" constant="45" id="waL-jk-tNy"/>
                                                         </constraints>
-                                                        <state key="normal" title="B"/>
+                                                        <state key="normal" image="UnFav"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA9-JP-gxf">
                                                         <rect key="frame" x="8" y="76" width="398" height="21"/>
@@ -990,6 +990,7 @@
                         <outlet property="addLbl" destination="I0k-8W-eMk" id="1h3-dL-AS1"/>
                         <outlet property="aliasLbl" destination="S5s-4f-AlB" id="3EM-1C-DxE"/>
                         <outlet property="callBtn" destination="oCy-sr-Qb0" id="qxD-do-FpQ"/>
+                        <outlet property="favButton" destination="0sy-YX-mRF" id="6W6-Zj-7BL"/>
                         <outlet property="msgBtn" destination="y3y-4d-eDI" id="aej-Gh-0oS"/>
                         <outlet property="priceLbl" destination="pA9-JP-gxf" id="SsX-mP-djg"/>
                         <outlet property="ratinView" destination="z5F-AN-f5X" id="s7U-pW-OyQ"/>
@@ -1058,6 +1059,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="UnFav" width="17.5" height="17.5"/>
         <image name="backIcon" width="24" height="24"/>
         <image name="backWIcon" width="24" height="24"/>
         <image name="cameraIcon" width="30" height="30"/>
