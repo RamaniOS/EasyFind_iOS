@@ -28,4 +28,8 @@ class FavoriteStore {
     static func removeFromFav(with business: Businesses) {
         list.removeAll(where: {$0.id == business.id})
     }
+    
+    static func performLogout() {
+        list.removeAll()
+    }
 }

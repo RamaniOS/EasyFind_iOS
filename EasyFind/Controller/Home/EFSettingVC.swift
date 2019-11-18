@@ -70,5 +70,7 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func logoutButtonClicked(_ sender: Any) {
+        FavoriteStore.performLogout()
+        navigationController?.popToRootViewController(animated: true)
     }
 }
