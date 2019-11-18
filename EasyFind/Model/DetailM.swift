@@ -1,6 +1,6 @@
 //
 //
-//  DetailM.swift//
+//  DetailM.swift
 //  EasyFind
 //
 //  Created by Nitin on 17/11/19.
