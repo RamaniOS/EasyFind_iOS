@@ -1,6 +1,5 @@
 //
-//
-//
+
 //  DetailM.swift
 //  EasyFind
 //
