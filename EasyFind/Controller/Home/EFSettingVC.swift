@@ -57,6 +57,11 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func aboutUsBtnClicked(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "EFAboutUsVC") as! EFAboutUsVC
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MFMailComposeViewControllerDelegate
