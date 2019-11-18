@@ -140,14 +140,22 @@
                                     <action selector="backBtnClicked:" destination="WCM-6a-Dc3" eventType="touchUpInside" id="pG3-SR-Vlp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed5-mR-Hz6">
+                                <rect key="frame" x="166.5" y="54.5" width="81.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Y9b-3Z-z5G" firstAttribute="leading" secondItem="juy-AH-til" secondAttribute="leading" id="HHz-5X-k1G"/>
+                            <constraint firstItem="Ed5-mR-Hz6" firstAttribute="centerX" secondItem="juy-AH-til" secondAttribute="centerX" id="IJx-ez-mSQ"/>
                             <constraint firstItem="Y9b-3Z-z5G" firstAttribute="trailing" secondItem="juy-AH-til" secondAttribute="trailing" id="KHs-2h-Gtk"/>
                             <constraint firstItem="Y9b-3Z-z5G" firstAttribute="top" secondItem="juy-AH-til" secondAttribute="top" constant="44" id="LQC-xI-o1f"/>
                             <constraint firstItem="Cpx-QO-p6N" firstAttribute="leading" secondItem="juy-AH-til" secondAttribute="leading" constant="8" id="oIe-v9-f74"/>
                             <constraint firstItem="Cpx-QO-p6N" firstAttribute="top" secondItem="juy-AH-til" secondAttribute="top" id="oR3-BB-W06"/>
+                            <constraint firstItem="Ed5-mR-Hz6" firstAttribute="centerY" secondItem="Cpx-QO-p6N" secondAttribute="centerY" id="uIR-3i-pf3"/>
                             <constraint firstItem="Y9b-3Z-z5G" firstAttribute="bottom" secondItem="juy-AH-til" secondAttribute="bottom" id="vol-lB-IAW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="juy-AH-til"/>
@@ -633,7 +641,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0k-1e-ood">
-                                        <rect key="frame" x="202" y="165" width="162" height="30"/>
+                                        <rect key="frame" x="219" y="165" width="145" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="oOf-WY-JoU"/>
                                         </constraints>
