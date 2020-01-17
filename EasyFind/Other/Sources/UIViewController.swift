@@ -14,7 +14,7 @@ extension UIViewController {
     
     ///
     func loadPic(strUrl: String, picView: UIImageView){
-        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
         picView.addSubview(activityIndicator)
         activityIndicator.center = picView.center
         activityIndicator.startAnimating()
