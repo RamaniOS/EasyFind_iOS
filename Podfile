@@ -8,8 +8,7 @@ target 'EasyFind' do
 	pod 'Alamofire'
 	pod 'SDWebImage'
 	pod 'Cosmos'
-
-   pod 'IQKeyboardManagerSwift'
+  pod 'IQKeyboardManagerSwift'
   # Pods for EasyFind
 
 end
