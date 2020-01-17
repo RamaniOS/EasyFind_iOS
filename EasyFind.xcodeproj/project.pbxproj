@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		184F3DBC238081410093DB47 /* Pods_EasyFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; };
-		184F3DBD238081410093DB47 /* Pods_EasyFind.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		184F3DBD238081410093DB47 /* Pods_EasyFind.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0E256590E9828185490952F /* Pods_EasyFind.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18A57512238105C400E12E84 /* EFTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57511238105C400E12E84 /* EFTabBarVC.swift */; };
 		18A575142381065600E12E84 /* Singelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A575132381065600E12E84 /* Singelton.swift */; };
 		18C216E02381E409001C36AB /* DetailM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C216DF2381E409001C36AB /* DetailM.swift */; };
@@ -376,7 +376,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Ramanpreet Singh";
 				TargetAttributes = {
 					BCCC5ACC237EFA3800BE939E = {
