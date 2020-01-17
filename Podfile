@@ -9,6 +9,7 @@ target 'EasyFind' do
 	pod 'SDWebImage'
 	pod 'Cosmos'
 
+   pod 'IQKeyboardManagerSwift'
   # Pods for EasyFind
 
 end
