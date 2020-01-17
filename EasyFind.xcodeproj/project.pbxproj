@@ -49,6 +49,8 @@
 		BCCC5ADD237EFA3900BE939E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCC5ADB237EFA3900BE939E /* LaunchScreen.storyboard */; };
 		BCCC5AEC237F098900BE939E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AEB237F098900BE939E /* APIManager.swift */; };
 		BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AEE237F0A4C00BE939E /* YelpManager.swift */; };
+		BCFDFAED23D27DA6009F3BAB /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDFAEB23D27DA6009F3BAB /* User+CoreDataProperties.swift */; };
+		BCFDFAEE23D27DA6009F3BAB /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDFAEC23D27DA6009F3BAB /* User+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +111,8 @@
 		BCCC5ADE237EFA3900BE939E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCCC5AEB237F098900BE939E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BCCC5AEE237F0A4C00BE939E /* YelpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpManager.swift; sourceTree = "<group>"; };
+		BCFDFAEB23D27DA6009F3BAB /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCFDFAEC23D27DA6009F3BAB /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C0E256590E9828185490952F /* Pods_EasyFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2301A51AE9A1782C12B5686 /* Pods-EasyFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFind.debug.xcconfig"; path = "Target Support Files/Pods-EasyFind/Pods-EasyFind.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,6 +312,7 @@
 		BCCC5AE7237F096D00BE939E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCFDFAEA23D27DA6009F3BAB /* CoreDataModels */,
 				18A575132381065600E12E84 /* Singelton.swift */,
 				18C216DF2381E409001C36AB /* DetailM.swift */,
 				BC23D282237F635200604AD5 /* Yelp */,
@@ -350,6 +355,15 @@
 				BCCC5AEE237F0A4C00BE939E /* YelpManager.swift */,
 			);
 			path = YelpManager;
+			sourceTree = "<group>";
+		};
+		BCFDFAEA23D27DA6009F3BAB /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				BCFDFAEB23D27DA6009F3BAB /* User+CoreDataProperties.swift */,
+				BCFDFAEC23D27DA6009F3BAB /* User+CoreDataClass.swift */,
+			);
+			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,9 +516,11 @@
 				BCB84EF32381EE740033B397 /* FavoriteViewController.swift in Sources */,
 				BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */,
 				BC588839237F7E2D00E02F3D /* Businesses.swift in Sources */,
+				BCFDFAED23D27DA6009F3BAB /* User+CoreDataProperties.swift in Sources */,
 				18C216E62381FD44001C36AB /* EFSettingVC.swift in Sources */,
 				18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */,
 				18A575142381065600E12E84 /* Singelton.swift in Sources */,
+				BCFDFAEE23D27DA6009F3BAB /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
