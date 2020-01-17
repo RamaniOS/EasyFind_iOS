@@ -270,6 +270,7 @@
 			children = (
 				BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */,
 				BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */,
+				BC34744123D2745D002B0AF4 /* EasyFind.xcdatamodeld */,
 				BCCC5AE7237F096D00BE939E /* Model */,
 				BCCC5AE8237F096D00BE939E /* View */,
 				BCCC5AE6237F096D00BE939E /* Controller */,
@@ -280,7 +281,6 @@
 				BCCC5AE4237EFD7500BE939E /* MISC */,
 				BCBBBC202381E76A00339FFC /* Store */,
 				BC2728F4237FB4360020C271 /* Fonts */,
-				BC34744123D2745D002B0AF4 /* EasyFind.xcdatamodeld */,
 			);
 			path = EasyFind;
 			sourceTree = "<group>";
