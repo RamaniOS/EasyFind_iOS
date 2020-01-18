@@ -50,15 +50,18 @@ class SearchViewController: AbstractViewController {
     // MARK: - Helpers
     private func initViews() {
         
+        guard let user = Singelton.singObj.userInfoDict else {
+            return
+        }
         //
-        let possibleOldImagePath = Singelton.singObj.userInfoDict["user_img"] as? String
+        let possibleOldImagePath = user.imagePath
         if let oldImagePath = possibleOldImagePath {
             let oldFullPath = self.documentsPathForFileName(name: oldImagePath)
             let oldImageData = NSData(contentsOfFile: oldFullPath)
             // here is your saved image:
             img_view.image = UIImage(data: oldImageData! as Data)
         }
-        let welcome = "Welcome \(Singelton.singObj.userInfoDict["user_name"] as! String)"
+        let welcome = "Welcome \(user.userName as! String)"
         title_lbl.text = welcome
         
         initTableView()
