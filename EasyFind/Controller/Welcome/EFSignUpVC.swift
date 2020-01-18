@@ -18,6 +18,8 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
     var currLoc = CLLocation()
     var passDict = NSDictionary()
     
+    let persistent = PersistenceManager.shared
+    
     @IBOutlet var upConta_view: UIView!
     @IBOutlet var inConta_view: UIView!
     @IBOutlet var userN_view: UIView!
@@ -135,8 +137,36 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
     }
     
     // MARK: - Helper
+    
+    func saveToCoreData() -> User {
+        
+        let user = User(context: persistent.context)
+        user.imagePath = ""
+        user.userName = ""
+        user.password = ""
+        user.latitude = ""
+        user.longitude = ""
+        do {
+            try persistent.context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return user
+//        // fetch
+//
+//        persistent.fetch(type: User.self) { (users) in
+//            for user in users {
+//                print(user.userName)
+//            }
+//        }
+//
+        
+    }
 
     func signUpCompleted() {
+        let user = saveToCoreData()
+        
         //
         let alertController = UIAlertController(title: "EF", message: "SignUp Successfully Done.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive) {
@@ -145,7 +175,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
             //
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "EFTabBarVC") as! EFTabBarVC
-            Singelton.singObj.userInfoDict = self.passDict
+            Singelton.singObj.userInfoDict = user
             
             self.navigationController?.pushViewController(vc, animated: true)
             
