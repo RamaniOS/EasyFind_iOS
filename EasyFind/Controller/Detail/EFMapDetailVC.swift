@@ -81,6 +81,8 @@ class EFMapDetailVC: UIViewController {
             moveType = "W"
         }
         
+        drawRoute()
+        
     }
     
     @IBAction func zoomOutBtnClicked(_ sender: Any) {
