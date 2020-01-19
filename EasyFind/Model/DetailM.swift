@@ -19,6 +19,6 @@ struct DetailM : Codable {
 
 struct cordDetail : Codable {
 
-    let latitude : String?
-    let longitude : String?
+    let latitude : Double?
+    let longitude : Double?
 }

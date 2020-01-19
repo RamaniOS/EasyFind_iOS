@@ -24,20 +24,38 @@ class EFMapDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        editView.isHidden = true
-        
         mapDView.delegate = self
         mapDView.showsUserLocation = true
         let restLoc = MKPointAnnotation()
         restLoc.title = "Restaraunt"
-        restLoc.coordinate = CLLocationCoordinate2D(latitude: Double(passCoord.latitude ?? "0.00") as! CLLocationDegrees, longitude: Double(passCoord.longitude ?? "0.00") as! CLLocationDegrees)
+        restLoc.coordinate = CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
+        
+        // Define delta latitude and longitude
+        let latDelta:CLLocationDegrees = 0.5
+        let longDelta:CLLocationDegrees = 0.5
+        
+        // Define span
+        let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
+        
+        // define location
+        let location = CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
+        
+        // define region
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+        // set the region on the map
+        mapDView.setRegion(region, animated: true)
         
         mapDView.addAnnotation(restLoc)
+        
+        drawRoute()
         
     }
     
@@ -90,7 +108,7 @@ class EFMapDetailVC: UIViewController {
         // draw route
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: Singelton.sharedObj.currLoc.coordinate, addressDictionary: nil))
-        let destCord =  CLLocationCoordinate2D(latitude: Double(Singelton.sharedObj.userInfoDict!.latitude ?? "0.00") as! CLLocationDegrees, longitude: Double(Singelton.sharedObj.userInfoDict!.longitude ?? "0.00") as! CLLocationDegrees)
+        let destCord =  CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destCord, addressDictionary: nil))
         request.requestsAlternateRoutes = true
         if(moveType == "A"){
