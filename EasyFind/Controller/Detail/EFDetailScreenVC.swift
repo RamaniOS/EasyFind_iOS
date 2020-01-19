@@ -38,7 +38,6 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
         populateData()
         fetchList()
         favButton.image = business!.isFav! ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
