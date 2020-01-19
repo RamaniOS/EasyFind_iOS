@@ -16,6 +16,8 @@
 		18C216E823820606001C36AB /* EFAboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C216E723820606001C36AB /* EFAboutUsVC.swift */; };
 		18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9423806A8700C8669A /* EFSignInVC.swift */; };
 		18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2BF9623806A9900C8669A /* EFSignUpVC.swift */; };
+		18CA648123D3B77F00F3F37D /* EFMapDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA648023D3B77F00F3F37D /* EFMapDetailVC.swift */; };
+		18CA648323D3C1EE00F3F37D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA648223D3C1EE00F3F37D /* Place.swift */; };
 		18D53DBD238087BD00EDAFA6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DBC238087BD00EDAFA6 /* UIViewController.swift */; };
 		18D53DC723808A0000EDAFA6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DC2238089FF00EDAFA6 /* UIViewExtension.swift */; };
 		18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D53DC323808A0000EDAFA6 /* UIFloatExtension.swift */; };
@@ -75,6 +77,8 @@
 		18C216E723820606001C36AB /* EFAboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAboutUsVC.swift; sourceTree = "<group>"; };
 		18C2BF9423806A8700C8669A /* EFSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignInVC.swift; sourceTree = "<group>"; };
 		18C2BF9623806A9900C8669A /* EFSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSignUpVC.swift; sourceTree = "<group>"; };
+		18CA648023D3B77F00F3F37D /* EFMapDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFMapDetailVC.swift; sourceTree = "<group>"; };
+		18CA648223D3C1EE00F3F37D /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		18D53DBC238087BD00EDAFA6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		18D53DC2238089FF00EDAFA6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		18D53DC323808A0000EDAFA6 /* UIFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFloatExtension.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			children = (
 				18E514712381CB4E003FB8C9 /* EFDetailScreenVC.swift */,
 				18C216E723820606001C36AB /* EFAboutUsVC.swift */,
+				18CA648023D3B77F00F3F37D /* EFMapDetailVC.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 		BCBBBC202381E76A00339FFC /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				18CA648223D3C1EE00F3F37D /* Place.swift */,
 				BC34743F23D27414002B0AF4 /* PersistenceManager.swift */,
 				BCBBBC212381E77F00339FFC /* FavoriteStore.swift */,
 				BCB84EF42381F1140033B397 /* NotificationStore.swift */,
@@ -489,6 +495,7 @@
 				18E514722381CB4E003FB8C9 /* EFDetailScreenVC.swift in Sources */,
 				BC58883B237F7E2D00E02F3D /* Center.swift in Sources */,
 				BCB84EF52381F1140033B397 /* NotificationStore.swift in Sources */,
+				18CA648323D3C1EE00F3F37D /* Place.swift in Sources */,
 				18C216E02381E409001C36AB /* DetailM.swift in Sources */,
 				18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */,
 				BCBBBC222381E77F00339FFC /* FavoriteStore.swift in Sources */,
@@ -497,6 +504,7 @@
 				BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */,
 				BC58883C237F7E2D00E02F3D /* Region.swift in Sources */,
 				BC588838237F7E2D00E02F3D /* Location.swift in Sources */,
+				18CA648123D3B77F00F3F37D /* EFMapDetailVC.swift in Sources */,
 				18D53DBD238087BD00EDAFA6 /* UIViewController.swift in Sources */,
 				BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */,
 				BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */,

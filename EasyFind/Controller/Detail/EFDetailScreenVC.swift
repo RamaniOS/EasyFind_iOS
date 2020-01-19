@@ -53,6 +53,13 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     }
     
     // MARK: - Action
+    @IBAction func mapBtnClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "EFMapDetailVC") as! EFMapDetailVC
+        vc.passCoord = baseModel?.coordinates
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func backBtnClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

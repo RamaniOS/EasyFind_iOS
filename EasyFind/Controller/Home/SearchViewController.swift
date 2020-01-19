@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class SearchViewController: AbstractViewController {
     
     // MARK: - Properties
+    var address: String?
     var userInfoDict = NSDictionary()
     private var offset = 0
     private var limit = 20
@@ -40,7 +42,7 @@ class SearchViewController: AbstractViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
-
+    
     // MARK: -  Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,7 @@ class SearchViewController: AbstractViewController {
     // MARK: - Helpers
     private func initViews() {
         
-        guard let user = Singelton.singObj.userInfoDict else {
+        guard let user = Singelton.sharedObj.userInfoDict else {
             return
         }
         //
@@ -98,11 +100,37 @@ class SearchViewController: AbstractViewController {
         fetchList()
     }
     
+    
     private func fetchList() {
-        weak var `self` = self
-        YelpManager.fetchYelpBusinesses(with: offset, location: "Toronoto") { (baseModel) in
-            self?.baseModel = baseModel
+        let coordinate = CLLocation(latitude: Double(Singelton.sharedObj.userInfoDict?.latitude as! String) as! CLLocationDegrees, longitude: Double(Singelton.sharedObj.userInfoDict?.longitude as! String) as! CLLocationDegrees)
+       getLocationName(location: coordinate)
+        
+        
+    }
+    
+    private func getLocationName(location: CLLocation)  {
+        
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error {
+                print(error)
+            } else {
+                
+                if let placemark = placemarks?[0] {
+                    if (placemark.locality != nil) {
+                        self.address = placemark.locality as? String ?? ""
+                    }
+//                    if placemark.subLocality != nil {
+//                        self.address! += placemark.subLocality! + ", "
+//                    }
+                    YelpManager.fetchYelpBusinesses(with: self.offset, location: self.address ?? "Toronto") { (baseModel) in
+                            self.baseModel = baseModel
+                    }
+                }
+               
+            }
         }
+        
+   
     }
     
     private var cellClass: SearchTableViewCell.Type {

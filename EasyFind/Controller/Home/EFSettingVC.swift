@@ -27,8 +27,8 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
         Helper.applyGradient(to: callUsButton)
         Helper.applyGradient(to: logoutButton)
     }
-    // MARK: - Action
 
+    // MARK: - Action
     @IBAction func callUsBtnClicked(_ sender: Any) {
         if let url = URL(string: "tel://+0000000)"), UIApplication.shared.canOpenURL(url){
             if #available(iOS 10, *)

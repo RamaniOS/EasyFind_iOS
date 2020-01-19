@@ -9,9 +9,16 @@
 //
 
 import Foundation
+import MapKit
 
 struct DetailM : Codable {
 
     let photos : [String]?
-  
+    let coordinates: cordDetail?
+}
+
+struct cordDetail : Codable {
+
+    let latitude : String?
+    let longitude : String?
 }
