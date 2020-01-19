@@ -24,6 +24,8 @@ class EFMapDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in }
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -31,6 +33,7 @@ class EFMapDetailVC: UIViewController {
         
         mapDView.delegate = self
         mapDView.showsUserLocation = true
+        
         let restLoc = MKPointAnnotation()
         restLoc.title = "Restaraunt"
         restLoc.coordinate = CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
@@ -54,6 +57,9 @@ class EFMapDetailVC: UIViewController {
         mapDView.addAnnotation(restLoc)
         
         drawRoute()
+        
+        addRegion(coordinate: location)
+        
         
     }
     
@@ -100,6 +106,24 @@ class EFMapDetailVC: UIViewController {
     }
     
     // MARK: - Helper
+    func showNotification(title: String, message: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = message
+        content.badge = 1
+        content.sound = .default
+        let request = UNNotificationRequest(identifier: "notif", content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func addRegion(coordinate: CLLocationCoordinate2D) {
+        let region = CLCircularRegion(center: coordinate, radius: 200, identifier: "geofence")
+        mapDView.removeOverlays(mapDView.overlays)
+        locationManager.startMonitoring(for: region)
+        let circle = MKCircle(center: coordinate, radius: region.radius)
+        mapDView.addOverlay(circle)
+    }
+    
     func drawRoute() {
         // remove previous overlays
         let overlays = mapDView.overlays
@@ -136,8 +160,22 @@ class EFMapDetailVC: UIViewController {
 extension EFMapDetailVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
+        //let location = locations[0]
         
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        let title = "You Entered the Region"
+        let message = "Wow theres cool stuff in here! YAY!"
+        showAlert(title: title, message: message)
+        showNotification(title: title, message: message)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        let title = "You Left the Region"
+        let message = "Say bye bye to all that cool stuff. =["
+        showAlert(title: title, message: message)
+        showNotification(title: title, message: message)
     }
 }
 
