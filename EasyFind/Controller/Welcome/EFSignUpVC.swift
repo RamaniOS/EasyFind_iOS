@@ -15,10 +15,11 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
     // MARK: - Properties
     let picker = UIImagePickerController()
     var locationManager: CLLocationManager! = nil
-    var currLoc = CLLocation()
+    
     var passDict = NSDictionary()
     
     let persistent = PersistenceManager.shared
+    var imagePath = String()
     
     @IBOutlet var upConta_view: UIView!
     @IBOutlet var inConta_view: UIView!
@@ -99,12 +100,12 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
             if self.checkUserDefaults() {
                 do {
                     let imageData = img_view.image!.jpegData(compressionQuality: 1)
-                    let relativePath = "image_\(NSDate.timeIntervalSinceReferenceDate).jpg"
-                    let path = self.documentsPathForFileName(name: relativePath)
+                    imagePath = "image_\(NSDate.timeIntervalSinceReferenceDate).jpg"
+                    let path = self.documentsPathForFileName(name: imagePath)
                     try imageData!.write(to: URL(fileURLWithPath: path), options: .atomic)
                     
                     if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray {
-                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "lat" : "\(currLoc.coordinate.latitude)", "long" : "\(currLoc.coordinate.longitude)", "user_img": relativePath] as [String : Any]
+                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "lat" : "\(Singelton.sharedObj.currLoc.coordinate.latitude)", "long" : "\(Singelton.sharedObj.currLoc.coordinate.longitude)", "user_img": imagePath] as [String : Any]
                         passDict = newDict as NSDictionary
                         var newArr = NSMutableArray()
                         newArr = dictArr.mutableCopy() as! NSMutableArray
@@ -112,7 +113,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
                         UserDefaults.standard.set(newArr, forKey: "singnup_arr")
                         
                     }else {
-                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "lat" : "\(currLoc.coordinate.latitude)", "long" : "\(currLoc.coordinate.longitude)", "user_img": relativePath] as [String : Any]
+                        let newDict = ["user_name" : userN_tf.text ?? "", "password" : passwd_tf.text ?? "", "lat" : "\(Singelton.sharedObj.currLoc.coordinate.latitude)", "long" : "\(Singelton.sharedObj.currLoc.coordinate.longitude)", "user_img": imagePath] as [String : Any]
                         passDict = newDict as NSDictionary
                         let dictArr = NSMutableArray()
                         dictArr.add(newDict)
@@ -141,12 +142,12 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
     func saveToCoreData() -> User {
         
         let user = User(context: persistent.context)
-        user.imagePath = ""
-        user.userName = ""
-        user.password = ""
-        user.latitude = ""
-        user.longitude = ""
-        do {
+        user.imagePath = imagePath
+        user.userName = userN_tf.text
+        user.password = passwd_tf.text
+        user.latitude = String(Singelton.sharedObj.currLoc.coordinate.latitude)
+        user.longitude = String(Singelton.sharedObj.currLoc.coordinate.longitude)
+        do{
             try persistent.context.save()
         } catch {
             print(error.localizedDescription)
@@ -175,7 +176,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
             //
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "EFTabBarVC") as! EFTabBarVC
-            Singelton.singObj.userInfoDict = user
+            Singelton.sharedObj.userInfoDict = user
             
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -329,7 +330,7 @@ extension EFSignUpVC: CLLocationManagerDelegate {
         
         if let location = locations.first {
             
-            currLoc = location
+            Singelton.sharedObj.currLoc = location
             print(location.coordinate)
             
         }

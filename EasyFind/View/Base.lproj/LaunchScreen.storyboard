@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,17 +75,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Srinath Balla (C0764925)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPJ-E9-80D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Ramanpreet Singh (C0761706)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYY-7G-zle">
                                 <rect key="frame" x="20" y="464" width="374" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="l0m-JD-lbw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Ramanpreet Singh (C0761706)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYY-7G-zle">
-                                <rect key="frame" x="20" y="493" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1Ha-df-20N"/>
                                 </constraints>
@@ -97,10 +88,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ddS-CN-hYx" firstAttribute="centerY" secondItem="POR-56-Eij" secondAttribute="centerY" constant="-200" id="2DY-Ao-tQe"/>
+                            <constraint firstItem="jYY-7G-zle" firstAttribute="top" secondItem="RgZ-P8-QqG" secondAttribute="bottom" constant="8" id="DtL-bH-kk5"/>
                             <constraint firstItem="mbv-Yj-DuR" firstAttribute="top" secondItem="Ug1-Gk-PJ8" secondAttribute="bottom" constant="20" id="DzR-FN-kg6"/>
                             <constraint firstItem="Ug1-Gk-PJ8" firstAttribute="top" secondItem="ddS-CN-hYx" secondAttribute="bottom" constant="8" id="Ebs-ks-1Tq"/>
                             <constraint firstItem="ahz-Rq-X8D" firstAttribute="centerY" secondItem="mbv-Yj-DuR" secondAttribute="centerY" id="FEi-V7-0AR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hPJ-E9-80D" secondAttribute="trailing" constant="20" id="GTt-vT-fMx"/>
                             <constraint firstAttribute="bottom" secondItem="POR-56-Eij" secondAttribute="bottom" id="K3a-m0-GUg"/>
                             <constraint firstItem="mbv-Yj-DuR" firstAttribute="leading" secondItem="ahz-Rq-X8D" secondAttribute="trailing" id="MhW-6c-vnV"/>
                             <constraint firstItem="ddS-CN-hYx" firstAttribute="centerX" secondItem="POR-56-Eij" secondAttribute="centerX" id="Th9-Cj-p30"/>
@@ -109,9 +100,7 @@
                             <constraint firstItem="jYY-7G-zle" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZdV-90-2nm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jYY-7G-zle" secondAttribute="trailing" constant="20" id="aEQ-nM-wxo"/>
                             <constraint firstItem="POR-56-Eij" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bxk-lk-sUY"/>
-                            <constraint firstItem="jYY-7G-zle" firstAttribute="top" secondItem="hPJ-E9-80D" secondAttribute="bottom" constant="8" id="dPj-JQ-nGB"/>
                             <constraint firstItem="kwc-Yc-EKH" firstAttribute="leading" secondItem="mbv-Yj-DuR" secondAttribute="trailing" id="dzj-sw-l5u"/>
-                            <constraint firstItem="hPJ-E9-80D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eEa-Gr-TCm"/>
                             <constraint firstItem="Ug1-Gk-PJ8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="f1N-rV-omx"/>
                             <constraint firstItem="ddS-CN-hYx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fQ7-Ni-AHG"/>
                             <constraint firstItem="RgZ-P8-QqG" firstAttribute="top" secondItem="ahz-Rq-X8D" secondAttribute="bottom" constant="50" id="hHh-3w-xgf"/>
@@ -120,7 +109,6 @@
                             <constraint firstItem="POR-56-Eij" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jzR-3Q-jTH"/>
                             <constraint firstItem="mbv-Yj-DuR" firstAttribute="centerX" secondItem="Ug1-Gk-PJ8" secondAttribute="centerX" id="n4k-lk-ojh"/>
                             <constraint firstAttribute="trailing" secondItem="kwc-Yc-EKH" secondAttribute="trailing" constant="20" id="oMc-QZ-wPV"/>
-                            <constraint firstItem="hPJ-E9-80D" firstAttribute="top" secondItem="RgZ-P8-QqG" secondAttribute="bottom" constant="8" id="rOn-8C-Mre"/>
                             <constraint firstItem="ahz-Rq-X8D" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="uXo-iA-zVR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="POR-56-Eij" secondAttribute="trailing" id="vej-1M-xFv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ug1-Gk-PJ8" secondAttribute="trailing" constant="20" id="yuh-Df-XWf"/>
