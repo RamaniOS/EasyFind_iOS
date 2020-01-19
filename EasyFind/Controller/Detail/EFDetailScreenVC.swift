@@ -37,9 +37,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.setHidesBackButton(true, animated: false);
-        navigationController?.setNavigationBarHidden(true, animated: false)
+       
         
         populateData()
         fetchList()
@@ -49,6 +47,9 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationItem.setHidesBackButton(true, animated: false);
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -83,7 +84,6 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     
     @IBAction func msgBtnClicked(_ sender: Any) {
         if MFMessageComposeViewController.canSendText() {
-            
             
             let messageVC = MFMessageComposeViewController()
             

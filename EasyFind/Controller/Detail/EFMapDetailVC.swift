@@ -24,7 +24,9 @@ class EFMapDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.setNavigationBarHidden(true, animated: true)
+//        navigationController?.navigationBar.prefersLargeTitles = false
+//        self.navigationItem.setHidesBackButton(true, animated: false);
+//        navigationController?.setNavigationBarHidden(true, animated: false)
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
