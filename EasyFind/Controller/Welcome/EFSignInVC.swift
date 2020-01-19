@@ -13,6 +13,8 @@ class EFSignInVC: UIViewController {
     
     // MARK: - Properties
     var passDict = NSDictionary()
+    let persistent = PersistenceManager.shared
+    var userDefaultBool: Bool!
     
     @IBOutlet var upConta_view: UIView!
     @IBOutlet var inConta_view: UIView!
@@ -75,26 +77,26 @@ class EFSignInVC: UIViewController {
         }else{
             UserDefaults.standard.removeObject(forKey: "user_name")
             UserDefaults.standard.removeObject(forKey: "password")
-//            if let appDomain = Bundle.main.bundleIdentifier {
-//                UserDefaults.standard.removePersistentDomain(forName: appDomain)
-//            }
+            //            if let appDomain = Bundle.main.bundleIdentifier {
+            //                UserDefaults.standard.removePersistentDomain(forName: appDomain)
+            //            }
         }
         
         // check validation
         if self.checkTextFields() {
             
             // check if its in userdefault...
-            if self.checkUserDefaults() {
+            self.checkUserDefaults()
+            if userDefaultBool == true {
                 //
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "EFTabBarVC") as! EFTabBarVC
-                Singelton.singObj.userInfoDict = passDict
                 
                 self.navigationController?.pushViewController(vc, animated: true)
             }else{
                 self.showAlert(title: "EF", message: "Invalid Info")
             }
-          
+            
         }
         
     }
@@ -142,63 +144,63 @@ class EFSignInVC: UIViewController {
         return true
     }
     
-    func checkUserDefaults() -> Bool {
+    func checkUserDefaults() {
         
-        if let dictArr = UserDefaults.standard.value(forKey: "singnup_arr") as? NSArray {
-            for dict in dictArr {
-                let userDict = dict as! NSDictionary
-                if userN_tf.text == userDict["user_name"] as? String && passwd_tf.text == userDict["password"] as? String {
-                    
+        persistent.fetch(type: User.self) { (users) in
+            for user in users {
+                if self.userN_tf.text == user.userName && self.passwd_tf.text == user.password {
+
                     //
-                    passDict = dict as! NSDictionary
-                    
-                    return true
+                    Singelton.sharedObj.userInfoDict = user
+
+                    self.userDefaultBool = true
+                }else{
+                    self.userDefaultBool = false
                 }
             }
         }
-                
-        return false
+       
     }
     
     func readDataInfoFromPlistFile() -> (Bool, String) {
         
         if let plist = Bundle.main.path(forResource: "DataInfo", ofType: "plist")
-           {
-               if let dict = NSDictionary(contentsOfFile: plist)
-               {
-                   //Reading the users
-                   if let users = dict["appUsers"] as? [[String: String]]
-                   {
-                        //
-                        var strMsg = String()
-                        for user in users
-                        {
-                           
-                            let userName = user["username"]!
-                            let passwd = user["password"]!
-                            
-                            // match entered data
-                            if(userName != userN_tf.text){
-                                strMsg = "Wrong Username"
-                            }else if(userName == userN_tf.text && passwd != passwd_tf.text){
-                                strMsg = "Wrong Password"
-                            }else if(userName == userN_tf.text && passwd == passwd_tf.text) {
-                                strMsg = ""
-                                return (true, "")
-                            }
+        {
+            if let dict = NSDictionary(contentsOfFile: plist)
+            {
+                //Reading the users
+                if let users = dict["appUsers"] as? [[String: String]]
+                {
+                    //
+                    var strMsg = String()
+                    for user in users
+                    {
+                        
+                        let userName = user["username"]!
+                        let passwd = user["password"]!
+                        
+                        // match entered data
+                        if(userName != userN_tf.text){
+                            strMsg = "Wrong Username"
+                        }else if(userName == userN_tf.text && passwd != passwd_tf.text){
+                            strMsg = "Wrong Password"
+                        }else if(userName == userN_tf.text && passwd == passwd_tf.text) {
+                            strMsg = ""
+                            return (true, "")
                         }
+                    }
                     
-                        //
-                        return (false, strMsg)
-                   }
-                  
-               }
-           }
+                    //
+                    return (false, strMsg)
+                }
+                
+            }
+        }
         
-           return (false, "Invalid information, check again.")
-           
+        return (false, "Invalid information, check again.")
+        
     }
     
-
+    
 }
 

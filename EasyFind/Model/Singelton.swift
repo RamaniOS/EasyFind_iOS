@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import MapKit
 
 class Singelton {
     
-    static let singObj = Singelton()
+    static let sharedObj = Singelton()
     
     var userInfoDict: User?
+    var currLoc = CLLocation()
 }
