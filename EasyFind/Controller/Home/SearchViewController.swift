@@ -46,6 +46,11 @@ class SearchViewController: AbstractViewController {
     // MARK: -  Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         initViews()
     }
     
@@ -103,7 +108,7 @@ class SearchViewController: AbstractViewController {
     
     private func fetchList() {
         let coordinate = CLLocation(latitude: Double(Singelton.sharedObj.userInfoDict?.latitude as! String) as! CLLocationDegrees, longitude: Double(Singelton.sharedObj.userInfoDict?.longitude as! String) as! CLLocationDegrees)
-       getLocationName(location: coordinate)
+        getLocationName(location: coordinate)
         
         
     }
@@ -119,18 +124,18 @@ class SearchViewController: AbstractViewController {
                     if (placemark.locality != nil) {
                         self.address = placemark.locality as? String ?? ""
                     }
-//                    if placemark.subLocality != nil {
-//                        self.address! += placemark.subLocality! + ", "
-//                    }
+                    //                    if placemark.subLocality != nil {
+                    //                        self.address! += placemark.subLocality! + ", "
+                    //                    }
                     YelpManager.fetchYelpBusinesses(with: self.offset, location: self.address ?? "Toronto") { (baseModel) in
-                            self.baseModel = baseModel
+                        self.baseModel = baseModel
                     }
                 }
-               
+                
             }
         }
         
-   
+        
     }
     
     private var cellClass: SearchTableViewCell.Type {

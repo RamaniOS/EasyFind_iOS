@@ -37,6 +37,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         populateData()
         fetchList()
         favButton.image = business!.isFav! ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
@@ -44,7 +45,10 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationItem.setHidesBackButton(true, animated: false);
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,7 +83,6 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     
     @IBAction func msgBtnClicked(_ sender: Any) {
         if MFMessageComposeViewController.canSendText() {
-            
             
             let messageVC = MFMessageComposeViewController()
             
