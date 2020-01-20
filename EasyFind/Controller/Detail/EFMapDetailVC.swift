@@ -24,20 +24,42 @@ class EFMapDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in }
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        editView.isHidden = true
-        
         mapDView.delegate = self
         mapDView.showsUserLocation = true
+        
         let restLoc = MKPointAnnotation()
         restLoc.title = "Restaraunt"
-        restLoc.coordinate = CLLocationCoordinate2D(latitude: Double(passCoord.latitude ?? "0.00") as! CLLocationDegrees, longitude: Double(passCoord.longitude ?? "0.00") as! CLLocationDegrees)
+        restLoc.coordinate = CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
+        
+        // Define delta latitude and longitude
+        let latDelta:CLLocationDegrees = 0.5
+        let longDelta:CLLocationDegrees = 0.5
+        
+        // Define span
+        let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
+        
+        // define location
+        let location = CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
+        
+        // define region
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+        // set the region on the map
+        mapDView.setRegion(region, animated: true)
         
         mapDView.addAnnotation(restLoc)
+        
+        drawRoute()
+        
+        addRegion(coordinate: location)
+        
         
     }
     
@@ -65,6 +87,8 @@ class EFMapDetailVC: UIViewController {
             moveType = "W"
         }
         
+        drawRoute()
+        
     }
     
     @IBAction func zoomOutBtnClicked(_ sender: Any) {
@@ -82,6 +106,24 @@ class EFMapDetailVC: UIViewController {
     }
     
     // MARK: - Helper
+    func showNotification(title: String, message: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = message
+        content.badge = 1
+        content.sound = .default
+        let request = UNNotificationRequest(identifier: "notif", content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func addRegion(coordinate: CLLocationCoordinate2D) {
+        let region = CLCircularRegion(center: coordinate, radius: 200, identifier: "geofence")
+        mapDView.removeOverlays(mapDView.overlays)
+        locationManager.startMonitoring(for: region)
+        let circle = MKCircle(center: coordinate, radius: region.radius)
+        mapDView.addOverlay(circle)
+    }
+    
     func drawRoute() {
         // remove previous overlays
         let overlays = mapDView.overlays
@@ -90,7 +132,7 @@ class EFMapDetailVC: UIViewController {
         // draw route
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: Singelton.sharedObj.currLoc.coordinate, addressDictionary: nil))
-        let destCord =  CLLocationCoordinate2D(latitude: Double(Singelton.sharedObj.userInfoDict!.latitude ?? "0.00") as! CLLocationDegrees, longitude: Double(Singelton.sharedObj.userInfoDict!.longitude ?? "0.00") as! CLLocationDegrees)
+        let destCord =  CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destCord, addressDictionary: nil))
         request.requestsAlternateRoutes = true
         if(moveType == "A"){
@@ -118,8 +160,22 @@ class EFMapDetailVC: UIViewController {
 extension EFMapDetailVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
+        //let location = locations[0]
         
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        let title = "You Entered the Region"
+        let message = "Wow theres cool stuff in here! YAY!"
+        showAlert(title: title, message: message)
+        showNotification(title: title, message: message)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        let title = "You Left the Region"
+        let message = "Say bye bye to all that cool stuff. =["
+        showAlert(title: title, message: message)
+        showNotification(title: title, message: message)
     }
 }
 

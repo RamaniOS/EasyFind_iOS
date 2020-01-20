@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 /// This is the signin class
 class EFSignInVC: UIViewController {
@@ -15,6 +16,7 @@ class EFSignInVC: UIViewController {
     var passDict = NSDictionary()
     let persistent = PersistenceManager.shared
     var userDefaultBool: Bool!
+    var locationManager: CLLocationManager! = nil
     
     @IBOutlet var upConta_view: UIView!
     @IBOutlet var inConta_view: UIView!
@@ -28,6 +30,16 @@ class EFSignInVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        //
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        locationManager.startUpdatingLocation()
         
         //
         setUpUI()
@@ -201,6 +213,49 @@ class EFSignInVC: UIViewController {
         
     }
     
+    func showLocationDisabledPopUp() {
+        let alertController = UIAlertController(title: "Background Location Access Disabled",
+                                                message: "We need location access.",
+                                                preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        alertController.addAction(openAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     
 }
+
+// MARK: - CLLocationManagerDelegate
+extension EFSignInVC: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let location = locations.first {
+            
+            Singelton.sharedObj.currLoc = location
+            print(location.coordinate)
+            
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if(status == CLAuthorizationStatus.denied) {
+            showLocationDisabledPopUp()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error :\(error)")
+    }
+}
+
 

@@ -183,8 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				18E514712381CB4E003FB8C9 /* EFDetailScreenVC.swift */,
-				18C216E723820606001C36AB /* EFAboutUsVC.swift */,
 				18CA648023D3B77F00F3F37D /* EFMapDetailVC.swift */,
+				18C216E723820606001C36AB /* EFAboutUsVC.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";

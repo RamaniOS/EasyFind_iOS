@@ -100,7 +100,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
             if self.checkUserDefaults() {
                 do {
                     let imageData = img_view.image!.jpegData(compressionQuality: 1)
-                    imagePath = "image_\(NSDate.timeIntervalSinceReferenceDate).jpg"
+                    imagePath = "/image_\(NSDate.timeIntervalSinceReferenceDate).jpg"
                     let path = self.documentsPathForFileName(name: imagePath)
                     try imageData!.write(to: URL(fileURLWithPath: path), options: .atomic)
                     
