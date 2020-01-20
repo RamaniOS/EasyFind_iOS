@@ -51,6 +51,7 @@
 		BCCC5ADD237EFA3900BE939E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCC5ADB237EFA3900BE939E /* LaunchScreen.storyboard */; };
 		BCCC5AEC237F098900BE939E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AEB237F098900BE939E /* APIManager.swift */; };
 		BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AEE237F0A4C00BE939E /* YelpManager.swift */; };
+		BCD7A25023D65159000105CE /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0ACFA223D64F63005E2CAD /* SavedViewController.swift */; };
 		BCFDFAED23D27DA6009F3BAB /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDFAEB23D27DA6009F3BAB /* User+CoreDataProperties.swift */; };
 		BCFDFAEE23D27DA6009F3BAB /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDFAEC23D27DA6009F3BAB /* User+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		18D53DC423808A0000EDAFA6 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		18E514712381CB4E003FB8C9 /* EFDetailScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFDetailScreenVC.swift; sourceTree = "<group>"; };
 		9B5D738FCE8DABCF3B3EC10A /* Pods-EasyFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFind.release.xcconfig"; path = "Target Support Files/Pods-EasyFind/Pods-EasyFind.release.xcconfig"; sourceTree = "<group>"; };
+		BC0ACFA223D64F63005E2CAD /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		BC23D2C3237F780B00604AD5 /* BaseBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBusiness.swift; sourceTree = "<group>"; };
 		BC2728F5237FB4360020C271 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		BC2728F6237FB4360020C271 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -206,6 +208,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC0ACFA123D64F51005E2CAD /* SavedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC0ACFA223D64F63005E2CAD /* SavedViewController.swift */,
+			);
+			path = SavedViewController;
+			sourceTree = "<group>";
+		};
 		BC23D282237F635200604AD5 /* Yelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,10 +317,11 @@
 			isa = PBXGroup;
 			children = (
 				BC51F7962381CF1C00AD50E2 /* AbstarctViewController */,
+				18E514702381C9F2003FB8C9 /* Detail */,
 				BCB84EF12381EE220033B397 /* FavoriteViewController */,
 				184F3DB423806AEA0093DB47 /* Home */,
+				BC0ACFA123D64F51005E2CAD /* SavedViewController */,
 				18C2BF932380698D00C8669A /* Welcome */,
-				18E514702381C9F2003FB8C9 /* Detail */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -528,6 +539,7 @@
 				18C216E62381FD44001C36AB /* EFSettingVC.swift in Sources */,
 				18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */,
 				18A575142381065600E12E84 /* Singelton.swift in Sources */,
+				BCD7A25023D65159000105CE /* SavedViewController.swift in Sources */,
 				BCFDFAEE23D27DA6009F3BAB /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
