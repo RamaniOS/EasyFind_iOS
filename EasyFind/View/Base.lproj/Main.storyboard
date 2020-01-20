@@ -216,6 +216,7 @@
                         <segue destination="wUE-GX-7Kf" kind="relationship" relationship="viewControllers" id="GC0-rd-cf4"/>
                         <segue destination="2aS-en-h1H" kind="relationship" relationship="viewControllers" id="4z3-4i-s94"/>
                         <segue destination="CqA-ii-KoN" kind="relationship" relationship="viewControllers" id="cGr-jc-pWx"/>
+                        <segue destination="bd7-5Q-WDk" kind="relationship" relationship="viewControllers" id="c3B-LK-Wvq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuf-bw-z0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1204,7 +1205,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTp-7X-1yj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602.89855072463774" y="-9.375"/>
+            <point key="canvasLocation" x="603" y="11"/>
         </scene>
         <!--Home-->
         <scene sceneID="nlq-VH-CmQ">
@@ -1225,11 +1226,28 @@
             </objects>
             <point key="canvasLocation" x="602.89855072463774" y="-688.39285714285711"/>
         </scene>
+        <!--Saved-->
+        <scene sceneID="pvy-9g-aSO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bd7-5Q-WDk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved" image="bookmark.fill" catalog="system" id="JPw-JT-KfI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sam-jA-Qe4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K5v-cD-TTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="603" y="1376"/>
+        </scene>
     </scenes>
     <resources>
         <image name="UnFav" width="17.5" height="17.5"/>
         <image name="backIcon" width="24" height="24"/>
         <image name="backWIcon" width="24" height="24"/>
+        <image name="bookmark.fill" catalog="system" width="56" height="64"/>
         <image name="cameraIcon" width="30" height="30"/>
         <image name="checkIcon" width="17" height="17"/>
         <image name="favTabIcon" width="24" height="24"/>
