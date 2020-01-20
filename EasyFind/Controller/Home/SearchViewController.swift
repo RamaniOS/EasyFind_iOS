@@ -68,9 +68,8 @@ class SearchViewController: AbstractViewController {
             // here is your saved image:
             img_view.image = UIImage(data: oldImageData! as Data)
         }
-        let welcome = "Welcome \(user.userName as! String)"
+        let welcome = "Welcome \(user.userName!)"
         title_lbl.text = welcome
-        
         initTableView()
         fetchList()
         addObserver()
@@ -105,37 +104,29 @@ class SearchViewController: AbstractViewController {
         fetchList()
     }
     
-    
     private func fetchList() {
-        let coordinate = CLLocation(latitude: Double(Singelton.sharedObj.userInfoDict?.latitude as! String) as! CLLocationDegrees, longitude: Double(Singelton.sharedObj.userInfoDict?.longitude as! String) as! CLLocationDegrees)
-        getLocationName(location: coordinate)
-        
-        
+        guard let latString = Singelton.sharedObj.userInfoDict?.latitude, let longString = Singelton.sharedObj.userInfoDict?.longitude else {
+            return
+        }
+        let location = CLLocation(latitude: Double(latString)!, longitude:  Double(longString)!)
+        getLocationName(location: location)
     }
     
     private func getLocationName(location: CLLocation)  {
-        
         CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
             if let error = error {
                 print(error)
             } else {
-                
                 if let placemark = placemarks?[0] {
                     if (placemark.locality != nil) {
-                        self.address = placemark.locality as? String ?? ""
+                        self.address = placemark.locality ?? ""
                     }
-                    //                    if placemark.subLocality != nil {
-                    //                        self.address! += placemark.subLocality! + ", "
-                    //                    }
                     YelpManager.fetchYelpBusinesses(with: self.offset, location: self.address ?? "Toronto") { (baseModel) in
                         self.baseModel = baseModel
                     }
                 }
-                
             }
         }
-        
-        
     }
     
     private var cellClass: SearchTableViewCell.Type {
