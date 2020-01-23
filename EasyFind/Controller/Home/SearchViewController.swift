@@ -17,7 +17,8 @@ class SearchViewController: AbstractViewController {
     private var offset = 0
     private var limit = 20
     private var isPagesAvailable = false
-    
+    private let persistent = PersistenceManager.shared
+
     var baseModel: BaseBusiness? = nil {
         didSet {
             guard let base = baseModel, base.businesses!.count > 0 else {
@@ -46,21 +47,25 @@ class SearchViewController: AbstractViewController {
     // MARK: -  Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        guard UserStore.isLogin else {
+            ActionShowLogin.execute()
+            return
+        }
+        fetchUseDetails()
+        initViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        initViews()
+    private func fetchUseDetails() {
+        persistent.fetch(type: User.self) { (users) in
+            Singelton.sharedObj.userInfoDict = users[0]
+        }
     }
     
     // MARK: - Helpers
     private func initViews() {
-        
         guard let user = Singelton.sharedObj.userInfoDict else {
             return
         }
-        //
         let possibleOldImagePath = user.imagePath
         if let oldImagePath = possibleOldImagePath {
             let oldFullPath = self.documentsPathForFileName(name: oldImagePath)

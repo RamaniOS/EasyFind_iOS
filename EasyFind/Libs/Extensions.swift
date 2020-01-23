@@ -220,3 +220,10 @@ extension UIButton {
         }
     }
 }
+
+extension UIApplication {
+    
+    class var appWindow: UIWindow! {
+        return (UIApplication.shared.delegate?.window!)!
+    }
+}
