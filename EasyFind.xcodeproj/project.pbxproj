@@ -340,11 +340,11 @@
 		BCCC5AE7237F096D00BE939E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BCFDFAEA23D27DA6009F3BAB /* User */,
-				18A575132381065600E12E84 /* Singelton.swift */,
-				18C216DF2381E409001C36AB /* DetailM.swift */,
-				BC23D282237F635200604AD5 /* Yelp */,
 				BC2B69B923DA269700C86C66 /* Action.swift */,
+				18C216DF2381E409001C36AB /* DetailM.swift */,
+				18A575132381065600E12E84 /* Singelton.swift */,
+				BCFDFAEA23D27DA6009F3BAB /* User */,
+				BC23D282237F635200604AD5 /* Yelp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
