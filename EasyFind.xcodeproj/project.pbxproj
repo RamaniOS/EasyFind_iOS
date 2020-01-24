@@ -31,9 +31,11 @@
 		BC2B69BA23DA269700C86C66 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2B69B923DA269700C86C66 /* Action.swift */; };
 		BC34744023D27414002B0AF4 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34743F23D27414002B0AF4 /* PersistenceManager.swift */; };
 		BC34744323D2745D002B0AF4 /* EasyFind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC34744123D2745D002B0AF4 /* EasyFind.xcdatamodeld */; };
+		BC34AB4023DAAB85002834B8 /* Businesses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34AB3C23DAAB85002834B8 /* Businesses+CoreDataClass.swift */; };
+		BC34AB4123DAAB85002834B8 /* Businesses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34AB3D23DAAB85002834B8 /* Businesses+CoreDataProperties.swift */; };
+		BC34AB4223DAAB85002834B8 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34AB3E23DAAB85002834B8 /* Location+CoreDataClass.swift */; };
+		BC34AB4323DAAB85002834B8 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34AB3F23DAAB85002834B8 /* Location+CoreDataProperties.swift */; };
 		BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588831237F7E2D00E02F3D /* Coordinates.swift */; };
-		BC588838237F7E2D00E02F3D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588832237F7E2D00E02F3D /* Location.swift */; };
-		BC588839237F7E2D00E02F3D /* Businesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588833237F7E2D00E02F3D /* Businesses.swift */; };
 		BC58883A237F7E2D00E02F3D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588834237F7E2D00E02F3D /* Categories.swift */; };
 		BC58883B237F7E2D00E02F3D /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588835237F7E2D00E02F3D /* Center.swift */; };
 		BC58883C237F7E2D00E02F3D /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588836237F7E2D00E02F3D /* Region.swift */; };
@@ -97,9 +99,11 @@
 		BC2B69B923DA269700C86C66 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		BC34743F23D27414002B0AF4 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		BC34744223D2745D002B0AF4 /* EasyFind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyFind.xcdatamodel; sourceTree = "<group>"; };
+		BC34AB3C23DAAB85002834B8 /* Businesses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Businesses+CoreDataClass.swift"; path = "EasyFind/Model/Yelp/Businesses+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BC34AB3D23DAAB85002834B8 /* Businesses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Businesses+CoreDataProperties.swift"; path = "EasyFind/Model/Yelp/Businesses+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BC34AB3E23DAAB85002834B8 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataClass.swift"; path = "EasyFind/Model/Yelp/Location+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BC34AB3F23DAAB85002834B8 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "EasyFind/Model/Yelp/Location+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BC588831237F7E2D00E02F3D /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
-		BC588832237F7E2D00E02F3D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		BC588833237F7E2D00E02F3D /* Businesses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Businesses.swift; sourceTree = "<group>"; };
 		BC588834237F7E2D00E02F3D /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		BC588835237F7E2D00E02F3D /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
 		BC588836237F7E2D00E02F3D /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -224,11 +228,13 @@
 			isa = PBXGroup;
 			children = (
 				BC23D2C3237F780B00604AD5 /* BaseBusiness.swift */,
-				BC588833237F7E2D00E02F3D /* Businesses.swift */,
+				BC34AB3C23DAAB85002834B8 /* Businesses+CoreDataClass.swift */,
+				BC34AB3D23DAAB85002834B8 /* Businesses+CoreDataProperties.swift */,
+				BC34AB3E23DAAB85002834B8 /* Location+CoreDataClass.swift */,
+				BC34AB3F23DAAB85002834B8 /* Location+CoreDataProperties.swift */,
 				BC588834237F7E2D00E02F3D /* Categories.swift */,
 				BC588835237F7E2D00E02F3D /* Center.swift */,
 				BC588831237F7E2D00E02F3D /* Coordinates.swift */,
-				BC588832237F7E2D00E02F3D /* Location.swift */,
 				BC588836237F7E2D00E02F3D /* Region.swift */,
 			);
 			path = Yelp;
@@ -334,7 +340,7 @@
 		BCCC5AE7237F096D00BE939E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BCFDFAEA23D27DA6009F3BAB /* CoreDataModels */,
+				BCFDFAEA23D27DA6009F3BAB /* User */,
 				18A575132381065600E12E84 /* Singelton.swift */,
 				18C216DF2381E409001C36AB /* DetailM.swift */,
 				BC23D282237F635200604AD5 /* Yelp */,
@@ -380,13 +386,13 @@
 			path = YelpManager;
 			sourceTree = "<group>";
 		};
-		BCFDFAEA23D27DA6009F3BAB /* CoreDataModels */ = {
+		BCFDFAEA23D27DA6009F3BAB /* User */ = {
 			isa = PBXGroup;
 			children = (
 				BCFDFAEB23D27DA6009F3BAB /* User+CoreDataProperties.swift */,
 				BCFDFAEC23D27DA6009F3BAB /* User+CoreDataClass.swift */,
 			);
-			path = CoreDataModels;
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +518,7 @@
 				18E514722381CB4E003FB8C9 /* EFDetailScreenVC.swift in Sources */,
 				BC58883B237F7E2D00E02F3D /* Center.swift in Sources */,
 				BCB84EF52381F1140033B397 /* NotificationStore.swift in Sources */,
+				BC34AB4023DAAB85002834B8 /* Businesses+CoreDataClass.swift in Sources */,
 				18CA648323D3C1EE00F3F37D /* Place.swift in Sources */,
 				18C216E02381E409001C36AB /* DetailM.swift in Sources */,
 				18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */,
@@ -520,7 +527,6 @@
 				18A57512238105C400E12E84 /* EFTabBarVC.swift in Sources */,
 				BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */,
 				BC58883C237F7E2D00E02F3D /* Region.swift in Sources */,
-				BC588838237F7E2D00E02F3D /* Location.swift in Sources */,
 				BC2B69B823DA257600C86C66 /* UserStore.swift in Sources */,
 				BC2B69BA23DA269700C86C66 /* Action.swift in Sources */,
 				18CA648123D3B77F00F3F37D /* EFMapDetailVC.swift in Sources */,
@@ -532,6 +538,7 @@
 				BC588840237F807000E02F3D /* SearchViewController.swift in Sources */,
 				BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */,
 				18C216E823820606001C36AB /* EFAboutUsVC.swift in Sources */,
+				BC34AB4323DAAB85002834B8 /* Location+CoreDataProperties.swift in Sources */,
 				18C2BF9523806A8700C8669A /* EFSignInVC.swift in Sources */,
 				BC34744023D27414002B0AF4 /* PersistenceManager.swift in Sources */,
 				18D53DC923808A0000EDAFA6 /* UIColorExtension.swift in Sources */,
@@ -542,7 +549,8 @@
 				BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */,
 				BCB84EF32381EE740033B397 /* FavoriteViewController.swift in Sources */,
 				BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */,
-				BC588839237F7E2D00E02F3D /* Businesses.swift in Sources */,
+				BC34AB4223DAAB85002834B8 /* Location+CoreDataClass.swift in Sources */,
+				BC34AB4123DAAB85002834B8 /* Businesses+CoreDataProperties.swift in Sources */,
 				BCFDFAED23D27DA6009F3BAB /* User+CoreDataProperties.swift in Sources */,
 				18C216E62381FD44001C36AB /* EFSettingVC.swift in Sources */,
 				18C2BF9723806A9900C8669A /* EFSignUpVC.swift in Sources */,

@@ -15,6 +15,11 @@ class PersistenceManager {
     
     static let shared = PersistenceManager()
     
+    static func printPath() {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            print(urls[urls.count-1] as URL)
+    }
+    
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }

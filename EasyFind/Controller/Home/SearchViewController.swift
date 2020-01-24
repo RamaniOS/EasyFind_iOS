@@ -18,7 +18,7 @@ class SearchViewController: AbstractViewController {
     private var limit = 20
     private var isPagesAvailable = false
     private let persistent = PersistenceManager.shared
-
+    
     var baseModel: BaseBusiness? = nil {
         didSet {
             guard let base = baseModel, base.businesses!.count > 0 else {
@@ -67,13 +67,13 @@ class SearchViewController: AbstractViewController {
             return
         }
         let possibleOldImagePath = user.imagePath
-        if let oldImagePath = possibleOldImagePath {
-            let oldFullPath = self.documentsPathForFileName(name: oldImagePath)
-            let oldImageData = NSData(contentsOfFile: oldFullPath)
-            // here is your saved image:
-            img_view.image = UIImage(data: oldImageData! as Data)
-        }
-        let welcome = "Welcome \(user.userName!)"
+        let oldImagePath = possibleOldImagePath
+        let oldFullPath = self.documentsPathForFileName(name: oldImagePath)
+        let oldImageData = NSData(contentsOfFile: oldFullPath)
+        // here is your saved image:
+        //img_view.image = UIImage(data: oldImageData! as Data)
+        
+        let welcome = "Welcome \(user.userName)"
         title_lbl.text = welcome
         initTableView()
         fetchList()

@@ -143,8 +143,8 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
         
         let user = User(context: persistent.context)
         user.imagePath = imagePath
-        user.userName = userN_tf.text
-        user.password = passwd_tf.text
+        user.userName = userN_tf.text!
+        user.password = passwd_tf.text!
         user.latitude = String(Singelton.sharedObj.currLoc.coordinate.latitude)
         user.longitude = String(Singelton.sharedObj.currLoc.coordinate.longitude)
         do{

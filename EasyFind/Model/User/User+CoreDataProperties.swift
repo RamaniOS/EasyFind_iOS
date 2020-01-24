@@ -16,10 +16,10 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var imagePath: String?
-    @NSManaged public var userName: String?
-    @NSManaged public var password: String?
-    @NSManaged public var latitude: String?
-    @NSManaged public var longitude: String?
+    @NSManaged public var imagePath: String
+    @NSManaged public var userName: String
+    @NSManaged public var password: String
+    @NSManaged public var latitude: String
+    @NSManaged public var longitude: String
 
 }

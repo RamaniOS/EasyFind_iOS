@@ -30,24 +30,22 @@ class SearchTableViewCell: UITableViewCell {
             guard let business = business else { return }
             titleLabel.text = business.name
             imgView.sd_setImage(with: business.imageURL)
-            starView.rating = business.rating ?? 0
-            if let review = business.review_count {
-                ratingLabel.text = "\(review) Review"
-            }
+            starView.rating = business.rating
+            ratingLabel.text = "\(business.review_count) Review"
             priceLabel.text = business.price
             if let location = business.location, let address =  location.address1, let city =  location.city{
                 addressLabel.text = "\(address), \(city)"
             }
-            if let category = business.categories {
-                var types = ""
-                for index in 0...category.count - 1 {
-                    types.append(category[index].title!)
-                    if index < category.count - 1 {
-                        types.append(", ")
-                    }
-                }
-                typesLabel.text = types
-            }
+//            if let category = business.categories {
+//                var types = ""
+//                for index in 0...category.count - 1 {
+//                    types.append(category[index].title!)
+//                    if index < category.count - 1 {
+//                        types.append(", ")
+//                    }
+//                }
+//                typesLabel.text = types
+//            }
             favButton.image = business.isFav! ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
             favButton.actionBlock { [weak self] in
                 guard let `self` = self else { return }
