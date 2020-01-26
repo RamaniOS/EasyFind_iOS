@@ -14,7 +14,7 @@ import CoreData
 public class Businesses: NSManagedObject, Codable {
     
     enum CodingKeys: String, CodingKey {
-        case alias, display_phone, distance, id, image_url, is_closed, name, phone, price, rating, review_count, transactions, url, location
+        case alias, display_phone, distance, id, image_url, is_closed, name, phone, price, rating, review_count, transactions, url, location, categories, coordinates
     }
     
     // MARK: - Decodable
@@ -63,6 +63,12 @@ public class Businesses: NSManagedObject, Codable {
         if let loc = try container.decodeIfPresent(Location.self, forKey: .location) {
             location = loc
         }
+        if let cor = try container.decodeIfPresent(Coordinates.self, forKey: .coordinates) {
+            coordinates = cor
+        }
+        if let cat = try container.decodeIfPresent([Categories].self, forKey: .categories) {
+            rowCategories = NSOrderedSet(array: cat)
+        }
     }
     
     // MARK: - Encodable
@@ -82,6 +88,8 @@ public class Businesses: NSManagedObject, Codable {
         try container.encode(transactions, forKey: .transactions)
         try container.encode(url, forKey: .url)
         try container.encode(location, forKey: .location)
+        try container.encode(coordinates, forKey: .coordinates)
+        try container.encode(categories, forKey: .categories)
     }
     
     var isFAV: Bool?
@@ -99,5 +107,9 @@ public class Businesses: NSManagedObject, Codable {
             return URL(string: url)
         }
         return nil
+    }
+    
+    var categories: [Categories]? {
+        return rowCategories?.array as? [Categories]
     }
 }

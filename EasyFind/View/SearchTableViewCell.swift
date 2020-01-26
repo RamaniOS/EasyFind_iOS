@@ -36,16 +36,16 @@ class SearchTableViewCell: UITableViewCell {
             if let location = business.location, let address =  location.address1, let city =  location.city{
                 addressLabel.text = "\(address), \(city)"
             }
-//            if let category = business.categories {
-//                var types = ""
-//                for index in 0...category.count - 1 {
-//                    types.append(category[index].title!)
-//                    if index < category.count - 1 {
-//                        types.append(", ")
-//                    }
-//                }
-//                typesLabel.text = types
-//            }
+            if let category = business.categories {
+                var types = ""
+                for index in 0...category.count - 1 {
+                    types.append(category[index].title!)
+                    if index < category.count - 1 {
+                        types.append(", ")
+                    }
+                }
+                typesLabel.text = types
+            }
             favButton.image = business.isFav! ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
             favButton.actionBlock { [weak self] in
                 guard let `self` = self else { return }

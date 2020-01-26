@@ -31,5 +31,42 @@ extension Businesses {
     @NSManaged public var transactions: [String]?
     @NSManaged public var url: String?
     @NSManaged public var location: Location?
+    @NSManaged public var rowCategories: NSOrderedSet?
+    @NSManaged public var coordinates: Coordinates?
+
+}
+
+// MARK: Generated accessors for categories
+extension Businesses {
+
+    @objc(insertObject:inCategoriesAtIndex:)
+    @NSManaged public func insertIntoCategories(_ value: Categories, at idx: Int)
+
+    @objc(removeObjectFromCategoriesAtIndex:)
+    @NSManaged public func removeFromCategories(at idx: Int)
+
+    @objc(insertCategories:atIndexes:)
+    @NSManaged public func insertIntoCategories(_ values: [Categories], at indexes: NSIndexSet)
+
+    @objc(removeCategoriesAtIndexes:)
+    @NSManaged public func removeFromCategories(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInCategoriesAtIndex:withObject:)
+    @NSManaged public func replaceCategories(at idx: Int, with value: Categories)
+
+    @objc(replaceCategoriesAtIndexes:withCategories:)
+    @NSManaged public func replaceCategories(at indexes: NSIndexSet, with values: [Categories])
+
+    @objc(addCategoriesObject:)
+    @NSManaged public func addToCategories(_ value: Categories)
+
+    @objc(removeCategoriesObject:)
+    @NSManaged public func removeFromCategories(_ value: Categories)
+
+    @objc(addCategories:)
+    @NSManaged public func addToCategories(_ values: NSOrderedSet)
+
+    @objc(removeCategories:)
+    @NSManaged public func removeFromCategories(_ values: NSOrderedSet)
 
 }

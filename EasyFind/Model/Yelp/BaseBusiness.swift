@@ -11,5 +11,4 @@ import Foundation
 struct BaseBusiness : Codable {
 	let businesses : [Businesses]?
 	let total : Int?
-	let region : Region?
 }

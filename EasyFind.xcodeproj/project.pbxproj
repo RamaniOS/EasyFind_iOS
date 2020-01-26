@@ -35,10 +35,6 @@
 		BC34AB4123DAAB85002834B8 /* Businesses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34AB3D23DAAB85002834B8 /* Businesses+CoreDataProperties.swift */; };
 		BC34AB4223DAAB85002834B8 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34AB3E23DAAB85002834B8 /* Location+CoreDataClass.swift */; };
 		BC34AB4323DAAB85002834B8 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34AB3F23DAAB85002834B8 /* Location+CoreDataProperties.swift */; };
-		BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588831237F7E2D00E02F3D /* Coordinates.swift */; };
-		BC58883A237F7E2D00E02F3D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588834237F7E2D00E02F3D /* Categories.swift */; };
-		BC58883B237F7E2D00E02F3D /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588835237F7E2D00E02F3D /* Center.swift */; };
-		BC58883C237F7E2D00E02F3D /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588836237F7E2D00E02F3D /* Region.swift */; };
 		BC58883E237F7FFA00E02F3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58883D237F7FFA00E02F3D /* Extensions.swift */; };
 		BC588840237F807000E02F3D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58883F237F807000E02F3D /* SearchViewController.swift */; };
 		BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588841237F819000E02F3D /* SearchTableViewCell.swift */; };
@@ -48,6 +44,10 @@
 		BCB84EF72382058E0033B397 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB84EF62382058E0033B397 /* Helper.swift */; };
 		BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBBC1E2381DC0200339FFC /* AbstractViewController.swift */; };
 		BCBBBC222381E77F00339FFC /* FavoriteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBBC212381E77F00339FFC /* FavoriteStore.swift */; };
+		BCC0018D23DDF463006EC8AF /* Categories+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0018523DDF463006EC8AF /* Categories+CoreDataClass.swift */; };
+		BCC0018E23DDF463006EC8AF /* Categories+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0018623DDF463006EC8AF /* Categories+CoreDataProperties.swift */; };
+		BCC0018F23DDF463006EC8AF /* Coordinates+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0018723DDF463006EC8AF /* Coordinates+CoreDataClass.swift */; };
+		BCC0019023DDF463006EC8AF /* Coordinates+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0018823DDF463006EC8AF /* Coordinates+CoreDataProperties.swift */; };
 		BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */; };
 		BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */; };
 		BCCC5AD8237EFA3800BE939E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCC5AD6237EFA3800BE939E /* Main.storyboard */; };
@@ -103,10 +103,6 @@
 		BC34AB3D23DAAB85002834B8 /* Businesses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Businesses+CoreDataProperties.swift"; path = "EasyFind/Model/Yelp/Businesses+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BC34AB3E23DAAB85002834B8 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataClass.swift"; path = "EasyFind/Model/Yelp/Location+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		BC34AB3F23DAAB85002834B8 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "EasyFind/Model/Yelp/Location+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		BC588831237F7E2D00E02F3D /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
-		BC588834237F7E2D00E02F3D /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
-		BC588835237F7E2D00E02F3D /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
-		BC588836237F7E2D00E02F3D /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		BC58883D237F7FFA00E02F3D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BC58883F237F807000E02F3D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BC588841237F819000E02F3D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +112,10 @@
 		BCB84EF62382058E0033B397 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BCBBBC1E2381DC0200339FFC /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		BCBBBC212381E77F00339FFC /* FavoriteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStore.swift; sourceTree = "<group>"; };
+		BCC0018523DDF463006EC8AF /* Categories+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Categories+CoreDataClass.swift"; path = "EasyFind/Model/Yelp/Categories+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BCC0018623DDF463006EC8AF /* Categories+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Categories+CoreDataProperties.swift"; path = "EasyFind/Model/Yelp/Categories+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BCC0018723DDF463006EC8AF /* Coordinates+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Coordinates+CoreDataClass.swift"; path = "EasyFind/Model/Yelp/Coordinates+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BCC0018823DDF463006EC8AF /* Coordinates+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Coordinates+CoreDataProperties.swift"; path = "EasyFind/Model/Yelp/Coordinates+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BCCC5ACD237EFA3800BE939E /* EasyFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 		184F3DB423806AEA0093DB47 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				18A57511238105C400E12E84 /* EFTabBarVC.swift */,
 				BC58883F237F807000E02F3D /* SearchViewController.swift */,
+				18A57511238105C400E12E84 /* EFTabBarVC.swift */,
 				18C216E52381FD44001C36AB /* EFSettingVC.swift */,
 			);
 			path = Home;
@@ -232,10 +232,10 @@
 				BC34AB3D23DAAB85002834B8 /* Businesses+CoreDataProperties.swift */,
 				BC34AB3E23DAAB85002834B8 /* Location+CoreDataClass.swift */,
 				BC34AB3F23DAAB85002834B8 /* Location+CoreDataProperties.swift */,
-				BC588834237F7E2D00E02F3D /* Categories.swift */,
-				BC588835237F7E2D00E02F3D /* Center.swift */,
-				BC588831237F7E2D00E02F3D /* Coordinates.swift */,
-				BC588836237F7E2D00E02F3D /* Region.swift */,
+				BCC0018523DDF463006EC8AF /* Categories+CoreDataClass.swift */,
+				BCC0018623DDF463006EC8AF /* Categories+CoreDataProperties.swift */,
+				BCC0018723DDF463006EC8AF /* Coordinates+CoreDataClass.swift */,
+				BCC0018823DDF463006EC8AF /* Coordinates+CoreDataProperties.swift */,
 			);
 			path = Yelp;
 			sourceTree = "<group>";
@@ -516,22 +516,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E514722381CB4E003FB8C9 /* EFDetailScreenVC.swift in Sources */,
-				BC58883B237F7E2D00E02F3D /* Center.swift in Sources */,
 				BCB84EF52381F1140033B397 /* NotificationStore.swift in Sources */,
+				BCC0018E23DDF463006EC8AF /* Categories+CoreDataProperties.swift in Sources */,
 				BC34AB4023DAAB85002834B8 /* Businesses+CoreDataClass.swift in Sources */,
 				18CA648323D3C1EE00F3F37D /* Place.swift in Sources */,
 				18C216E02381E409001C36AB /* DetailM.swift in Sources */,
+				BCC0018D23DDF463006EC8AF /* Categories+CoreDataClass.swift in Sources */,
 				18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */,
 				BCBBBC222381E77F00339FFC /* FavoriteStore.swift in Sources */,
 				BCCC5AEC237F098900BE939E /* APIManager.swift in Sources */,
 				18A57512238105C400E12E84 /* EFTabBarVC.swift in Sources */,
 				BCCC5AEF237F0A4C00BE939E /* YelpManager.swift in Sources */,
-				BC58883C237F7E2D00E02F3D /* Region.swift in Sources */,
 				BC2B69B823DA257600C86C66 /* UserStore.swift in Sources */,
 				BC2B69BA23DA269700C86C66 /* Action.swift in Sources */,
 				18CA648123D3B77F00F3F37D /* EFMapDetailVC.swift in Sources */,
 				18D53DBD238087BD00EDAFA6 /* UIViewController.swift in Sources */,
-				BC588837237F7E2D00E02F3D /* Coordinates.swift in Sources */,
 				BC23D2CA237F780B00604AD5 /* BaseBusiness.swift in Sources */,
 				BC34744323D2745D002B0AF4 /* EasyFind.xcdatamodeld in Sources */,
 				BCB84EF72382058E0033B397 /* Helper.swift in Sources */,
@@ -544,12 +543,13 @@
 				18D53DC923808A0000EDAFA6 /* UIColorExtension.swift in Sources */,
 				BC58883E237F7FFA00E02F3D /* Extensions.swift in Sources */,
 				BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */,
-				BC58883A237F7E2D00E02F3D /* Categories.swift in Sources */,
 				18D53DC723808A0000EDAFA6 /* UIViewExtension.swift in Sources */,
+				BCC0019023DDF463006EC8AF /* Coordinates+CoreDataProperties.swift in Sources */,
 				BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */,
 				BCB84EF32381EE740033B397 /* FavoriteViewController.swift in Sources */,
 				BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */,
 				BC34AB4223DAAB85002834B8 /* Location+CoreDataClass.swift in Sources */,
+				BCC0018F23DDF463006EC8AF /* Coordinates+CoreDataClass.swift in Sources */,
 				BC34AB4123DAAB85002834B8 /* Businesses+CoreDataProperties.swift in Sources */,
 				BCFDFAED23D27DA6009F3BAB /* User+CoreDataProperties.swift in Sources */,
 				18C216E62381FD44001C36AB /* EFSettingVC.swift in Sources */,

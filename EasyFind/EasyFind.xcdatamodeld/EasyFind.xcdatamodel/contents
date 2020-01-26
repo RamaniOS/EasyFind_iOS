@@ -14,7 +14,19 @@
         <attribute name="review_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="transactions" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="coordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coordinates" inverseName="businesses" inverseEntity="Coordinates"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Cascade" ordered="YES" destinationEntity="Location" inverseName="businesses" inverseEntity="Location"/>
+        <relationship name="rowCategories" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Categories" inverseName="businesses" inverseEntity="Categories"/>
+    </entity>
+    <entity name="Categories" representedClassName="Categories" syncable="YES">
+        <attribute name="alias" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="businesses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Businesses" inverseName="rowCategories" inverseEntity="Businesses"/>
+    </entity>
+    <entity name="Coordinates" representedClassName="Coordinates" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="businesses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Businesses" inverseName="coordinates" inverseEntity="Businesses"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="address1" optional="YES" attributeType="String"/>
@@ -35,8 +47,10 @@
         <attribute name="userName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Businesses" positionX="-63" positionY="18" width="128" height="253"/>
+        <element name="Businesses" positionX="-63" positionY="18" width="128" height="283"/>
         <element name="Location" positionX="-54" positionY="36" width="128" height="178"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Categories" positionX="-54" positionY="117" width="128" height="88"/>
+        <element name="Coordinates" positionX="-45" positionY="126" width="128" height="88"/>
     </elements>
 </model>
