@@ -12,9 +12,17 @@ import CoreData
 
 @objc(Coordinates)
 public class Coordinates: NSManagedObject, Codable {
-
+    
     enum CodingKeys: String, CodingKey {
         case latitude, longitude
+    }
+    
+    convenience init?(business: Businesses, insertInto context: NSManagedObjectContext) {
+        self.init(entity: Coordinates.entity(), insertInto: context)
+        if let coordinates = business.coordinates {
+            latitude = coordinates.latitude
+            longitude = coordinates.longitude
+        }
     }
     
     // MARK: - Decodable

@@ -17,6 +17,20 @@ public class Location: NSManagedObject, Codable {
         case address1, address2, address3, city, country, display_address, state, zip_code
     }
     
+    convenience init?(business: Businesses, insertInto context: NSManagedObjectContext) {
+        self.init(entity: Location.entity(), insertInto: context)
+        if let location = business.location {
+            address1 = location.address1
+            address2 = location.address2
+            address3 = location.address3
+            city = location.city
+            country = location.country
+            display_address = location.display_address
+            state = location.state
+            zip_code = location.zip_code
+        }
+    }
+    
     // MARK: - Decodable
     required convenience public init(from decoder: Decoder) throws {
         self.init(entity: Location.entity(), insertInto: nil)

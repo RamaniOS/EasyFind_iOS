@@ -17,6 +17,33 @@ public class Businesses: NSManagedObject, Codable {
         case alias, display_phone, distance, id, image_url, is_closed, name, phone, price, rating, review_count, transactions, url, location, categories, coordinates
     }
     
+    convenience init?(business: Businesses, insertInto context: NSManagedObjectContext) {
+        self.init(entity: Businesses.entity(), insertInto: context)
+        alias = business.alias
+        display_phone = business.display_phone
+        id = business.id
+        image_url = business.image_url
+        is_closed = business.is_closed
+        name = business.name
+        phone = business.phone
+        price = business.price
+        rating = business.rating
+        review_count = business.review_count
+        transactions = business.transactions
+        url = business.url
+        coordinates = Coordinates(business: business, insertInto: context)
+        
+        location = Location(business: business, insertInto: context)
+        
+        var localCategories = [Categories]()
+        for category in business.categories! {
+            if let localCategory = Categories(category: category, insertInto: context) {
+                localCategories.append(localCategory)
+            }
+        }
+        rowCategories = NSOrderedSet(array: localCategories)
+    }
+    
     // MARK: - Decodable
     required convenience public init(from decoder: Decoder) throws {
         self.init(entity: Businesses.entity(), insertInto: nil)

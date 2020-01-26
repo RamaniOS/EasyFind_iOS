@@ -71,7 +71,7 @@ class SearchViewController: AbstractViewController {
         let oldFullPath = self.documentsPathForFileName(name: oldImagePath)
         let oldImageData = NSData(contentsOfFile: oldFullPath)
         // here is your saved image:
-        //img_view.image = UIImage(data: oldImageData! as Data)
+        img_view.image = UIImage(data: oldImageData! as Data)
         
         let welcome = "Welcome \(user.userName)"
         title_lbl.text = welcome
@@ -170,8 +170,19 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ob = items[indexPath.row]
+        let context = PersistenceManager.shared.context
+        _ = Businesses(business: ob, insertInto: context)
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.pushViewController(EFDetailScreenVC.control(with: items[indexPath.row]), animated: true)
+        //navigationController?.pushViewController(EFDetailScreenVC.control(with: items[indexPath.row]), animated: true)
     }
 }
 

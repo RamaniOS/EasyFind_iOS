@@ -12,9 +12,15 @@ import CoreData
 
 @objc(Categories)
 public class Categories: NSManagedObject, Codable {
-
+    
     enum CodingKeys: String, CodingKey {
         case alias, title
+    }
+    
+    convenience init?(category: Categories, insertInto context: NSManagedObjectContext) {
+        self.init(entity: Categories.entity(), insertInto: context)
+        alias = category.alias
+        title = category.title
     }
     
     // MARK: - Decodable

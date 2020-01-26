@@ -71,8 +71,8 @@ class PersistenceManager {
     func fetch<T: NSManagedObject>(type: T.Type, comp: @escaping ([T]) -> Void) {
         let request = NSFetchRequest<T>(entityName: String(describing: type))
         do {
-            let ob = try context.fetch(request)
-            comp(ob)
+            let objects = try context.fetch(request)
+            comp(objects)
         } catch {
             comp([])
         }
