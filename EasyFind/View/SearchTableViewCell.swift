@@ -30,10 +30,8 @@ class SearchTableViewCell: UITableViewCell {
             guard let business = business else { return }
             titleLabel.text = business.name
             imgView.sd_setImage(with: business.imageURL)
-            starView.rating = business.rating ?? 0
-            if let review = business.review_count {
-                ratingLabel.text = "\(review) Review"
-            }
+            starView.rating = business.rating
+            ratingLabel.text = "\(business.review_count) Review"
             priceLabel.text = business.price
             if let location = business.location, let address =  location.address1, let city =  location.city{
                 addressLabel.text = "\(address), \(city)"

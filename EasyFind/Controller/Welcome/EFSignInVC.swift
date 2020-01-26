@@ -15,7 +15,7 @@ class EFSignInVC: UIViewController {
     // MARK: - Properties
     var passDict = NSDictionary()
     let persistent = PersistenceManager.shared
-    var userDefaultBool: Bool!
+    var userDefaultBool = false
     var locationManager: CLLocationManager! = nil
     
     @IBOutlet var upConta_view: UIView!
@@ -30,32 +30,20 @@ class EFSignInVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        //
+        setUpUI()
+        initSetup()
+        DispatchQueue.global(qos: .background).async {
+            self.initLocation()
+        }
+    }
+    
+    private func initLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         locationManager.startUpdatingLocation()
-        
-        //
-        setUpUI()
-        
-        //
-        initSetup()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        //
-        self.view.endEditing(true)
-        
-        //
-        initSetup()
     }
     
     // MARK: - Action
@@ -68,7 +56,7 @@ class EFSignInVC: UIViewController {
     }
     
     @IBAction func rememberBtnClicked(_ sender: UIButton) {
-        if sender.isSelected == false {
+        if sender.isSelected {
             sender.isSelected = true
         }else{
             sender.isSelected = false
@@ -99,18 +87,13 @@ class EFSignInVC: UIViewController {
             
             // check if its in userdefault...
             self.checkUserDefaults()
-            if userDefaultBool == true {
-                //
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "EFTabBarVC") as! EFTabBarVC
-                
-                self.navigationController?.pushViewController(vc, animated: true)
-            }else{
+            if userDefaultBool {
+                UserStore.isLogin = true
+                ActionShowHome.execute()
+            } else {
                 self.showAlert(title: "EF", message: "Invalid Info")
             }
-            
         }
-        
     }
     
     // MARK: - Helper
@@ -157,21 +140,16 @@ class EFSignInVC: UIViewController {
     }
     
     func checkUserDefaults() {
-        
         persistent.fetch(type: User.self) { (users) in
             for user in users {
                 if self.userN_tf.text == user.userName && self.passwd_tf.text == user.password {
-
-                    //
                     Singelton.sharedObj.userInfoDict = user
-
                     self.userDefaultBool = true
-                }else{
+                } else {
                     self.userDefaultBool = false
                 }
             }
         }
-       
     }
     
     func readDataInfoFromPlistFile() -> (Bool, String) {
@@ -242,7 +220,6 @@ extension EFSignInVC: CLLocationManagerDelegate {
         if let location = locations.first {
             
             Singelton.sharedObj.currLoc = location
-            print(location.coordinate)
             
         }
     }

@@ -145,10 +145,10 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
         slideScrollView.contentSize = CGSize(width: slideScrollView.frame.size.width * CGFloat(pageCount!), height: slideScrollView.frame.size.height)
         slideScrollView.showsHorizontalScrollIndicator = false
         slideScrollView.bounces = false
-        
         for i in 0..<Int(pageCount!) {
             // set banner image...
-            let imageView = UIImageView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.slideScrollView.frame.size.width, height: 300.0))
+            let screenMinY = view.frame.minY - safeArea.top
+            let imageView = UIImageView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: screenMinY, width: self.slideScrollView.frame.size.width, height: self.slideScrollView.frame.size.height + safeArea.top))
             let bannerImage = self.baseModel?.photos![i] ?? ""
             self.loadPic(strUrl: bannerImage, picView: imageView)
             imageView.contentMode = .scaleAspectFill
@@ -169,5 +169,15 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
             slideToX = 0
         }
         self.slideScrollView.scrollRectToVisible(CGRect(x: slideToX, y: 0, width: pageWidth, height: self.slideScrollView.frame.height), animated: true)
+    }
+    
+    private var safeArea: (top: CGFloat, bottom: CGFloat) {
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            let topPadding = window?.safeAreaInsets.top
+            let bottomPadding = window?.safeAreaInsets.bottom
+            return (topPadding ?? 0, bottomPadding ?? 0)
+        }
+        return (0, 0)
     }
 }

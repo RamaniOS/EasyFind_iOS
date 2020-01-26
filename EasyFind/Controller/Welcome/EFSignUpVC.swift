@@ -139,12 +139,12 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
     
     // MARK: - Helper
     
-    func saveToCoreData() -> User {
+    func saveToCoreData(){
         
         let user = User(context: persistent.context)
         user.imagePath = imagePath
-        user.userName = userN_tf.text
-        user.password = passwd_tf.text
+        user.userName = userN_tf.text!
+        user.password = passwd_tf.text!
         user.latitude = String(Singelton.sharedObj.currLoc.coordinate.latitude)
         user.longitude = String(Singelton.sharedObj.currLoc.coordinate.longitude)
         do{
@@ -152,9 +152,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
         } catch {
             print(error.localizedDescription)
         }
-        
-        return user
-//        // fetch
+        //        // fetch
 //
 //        persistent.fetch(type: User.self) { (users) in
 //            for user in users {
@@ -166,20 +164,15 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
     }
 
     func signUpCompleted() {
-        let user = saveToCoreData()
+        saveToCoreData()
         
         //
         let alertController = UIAlertController(title: "EF", message: "SignUp Successfully Done.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive) {
             UIAlertAction in
             
-            //
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "EFTabBarVC") as! EFTabBarVC
-            Singelton.sharedObj.userInfoDict = user
-            
-            self.navigationController?.pushViewController(vc, animated: true)
-            
+            UserStore.isLogin = true
+            ActionShowHome.execute()
         }
         
         // Add the actions
