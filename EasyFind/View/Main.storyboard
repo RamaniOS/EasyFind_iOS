@@ -226,11 +226,19 @@
                                     <outlet property="delegate" destination="p2T-Oz-blG" id="uOE-JX-0BG"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favourite fond..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2F-Gu-mBy">
+                                <rect key="frame" x="100" y="438" width="214" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="h7g-QW-ien" firstAttribute="top" secondItem="64w-fW-ndh" secondAttribute="top" id="6kv-PI-Lig"/>
                             <constraint firstItem="64w-fW-ndh" firstAttribute="trailing" secondItem="h7g-QW-ien" secondAttribute="trailing" id="SPj-5U-FVj"/>
+                            <constraint firstItem="c2F-Gu-mBy" firstAttribute="centerY" secondItem="64w-fW-ndh" secondAttribute="centerY" id="ZzQ-xE-FCM"/>
+                            <constraint firstItem="c2F-Gu-mBy" firstAttribute="centerX" secondItem="64w-fW-ndh" secondAttribute="centerX" id="tWO-ya-vBY"/>
                             <constraint firstItem="64w-fW-ndh" firstAttribute="bottom" secondItem="h7g-QW-ien" secondAttribute="bottom" id="uNu-eg-9WJ"/>
                             <constraint firstItem="h7g-QW-ien" firstAttribute="leading" secondItem="64w-fW-ndh" secondAttribute="leading" id="uc1-FK-Y6O"/>
                         </constraints>
@@ -238,6 +246,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="d2Q-Xo-rDl"/>
                     <connections>
+                        <outlet property="noItemsLabel" destination="c2F-Gu-mBy" id="kcR-FB-9KC"/>
                         <outlet property="tableView" destination="h7g-QW-ien" id="lZt-vK-PbG"/>
                     </connections>
                 </viewController>

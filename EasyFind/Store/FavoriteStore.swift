@@ -21,7 +21,7 @@ class FavoriteStore {
     }
     
     static func addToFav(with business: Businesses) {
-        guard !PersistenceManager.shared.checkIsExist(at: business.id!) else {
+        guard !PersistenceManager.shared.checkIsExist(at: business) else {
             return // If already
         }
         _ = Businesses(business: business, insertInto: context)

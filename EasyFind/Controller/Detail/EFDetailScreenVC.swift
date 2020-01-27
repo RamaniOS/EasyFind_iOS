@@ -41,17 +41,6 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
         fetchList()
         guard let business = business else { return }
         favButton.image = business.isFav ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
-        favButton.actionBlock { [weak self] in
-            guard let `self` = self else { return }
-            business.isFav = !business.isFav
-            self.favButton.image = business.isFav ? #imageLiteral(resourceName: "Fav") : #imageLiteral(resourceName: "UnFav")
-            if business.isFav {
-                FavoriteStore.addToFav(with: business)
-            } else {
-                FavoriteStore.removeFromFav(with: business)
-            }
-            NotificationStore.refreshFav()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

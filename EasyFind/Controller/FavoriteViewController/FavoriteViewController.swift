@@ -10,12 +10,14 @@ import UIKit
 
 class FavoriteViewController: AbstractViewController {
     
+    @IBOutlet weak var noItemsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var items: [Businesses] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let `self` = self else { return }
+                self.noItemsLabel.isHidden = self.items.count > 0
                 self.tableView.reloadData()
             }
         }

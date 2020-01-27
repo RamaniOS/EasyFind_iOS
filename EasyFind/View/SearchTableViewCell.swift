@@ -28,6 +28,7 @@ class SearchTableViewCell: UITableViewCell {
     var business: Businesses? {
         didSet {
             guard let business = business else { return }
+            business.isFav = PersistenceManager.shared.checkIsExist(at: business) 
             titleLabel.text = business.name
             imgView.sd_setImage(with: business.imageURL)
             starView.rating = business.rating

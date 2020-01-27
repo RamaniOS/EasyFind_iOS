@@ -78,16 +78,19 @@ class PersistenceManager {
         }
     }
     
-    func checkIsExist(at id: String) -> Bool {
+    func checkIsExist(at object: Businesses) -> Bool {
         let request: NSFetchRequest<Businesses> = Businesses.fetchRequest()
-        request.predicate = NSPredicate(format: "id = %@", id)
+        request.predicate = NSPredicate(format: "id = %@", object.id!)
         request.includesSubentities = false
         do {
-            let objects = try context.count(for: request)
-            return objects > 0
+            let objects = try context.fetch(request)
+            for obj in objects where obj == object {
+                return true
+            }
         } catch {
             return false
         }
+        return false
     }
     
     func delete(at id: String) -> Bool {
@@ -96,12 +99,15 @@ class PersistenceManager {
         request.includesSubentities = false
         do {
             let objects = try context.fetch(request)
-            context.delete(objects[0]) // we know only one object for one id
-            try context.save()
-            return true
+            if objects.count > 0 {
+                context.delete(objects[0]) // we know only one object for one id
+                try context.save()
+                return true
+            }
         } catch {
             return false
         }
+        return false
     }
     
     func update<T: NSManagedObject>(type: T.Type, comp: @escaping(_: Bool) -> Void) {
