@@ -24,7 +24,8 @@ class EFMapDetailVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Find Route"
+        navigationController?.navigationBar.prefersLargeTitles = false
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in }
         
         locationManager.delegate = self
@@ -58,10 +59,11 @@ class EFMapDetailVC: UIViewController {
         mapDView.addAnnotation(restLoc)
         
         drawRoute()
-        
-       
-        
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     // MARK: - Action
