@@ -20,11 +20,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
+
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-Z6-b88">
                                 <rect key="frame" x="30" y="40" width="540" height="60"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
+
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8C-eZ-elI">
                                 <rect key="frame" x="0.0" y="45" width="414" height="767"/>
                                 <subviews>
@@ -133,7 +133,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
->>>>>>> NitinJaswal
+
                                 <constraints>
                                     <constraint firstItem="8AC-lv-cb7" firstAttribute="top" secondItem="ZG0-ys-dSC" secondAttribute="bottom" constant="36" id="3HF-8M-rW7"/>
                                     <constraint firstItem="H8h-Xa-wHE" firstAttribute="top" secondItem="5HG-6Q-Fta" secondAttribute="bottom" constant="20" id="484-pK-ngU"/>
@@ -156,7 +156,7 @@
                                     <constraint firstItem="5HG-6Q-Fta" firstAttribute="top" secondItem="8AC-lv-cb7" secondAttribute="bottom" constant="20" id="tHv-LN-zYq"/>
                                     <constraint firstItem="H8h-Xa-wHE" firstAttribute="leading" secondItem="p8C-eZ-elI" secondAttribute="leading" constant="20" id="yL0-9B-YDk"/>
                                 </constraints>
-<<<<<<< HEAD
+
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                 <state key="normal" title=" Call Us"/>
                                 <userDefinedRuntimeAttributes>
@@ -210,9 +210,9 @@
                                     <action selector="logoutButtonClicked:" destination="CqA-ii-KoN" eventType="touchUpInside" id="Def-0F-h7K"/>
                                 </connections>
                             </button>
-=======
+
                             </scrollView>
->>>>>>> NitinJaswal
+
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -235,11 +235,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFG-T9-ba0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
+
             <point key="canvasLocation" x="603" y="887"/>
-=======
+
             <point key="canvasLocation" x="602.89855072463774" y="1521.4285714285713"/>
->>>>>>> NitinJaswal
+
         </scene>
         <!--About UsVC-->
         <scene sceneID="PG9-uU-Bls">
