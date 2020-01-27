@@ -1,3 +1,4 @@
+
 //
 //  SigninVC.swift
 //  EasyFind
@@ -57,9 +58,9 @@ class EFSignInVC: UIViewController {
     
     @IBAction func rememberBtnClicked(_ sender: UIButton) {
         if sender.isSelected {
-            sender.isSelected = true
-        }else{
             sender.isSelected = false
+        }else{
+            sender.isSelected = true
         }
     }
     

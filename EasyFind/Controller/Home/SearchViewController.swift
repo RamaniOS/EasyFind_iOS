@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class SearchViewController: AbstractViewController {
     
@@ -18,10 +19,7 @@ class SearchViewController: AbstractViewController {
     private var limit = 20
     private var isPagesAvailable = false
     private let persistent = PersistenceManager.shared
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    private let searchController = UISearchController(searchResultsController: nil)
+    var locationManager: CLLocationManager! = nil
     
     var baseModel: BaseBusiness? = nil {
         didSet {
@@ -42,6 +40,12 @@ class SearchViewController: AbstractViewController {
         }
     }
     
+    @IBOutlet var img_view: UIImageView!
+    @IBOutlet var title_lbl: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
     // MARK: -  Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,13 +55,25 @@ class SearchViewController: AbstractViewController {
         }
         fetchUseDetails()
         initViews()
+        
+        self.initLocation()
+        
+    }
+    
+    private func initLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        locationManager.startUpdatingLocation()
     }
     
     private func fetchUseDetails() {
         persistent.fetch(type: User.self) { (users) in
             //
             for user in users {
-                if( UserStore.loginEmail == user.userName) {
+                if(UserStore.loginEmail == user.userName) {
                     Singelton.sharedObj.userInfoDict = user
                 }
             }
@@ -65,15 +81,45 @@ class SearchViewController: AbstractViewController {
     }
     
     // MARK: - Helpers
+    func showLocationDisabledPopUp() {
+           let alertController = UIAlertController(title: "Background Location Access Disabled",
+                                                   message: "We need location access.",
+                                                   preferredStyle: .alert)
+           
+           let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+           alertController.addAction(cancelAction)
+           
+           let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+               if let url = URL(string: UIApplication.openSettingsURLString) {
+                   UIApplication.shared.open(url, options: [:], completionHandler: nil)
+               }
+           }
+           alertController.addAction(openAction)
+           
+           self.present(alertController, animated: true, completion: nil)
+       }
+    
     private func initViews() {
+        guard let user = Singelton.sharedObj.userInfoDict else {
+            return
+        }
+        let possibleOldImagePath = user.imagePath
+        let oldImagePath = possibleOldImagePath
+        let oldFullPath = self.documentsPathForFileName(name: oldImagePath)
+        let oldImageData = NSData(contentsOfFile: oldFullPath)
+        // here is your saved image:
+        img_view.image = UIImage(data: oldImageData! as Data)
+        
+        let welcome = "Welcome \(user.userName)"
+        title_lbl.text = welcome
         initTableView()
         fetchList()
         addObserver()
-        title = "Search"
+        title = welcome
         navigationController?.navigationBar.prefersLargeTitles = true
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Location name"
+        searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -161,6 +207,17 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ob = items[indexPath.row]
+        let context = PersistenceManager.shared.context
+        _ = Businesses(business: ob, insertInto: context)
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(EFDetailScreenVC.control(with: items[indexPath.row]), animated: true)
     }
@@ -181,3 +238,29 @@ extension SearchViewController: UISearchBarDelegate {
         }
     }
 }
+
+// MARK: - CLLocationManagerDelegate
+extension SearchViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let location = locations.first {
+            //
+            Singelton.sharedObj.currLoc = location
+            print(location.coordinate)
+            
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if(status == CLAuthorizationStatus.denied) {
+            showLocationDisabledPopUp()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error :\(error)")
+    }
+    //
+}
+
+
