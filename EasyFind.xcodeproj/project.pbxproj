@@ -38,6 +38,8 @@
 		BC588840237F807000E02F3D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58883F237F807000E02F3D /* SearchViewController.swift */; };
 		BC588842237F819000E02F3D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC588841237F819000E02F3D /* SearchTableViewCell.swift */; };
 		BC588844237F819C00E02F3D /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC588843237F819C00E02F3D /* SearchTableViewCell.xib */; };
+		BC76A1F323DF605500036FD5 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC76A1F123DF605500036FD5 /* Location+CoreDataClass.swift */; };
+		BC76A1F423DF605500036FD5 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC76A1F223DF605500036FD5 /* Location+CoreDataProperties.swift */; };
 		BCB84EF32381EE740033B397 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB84EF22381EE740033B397 /* FavoriteViewController.swift */; };
 		BCB84EF52381F1140033B397 /* NotificationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB84EF42381F1140033B397 /* NotificationStore.swift */; };
 		BCB84EF72382058E0033B397 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB84EF62382058E0033B397 /* Helper.swift */; };
@@ -47,8 +49,6 @@
 		BCC0018E23DDF463006EC8AF /* Categories+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0018623DDF463006EC8AF /* Categories+CoreDataProperties.swift */; };
 		BCC0018F23DDF463006EC8AF /* Coordinates+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0018723DDF463006EC8AF /* Coordinates+CoreDataClass.swift */; };
 		BCC0019023DDF463006EC8AF /* Coordinates+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0018823DDF463006EC8AF /* Coordinates+CoreDataProperties.swift */; };
-		BCC0019F23DE1F87006EC8AF /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0019D23DE1F87006EC8AF /* Location+CoreDataClass.swift */; };
-		BCC001A023DE1F87006EC8AF /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0019E23DE1F87006EC8AF /* Location+CoreDataProperties.swift */; };
 		BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */; };
 		BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */; };
 		BCCC5ADA237EFA3900BE939E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCC5AD9237EFA3900BE939E /* Assets.xcassets */; };
@@ -104,6 +104,8 @@
 		BC58883F237F807000E02F3D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BC588841237F819000E02F3D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		BC588843237F819C00E02F3D /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		BC76A1F123DF605500036FD5 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BC76A1F223DF605500036FD5 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCB84EF22381EE740033B397 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		BCB84EF42381F1140033B397 /* NotificationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationStore.swift; sourceTree = "<group>"; };
 		BCB84EF62382058E0033B397 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -113,8 +115,6 @@
 		BCC0018623DDF463006EC8AF /* Categories+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Categories+CoreDataProperties.swift"; path = "EasyFind/Model/Yelp/Categories+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BCC0018723DDF463006EC8AF /* Coordinates+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Coordinates+CoreDataClass.swift"; path = "EasyFind/Model/Yelp/Coordinates+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		BCC0018823DDF463006EC8AF /* Coordinates+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Coordinates+CoreDataProperties.swift"; path = "EasyFind/Model/Yelp/Coordinates+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		BCC0019D23DE1F87006EC8AF /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		BCC0019E23DE1F87006EC8AF /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BCCC5ACD237EFA3800BE939E /* EasyFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCC5AD0237EFA3800BE939E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCC5AD2237EFA3800BE939E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,12 +220,12 @@
 				BC23D2C3237F780B00604AD5 /* BaseBusiness.swift */,
 				BC34AB3C23DAAB85002834B8 /* Businesses+CoreDataClass.swift */,
 				BC34AB3D23DAAB85002834B8 /* Businesses+CoreDataProperties.swift */,
-				BCC0019D23DE1F87006EC8AF /* Location+CoreDataClass.swift */,
-				BCC0019E23DE1F87006EC8AF /* Location+CoreDataProperties.swift */,
 				BCC0018523DDF463006EC8AF /* Categories+CoreDataClass.swift */,
 				BCC0018623DDF463006EC8AF /* Categories+CoreDataProperties.swift */,
 				BCC0018723DDF463006EC8AF /* Coordinates+CoreDataClass.swift */,
 				BCC0018823DDF463006EC8AF /* Coordinates+CoreDataProperties.swift */,
+				BC76A1F123DF605500036FD5 /* Location+CoreDataClass.swift */,
+				BC76A1F223DF605500036FD5 /* Location+CoreDataProperties.swift */,
 			);
 			path = Yelp;
 			sourceTree = "<group>";
@@ -505,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E514722381CB4E003FB8C9 /* EFDetailScreenVC.swift in Sources */,
+				BC76A1F423DF605500036FD5 /* Location+CoreDataProperties.swift in Sources */,
 				BCB84EF52381F1140033B397 /* NotificationStore.swift in Sources */,
 				BCC0018E23DDF463006EC8AF /* Categories+CoreDataProperties.swift in Sources */,
 				BC34AB4023DAAB85002834B8 /* Businesses+CoreDataClass.swift in Sources */,
@@ -512,7 +513,6 @@
 				18C216E02381E409001C36AB /* DetailM.swift in Sources */,
 				BCC0018D23DDF463006EC8AF /* Categories+CoreDataClass.swift in Sources */,
 				18D53DC823808A0000EDAFA6 /* UIFloatExtension.swift in Sources */,
-				BCC001A023DE1F87006EC8AF /* Location+CoreDataProperties.swift in Sources */,
 				BCBBBC222381E77F00339FFC /* FavoriteStore.swift in Sources */,
 				BCCC5AEC237F098900BE939E /* APIManager.swift in Sources */,
 				18A57512238105C400E12E84 /* EFTabBarVC.swift in Sources */,
@@ -533,10 +533,10 @@
 				BC58883E237F7FFA00E02F3D /* Extensions.swift in Sources */,
 				BCCC5AD1237EFA3800BE939E /* AppDelegate.swift in Sources */,
 				18D53DC723808A0000EDAFA6 /* UIViewExtension.swift in Sources */,
+				BC76A1F323DF605500036FD5 /* Location+CoreDataClass.swift in Sources */,
 				BCC0019023DDF463006EC8AF /* Coordinates+CoreDataProperties.swift in Sources */,
 				BCCC5AD3237EFA3800BE939E /* SceneDelegate.swift in Sources */,
 				BCB84EF32381EE740033B397 /* FavoriteViewController.swift in Sources */,
-				BCC0019F23DE1F87006EC8AF /* Location+CoreDataClass.swift in Sources */,
 				BCBBBC1F2381DC0200339FFC /* AbstractViewController.swift in Sources */,
 				BCC0018F23DDF463006EC8AF /* Coordinates+CoreDataClass.swift in Sources */,
 				BC34AB4123DAAB85002834B8 /* Businesses+CoreDataProperties.swift in Sources */,
