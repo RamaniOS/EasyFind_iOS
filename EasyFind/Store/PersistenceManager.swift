@@ -90,13 +90,17 @@ class PersistenceManager {
         }
     }
     
-    func delete<T: NSManagedObject>(type: T.Type, at object: T, comp: @escaping ([T]) -> Void) {
-        let request = NSFetchRequest<T>(entityName: String(describing: type))
+    func delete(at id: String) -> Bool {
+        let request: NSFetchRequest<Businesses> = Businesses.fetchRequest()
+        request.predicate = NSPredicate(format: "id = %@", id)
+        request.includesSubentities = false
         do {
             let objects = try context.fetch(request)
-            comp(objects)
+            context.delete(objects[0]) // we know only one object for one id
+            try context.save()
+            return true
         } catch {
-            comp([])
+            return false
         }
     }
     
