@@ -45,9 +45,7 @@ class EFDetailScreenVC: AbstractViewController, UIScrollViewDelegate, MFMessageC
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.prefersLargeTitles = false
-        self.navigationItem.setHidesBackButton(true, animated: false);
+        navigationItem.setHidesBackButton(true, animated: false);
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     

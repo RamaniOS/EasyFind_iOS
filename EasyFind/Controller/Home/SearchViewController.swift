@@ -193,17 +193,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let ob = items[indexPath.row]
-        let context = PersistenceManager.shared.context
-        _ = Businesses(business: ob, insertInto: context)
-        
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        
         tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(EFDetailScreenVC.control(with: items[indexPath.row]), animated: true)
     }

@@ -49,6 +49,7 @@ class FavoriteViewController: AbstractViewController {
     
     @objc private func fetchList() {
         FavoriteStore.fetchAllFav { (business) in
+            self.items.removeAll()
             self.items = business
         }
     }
