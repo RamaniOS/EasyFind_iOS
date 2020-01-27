@@ -152,6 +152,9 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
         } catch {
             print(error.localizedDescription)
         }
+        
+        //
+        Singelton.sharedObj.userInfoDict = user
         //        // fetch
 //
 //        persistent.fetch(type: User.self) { (users) in
@@ -172,6 +175,7 @@ class EFSignUpVC: UIViewController, UINavigationControllerDelegate {
             UIAlertAction in
             
             UserStore.isLogin = true
+            UserStore.loginEmail = self.userN_tf.text ?? ""
             ActionShowHome.execute()
         }
         

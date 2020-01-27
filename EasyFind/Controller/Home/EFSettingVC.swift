@@ -11,11 +11,15 @@ import MessageUI
 
 class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
 
+    // MARK: - Properties
     @IBOutlet weak var aboutUsButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var callUsButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet var img_view: UIImageView!
+    @IBOutlet var name_lbl: UILabel!
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
@@ -26,6 +30,20 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
         Helper.applyGradient(to: emailButton)
         Helper.applyGradient(to: callUsButton)
         Helper.applyGradient(to: logoutButton)
+        
+        guard let user = Singelton.sharedObj.userInfoDict else {
+            return
+        }
+        //
+        let possibleOldImagePath = user.imagePath
+        if possibleOldImagePath != nil {
+            let oldFullPath = self.documentsPathForFileName(name: possibleOldImagePath)
+            let oldImageData = NSData(contentsOfFile: oldFullPath)
+            // here is your saved image:
+            img_view.image = UIImage(data: oldImageData! as Data)
+        }
+        let welcome = "Welcome \(user.userName as! String)"
+        name_lbl.text = welcome
     }
 
     // MARK: - Action

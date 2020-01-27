@@ -55,7 +55,12 @@ class SearchViewController: AbstractViewController {
     
     private func fetchUseDetails() {
         persistent.fetch(type: User.self) { (users) in
-            Singelton.sharedObj.userInfoDict = users[0]
+            //
+            for user in users {
+                if( UserStore.loginEmail == user.userName) {
+                    Singelton.sharedObj.userInfoDict = user
+                }
+            }
         }
     }
     

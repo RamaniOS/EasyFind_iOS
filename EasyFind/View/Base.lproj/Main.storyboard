@@ -20,12 +20,143 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-Z6-b88">
                                 <rect key="frame" x="30" y="40" width="540" height="60"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+=======
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8C-eZ-elI">
+                                <rect key="frame" x="0.0" y="45" width="414" height="767"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AC-lv-cb7">
+                                        <rect key="frame" x="20" y="208" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="UCc-ze-xcK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
+                                        <state key="normal" title=" Call Us"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="callUsBtnClicked:" destination="CqA-ii-KoN" eventType="touchUpInside" id="Kh7-kw-Byz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8h-Xa-wHE">
+                                        <rect key="frame" x="20" y="368" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="shE-jc-4cf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
+                                        <state key="normal" title=" About Us"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="aboutUsBtnClicked:" destination="CqA-ii-KoN" eventType="touchUpInside" id="B0j-7r-iUn"/>
+                                        </connections>
+                                    </button>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esv-fk-hvb">
+                                        <rect key="frame" x="147" y="8" width="120" height="120"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M4o-dB-fEQ">
+                                                <rect key="frame" x="4" y="4" width="112" height="112"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="56"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="M4o-dB-fEQ" firstAttribute="leading" secondItem="esv-fk-hvb" secondAttribute="leading" constant="4" id="5Lu-Q5-4WJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="M4o-dB-fEQ" secondAttribute="trailing" constant="4" id="HuF-mj-js1"/>
+                                            <constraint firstAttribute="bottom" secondItem="M4o-dB-fEQ" secondAttribute="bottom" constant="4" id="Q9o-Ob-C1K"/>
+                                            <constraint firstAttribute="height" constant="120" id="kbK-id-CtD"/>
+                                            <constraint firstAttribute="width" constant="120" id="mPK-4I-dbk"/>
+                                            <constraint firstItem="M4o-dB-fEQ" firstAttribute="top" secondItem="esv-fk-hvb" secondAttribute="top" constant="4" id="twy-1r-UHS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="60"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HG-6Q-Fta">
+                                        <rect key="frame" x="20" y="288" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="QSn-i2-Edu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
+                                        <state key="normal" title=" Email Us"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="emailUsBtnClicked:" destination="CqA-ii-KoN" eventType="touchUpInside" id="oMm-bD-Hu5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zX-mN-rAp">
+                                        <rect key="frame" x="20" y="448" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="8jz-oZ-VOP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
+                                        <state key="normal" title="Logout"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logoutButtonClicked:" destination="CqA-ii-KoN" eventType="touchUpInside" id="4CA-X7-Yvc"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG0-ys-dSC">
+                                        <rect key="frame" x="20" y="140" width="374" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="wou-sj-vDO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+>>>>>>> NitinJaswal
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="VyD-l3-LWP"/>
+                                    <constraint firstItem="8AC-lv-cb7" firstAttribute="top" secondItem="ZG0-ys-dSC" secondAttribute="bottom" constant="36" id="3HF-8M-rW7"/>
+                                    <constraint firstItem="H8h-Xa-wHE" firstAttribute="top" secondItem="5HG-6Q-Fta" secondAttribute="bottom" constant="20" id="484-pK-ngU"/>
+                                    <constraint firstAttribute="trailing" secondItem="7zX-mN-rAp" secondAttribute="trailing" constant="20" id="6AB-0V-qIw"/>
+                                    <constraint firstItem="ZG0-ys-dSC" firstAttribute="leading" secondItem="p8C-eZ-elI" secondAttribute="leading" constant="20" id="B4s-LT-rgf"/>
+                                    <constraint firstItem="5HG-6Q-Fta" firstAttribute="leading" secondItem="p8C-eZ-elI" secondAttribute="leading" constant="20" id="F2L-Bc-onn"/>
+                                    <constraint firstItem="ZG0-ys-dSC" firstAttribute="top" secondItem="esv-fk-hvb" secondAttribute="bottom" constant="12" id="J26-br-FV8"/>
+                                    <constraint firstItem="7zX-mN-rAp" firstAttribute="centerX" secondItem="H8h-Xa-wHE" secondAttribute="centerX" id="KNf-99-UfP"/>
+                                    <constraint firstItem="esv-fk-hvb" firstAttribute="centerX" secondItem="p8C-eZ-elI" secondAttribute="centerX" id="Nm4-X6-O49"/>
+                                    <constraint firstItem="7zX-mN-rAp" firstAttribute="top" secondItem="H8h-Xa-wHE" secondAttribute="bottom" constant="20" id="VzI-8h-p5y"/>
+                                    <constraint firstAttribute="trailing" secondItem="H8h-Xa-wHE" secondAttribute="trailing" constant="20" id="WGB-Ja-eG1"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZG0-ys-dSC" secondAttribute="trailing" constant="20" id="XBH-6Q-fSd"/>
+                                    <constraint firstItem="8AC-lv-cb7" firstAttribute="leading" secondItem="p8C-eZ-elI" secondAttribute="leading" constant="20" id="XKw-Vm-zVr"/>
+                                    <constraint firstAttribute="trailing" secondItem="5HG-6Q-Fta" secondAttribute="trailing" constant="20" id="Yox-dn-atS"/>
+                                    <constraint firstAttribute="trailing" secondItem="8AC-lv-cb7" secondAttribute="trailing" constant="20" id="ckV-gS-vIK"/>
+                                    <constraint firstItem="esv-fk-hvb" firstAttribute="top" secondItem="p8C-eZ-elI" secondAttribute="top" constant="8" id="hvl-SV-np9"/>
+                                    <constraint firstAttribute="bottom" secondItem="7zX-mN-rAp" secondAttribute="bottom" constant="40" id="mby-FK-UIL"/>
+                                    <constraint firstItem="7zX-mN-rAp" firstAttribute="leading" secondItem="p8C-eZ-elI" secondAttribute="leading" constant="20" id="oa9-dn-qME"/>
+                                    <constraint firstItem="8AC-lv-cb7" firstAttribute="centerX" secondItem="esv-fk-hvb" secondAttribute="centerX" id="pAM-Iu-RwR"/>
+                                    <constraint firstItem="5HG-6Q-Fta" firstAttribute="top" secondItem="8AC-lv-cb7" secondAttribute="bottom" constant="20" id="tHv-LN-zYq"/>
+                                    <constraint firstItem="H8h-Xa-wHE" firstAttribute="leading" secondItem="p8C-eZ-elI" secondAttribute="leading" constant="20" id="yL0-9B-YDk"/>
                                 </constraints>
+<<<<<<< HEAD
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                 <state key="normal" title=" Call Us"/>
                                 <userDefinedRuntimeAttributes>
@@ -79,39 +210,36 @@
                                     <action selector="logoutButtonClicked:" destination="CqA-ii-KoN" eventType="touchUpInside" id="Def-0F-h7K"/>
                                 </connections>
                             </button>
+=======
+                            </scrollView>
+>>>>>>> NitinJaswal
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="0Ly-mC-X9a" firstAttribute="height" secondItem="cAW-Z6-b88" secondAttribute="height" id="2Dl-66-mWI"/>
-                            <constraint firstItem="cAW-Z6-b88" firstAttribute="top" secondItem="p1b-I5-vGi" secondAttribute="top" constant="40" id="2eC-ke-UAZ"/>
-                            <constraint firstItem="pN1-zL-zMH" firstAttribute="top" secondItem="0Ly-mC-X9a" secondAttribute="bottom" constant="20" id="Dug-An-u67"/>
-                            <constraint firstItem="pN1-zL-zMH" firstAttribute="trailing" secondItem="0Ly-mC-X9a" secondAttribute="trailing" id="Mii-et-PGC"/>
-                            <constraint firstItem="cAW-Z6-b88" firstAttribute="centerX" secondItem="p1b-I5-vGi" secondAttribute="centerX" id="N3Z-Yl-QQH"/>
-                            <constraint firstItem="cAW-Z6-b88" firstAttribute="width" secondItem="Qdq-q2-Nof" secondAttribute="width" multiplier="0.9" id="OpU-mH-wdr"/>
-                            <constraint firstItem="pN1-zL-zMH" firstAttribute="height" secondItem="0Ly-mC-X9a" secondAttribute="height" id="UAo-II-rr8"/>
-                            <constraint firstItem="0Ly-mC-X9a" firstAttribute="leading" secondItem="cAW-Z6-b88" secondAttribute="leading" id="Um2-Lq-tLS"/>
-                            <constraint firstItem="hpY-X0-eXA" firstAttribute="trailing" secondItem="cAW-Z6-b88" secondAttribute="trailing" id="g9c-KK-YV4"/>
-                            <constraint firstItem="0Ly-mC-X9a" firstAttribute="top" secondItem="hpY-X0-eXA" secondAttribute="bottom" constant="20" id="hrO-qg-k6q"/>
-                            <constraint firstItem="pN1-zL-zMH" firstAttribute="centerX" secondItem="0Ly-mC-X9a" secondAttribute="centerX" id="kBC-Yu-Gxy"/>
-                            <constraint firstItem="hpY-X0-eXA" firstAttribute="top" secondItem="cAW-Z6-b88" secondAttribute="bottom" constant="20" id="r8u-jy-HDW"/>
-                            <constraint firstItem="pN1-zL-zMH" firstAttribute="leading" secondItem="0Ly-mC-X9a" secondAttribute="leading" id="tTf-qo-FwD"/>
-                            <constraint firstItem="hpY-X0-eXA" firstAttribute="height" secondItem="cAW-Z6-b88" secondAttribute="height" id="xDo-Iq-h9B"/>
-                            <constraint firstItem="hpY-X0-eXA" firstAttribute="leading" secondItem="cAW-Z6-b88" secondAttribute="leading" id="xJv-5E-tdH"/>
-                            <constraint firstItem="0Ly-mC-X9a" firstAttribute="trailing" secondItem="cAW-Z6-b88" secondAttribute="trailing" id="zUH-9L-KdM"/>
+                            <constraint firstItem="p1b-I5-vGi" firstAttribute="bottom" secondItem="p8C-eZ-elI" secondAttribute="bottom" constant="1" id="Bld-4e-zDw"/>
+                            <constraint firstItem="p8C-eZ-elI" firstAttribute="top" secondItem="p1b-I5-vGi" secondAttribute="top" constant="1" id="EFd-1V-LF5"/>
+                            <constraint firstItem="p8C-eZ-elI" firstAttribute="leading" secondItem="p1b-I5-vGi" secondAttribute="leading" id="aeb-9K-EDt"/>
+                            <constraint firstItem="p1b-I5-vGi" firstAttribute="trailing" secondItem="p8C-eZ-elI" secondAttribute="trailing" id="kX3-O1-z9D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p1b-I5-vGi"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settingsTabIcon" id="8Fw-8t-uDQ"/>
                     <connections>
-                        <outlet property="aboutUsButton" destination="0Ly-mC-X9a" id="HeT-S2-1vB"/>
-                        <outlet property="callUsButton" destination="cAW-Z6-b88" id="2AX-9j-b0D"/>
-                        <outlet property="emailButton" destination="hpY-X0-eXA" id="ZB6-z8-o7b"/>
-                        <outlet property="logoutButton" destination="pN1-zL-zMH" id="HKp-8T-ctE"/>
+                        <outlet property="aboutUsButton" destination="H8h-Xa-wHE" id="ujM-sF-gqA"/>
+                        <outlet property="callUsButton" destination="8AC-lv-cb7" id="tEa-SL-4Ki"/>
+                        <outlet property="emailButton" destination="5HG-6Q-Fta" id="54G-F9-fx6"/>
+                        <outlet property="img_view" destination="M4o-dB-fEQ" id="JiU-jd-kiM"/>
+                        <outlet property="logoutButton" destination="7zX-mN-rAp" id="CEP-a5-ILU"/>
+                        <outlet property="name_lbl" destination="ZG0-ys-dSC" id="tEB-EI-4Ea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFG-T9-ba0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="603" y="887"/>
+=======
+            <point key="canvasLocation" x="602.89855072463774" y="1521.4285714285713"/>
+>>>>>>> NitinJaswal
         </scene>
         <!--About UsVC-->
         <scene sceneID="PG9-uU-Bls">

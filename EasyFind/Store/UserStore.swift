@@ -13,6 +13,7 @@ class UserStore {
     private init() {}
     
     private static let isLoginKey = "isLoginKey"
+    private static let loginEmailKey = "logEmail"
     
     // MARK: - Check login status
     public static var isLogin: Bool {
@@ -21,6 +22,15 @@ class UserStore {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: isLoginKey)
+        }
+    }
+    
+    public static var loginEmail: String {
+        get {
+            return UserDefaults.standard.value(forKey: loginEmailKey) as! String
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: loginEmailKey)
         }
     }
 }
