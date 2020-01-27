@@ -21,7 +21,7 @@ class YelpManager {
                 completion(nil)
                 return
             }
-            _ = baseModel.businesses!.compactMap { $0.isFav = false }
+            _ = baseModel.businesses!.compactMap { $0.isFav = PersistenceManager.shared.checkIsExist(at: $0.id!) }
             completion(baseModel)
         }
     }

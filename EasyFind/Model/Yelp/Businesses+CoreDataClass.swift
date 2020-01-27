@@ -32,9 +32,7 @@ public class Businesses: NSManagedObject, Codable {
         transactions = business.transactions
         url = business.url
         coordinates = Coordinates(business: business, insertInto: context)
-        
         location = Location(business: business, insertInto: context)
-        
         var localCategories = [Categories]()
         for category in business.categories! {
             if let localCategory = Categories(category: category, insertInto: context) {
@@ -42,6 +40,8 @@ public class Businesses: NSManagedObject, Codable {
             }
         }
         rowCategories = NSOrderedSet(array: localCategories)
+        // know will call for add to fav
+        isFav = true
     }
     
     // MARK: - Decodable
@@ -117,16 +117,6 @@ public class Businesses: NSManagedObject, Codable {
         try container.encode(location, forKey: .location)
         try container.encode(coordinates, forKey: .coordinates)
         try container.encode(categories, forKey: .categories)
-    }
-    
-    var isFAV: Bool?
-    var isFav: Bool? {
-        get {
-            return isFAV
-        }
-        set {
-            isFAV = newValue
-        }
     }
     
     var imageURL: URL? {

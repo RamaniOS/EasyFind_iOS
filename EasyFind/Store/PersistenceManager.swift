@@ -17,7 +17,7 @@ class PersistenceManager {
     
     static func printPath() {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            print(urls[urls.count-1] as URL)
+        print(urls[urls.count-1] as URL)
     }
     
     var context: NSManagedObjectContext {
@@ -69,6 +69,28 @@ class PersistenceManager {
     }
     
     func fetch<T: NSManagedObject>(type: T.Type, comp: @escaping ([T]) -> Void) {
+        let request = NSFetchRequest<T>(entityName: String(describing: type))
+        do {
+            let objects = try context.fetch(request)
+            comp(objects)
+        } catch {
+            comp([])
+        }
+    }
+    
+    func checkIsExist(at id: String) -> Bool {
+        let request: NSFetchRequest<Businesses> = Businesses.fetchRequest()
+        request.predicate = NSPredicate(format: "id = %@", id)
+        request.includesSubentities = false
+        do {
+            let objects = try context.count(for: request)
+            return objects > 0
+        } catch {
+            return false
+        }
+    }
+    
+    func delete<T: NSManagedObject>(type: T.Type, at object: T, comp: @escaping ([T]) -> Void) {
         let request = NSFetchRequest<T>(entityName: String(describing: type))
         do {
             let objects = try context.fetch(request)

@@ -10,9 +10,12 @@
 import Foundation
 import CoreData
 
-
 extension Businesses {
 
+    static func == (lhs: Businesses, rhs: Businesses) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Businesses> {
         return NSFetchRequest<Businesses>(entityName: "Businesses")
     }
@@ -33,7 +36,7 @@ extension Businesses {
     @NSManaged public var location: Location?
     @NSManaged public var rowCategories: NSOrderedSet?
     @NSManaged public var coordinates: Coordinates?
-
+    @NSManaged public var isFav: Bool
 }
 
 // MARK: Generated accessors for categories

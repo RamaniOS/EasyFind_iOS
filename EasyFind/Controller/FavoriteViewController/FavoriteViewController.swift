@@ -46,7 +46,9 @@ class FavoriteViewController: AbstractViewController {
     }
     
     @objc private func fetchList() {
-        items = FavoriteStore.fetchAllFav
+        FavoriteStore.fetchAllFav { (business) in
+            self.items = business
+        }
     }
     
     private var cellClass: SearchTableViewCell.Type {

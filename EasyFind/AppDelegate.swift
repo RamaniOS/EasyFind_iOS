@@ -16,12 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //sleep(4)
         /// keyboard_manager...
-        PersistenceManager.shared.fetch(type: Businesses.self) { (obs) in
-            for ob in obs {
-                print(ob)
-            }
-        }
-        PersistenceManager.printPath()
         IQKeyboardManager.shared.enable = true
         return true
     }

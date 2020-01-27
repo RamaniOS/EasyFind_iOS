@@ -12,24 +12,28 @@ class FavoriteStore {
     
     private init() {}
         
-    static private var list: [Businesses] = []
+    private static let context = PersistenceManager.shared.context
     
-    static var fetchAllFav: [Businesses] {
-        return list.reversed()
+    static func fetchAllFav(comp: @escaping (_ business: [Businesses]) -> Void) {
+        PersistenceManager.shared.fetch(type: Businesses.self) { (businesses) in
+            comp(businesses)
+        }
     }
     
     static func addToFav(with business: Businesses) {
-        if list.contains(where: {$0.id == business.id}) {
-            return // IF already exist
+        _ = Businesses(business: business, insertInto: context)
+        do {
+            try context.save()
+        } catch {
+            debugPrint(error.localizedDescription)
         }
-        list.append(business)
     }
     
     static func removeFromFav(with business: Businesses) {
-        list.removeAll(where: {$0.id == business.id})
+        
     }
     
     static func performLogout() {
-        list.removeAll()
+        PersistenceManager.shared.clean(type: Businesses.self)
     }
 }
