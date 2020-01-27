@@ -9,19 +9,19 @@
 import UIKit
 import WebKit
 
-class EFAboutUsVC: UIViewController, WKNavigationDelegate {
-
+class EFAboutUsVC: AbstractViewController, WKNavigationDelegate {
+    
     @IBOutlet var myWebKit: WKWebView!
     
     // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "About us"
         myWebKit.navigationDelegate = self
         myWebKit.allowsBackForwardNavigationGestures = true
-        
+        loadFromUrl()
         //self.loadFromString()
-        self.loadFromUrl()
+        
         //self.loadFromFile()
     }
     
@@ -62,6 +62,5 @@ class EFAboutUsVC: UIViewController, WKNavigationDelegate {
         let urlReq = URLRequest(url: url!)
         myWebKit.load(urlReq)
     }
-    
 
 }

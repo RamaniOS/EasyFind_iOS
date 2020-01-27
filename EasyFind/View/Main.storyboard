@@ -12,7 +12,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Settings-->
+        <!--SettingVC-->
         <scene sceneID="qfW-cc-zUy">
             <objects>
                 <viewController storyboardIdentifier="EFSettingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CqA-ii-KoN" customClass="EFSettingVC" customModule="EasyFind" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8C-eZ-elI">
-                                <rect key="frame" x="0.0" y="45" width="414" height="767"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="723"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AC-lv-cb7">
                                         <rect key="frame" x="20" y="208" width="374" height="60"/>
@@ -161,7 +161,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p1b-I5-vGi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTabIcon" id="8Fw-8t-uDQ"/>
+                    <navigationItem key="navigationItem" id="4vU-Gc-QCe"/>
                     <connections>
                         <outlet property="aboutUsButton" destination="H8h-Xa-wHE" id="ujM-sF-gqA"/>
                         <outlet property="callUsButton" destination="8AC-lv-cb7" id="tEa-SL-4Ki"/>
@@ -173,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFG-T9-ba0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="603" y="923"/>
+            <point key="canvasLocation" x="1513.0434782608697" y="922.76785714285711"/>
         </scene>
         <!--About UsVC-->
         <scene sceneID="PG9-uU-Bls">
@@ -191,44 +191,24 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpx-QO-p6N">
-                                <rect key="frame" x="8" y="44" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="NUg-J0-axc"/>
-                                    <constraint firstAttribute="height" constant="45" id="Wbx-fu-UIH"/>
-                                </constraints>
-                                <state key="normal" image="backIcon"/>
-                                <connections>
-                                    <action selector="backBtnClicked:" destination="WCM-6a-Dc3" eventType="touchUpInside" id="pG3-SR-Vlp"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed5-mR-Hz6">
-                                <rect key="frame" x="166.5" y="54.5" width="81.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Y9b-3Z-z5G" firstAttribute="leading" secondItem="juy-AH-til" secondAttribute="leading" id="HHz-5X-k1G"/>
-                            <constraint firstItem="Ed5-mR-Hz6" firstAttribute="centerX" secondItem="juy-AH-til" secondAttribute="centerX" id="IJx-ez-mSQ"/>
                             <constraint firstItem="Y9b-3Z-z5G" firstAttribute="trailing" secondItem="juy-AH-til" secondAttribute="trailing" id="KHs-2h-Gtk"/>
-                            <constraint firstItem="Y9b-3Z-z5G" firstAttribute="top" secondItem="juy-AH-til" secondAttribute="top" constant="44" id="LQC-xI-o1f"/>
-                            <constraint firstItem="Cpx-QO-p6N" firstAttribute="leading" secondItem="juy-AH-til" secondAttribute="leading" constant="8" id="oIe-v9-f74"/>
-                            <constraint firstItem="Cpx-QO-p6N" firstAttribute="top" secondItem="juy-AH-til" secondAttribute="top" id="oR3-BB-W06"/>
-                            <constraint firstItem="Ed5-mR-Hz6" firstAttribute="centerY" secondItem="Cpx-QO-p6N" secondAttribute="centerY" id="uIR-3i-pf3"/>
+                            <constraint firstItem="Y9b-3Z-z5G" firstAttribute="top" secondItem="juy-AH-til" secondAttribute="top" id="LQC-xI-o1f"/>
                             <constraint firstItem="Y9b-3Z-z5G" firstAttribute="bottom" secondItem="juy-AH-til" secondAttribute="bottom" id="vol-lB-IAW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="juy-AH-til"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="myWebKit" destination="Y9b-3Z-z5G" id="Cjd-ji-MV0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQx-hY-zgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="923"/>
+            <point key="canvasLocation" x="2421.739130434783" y="922.76785714285711"/>
         </scene>
         <!--Favorite View Controller-->
         <scene sceneID="XQr-vr-6rB">
@@ -277,7 +257,7 @@
                     <connections>
                         <segue destination="wUE-GX-7Kf" kind="relationship" relationship="viewControllers" id="GC0-rd-cf4"/>
                         <segue destination="2aS-en-h1H" kind="relationship" relationship="viewControllers" id="4z3-4i-s94"/>
-                        <segue destination="CqA-ii-KoN" kind="relationship" relationship="viewControllers" id="cGr-jc-pWx"/>
+                        <segue destination="CVw-As-XHW" kind="relationship" relationship="viewControllers" id="cGr-jc-pWx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuf-bw-z0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1196,10 +1176,28 @@
             </objects>
             <point key="canvasLocation" x="603" y="-619"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="t7L-c1-web">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CVw-As-XHW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTabIcon" id="8Fw-8t-uDQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y10-Nv-ZV2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CqA-ii-KoN" kind="relationship" relationship="rootViewController" id="qm4-zg-mQk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xd-t0-eUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602.89855072463774" y="922.76785714285711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="UnFav" width="17.5" height="17.5"/>
-        <image name="backIcon" width="24" height="24"/>
         <image name="backWIcon" width="24" height="24"/>
         <image name="cameraIcon" width="30" height="30"/>
         <image name="checkIcon" width="17" height="17"/>

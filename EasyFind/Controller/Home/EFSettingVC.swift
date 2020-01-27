@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 
 class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
-
+    
     // MARK: - Properties
     @IBOutlet weak var aboutUsButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
@@ -26,35 +26,29 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     private func initViews() {
+        title = "Settings"
         Helper.applyGradient(to: aboutUsButton)
         Helper.applyGradient(to: emailButton)
         Helper.applyGradient(to: callUsButton)
         Helper.applyGradient(to: logoutButton)
         
-        guard let user = Singelton.sharedObj.userInfoDict else {
-            return
-        }
+        guard let user = Singelton.sharedObj.userInfoDict else { return }
         //
         let possibleOldImagePath = user.imagePath
-        if possibleOldImagePath != nil {
-            let oldFullPath = self.documentsPathForFileName(name: possibleOldImagePath)
-            let oldImageData = NSData(contentsOfFile: oldFullPath)
-            // here is your saved image:
-            img_view.image = UIImage(data: oldImageData! as Data)
-        }
-        let welcome = "Welcome \(user.userName as! String)"
+        let oldFullPath = self.documentsPathForFileName(name: possibleOldImagePath)
+        let oldImageData = NSData(contentsOfFile: oldFullPath)
+        // here is your saved image:
+        img_view.image = UIImage(data: oldImageData! as Data)
+        let welcome = "Welcome \(user.userName)"
         name_lbl.text = welcome
     }
-
+    
     // MARK: - Action
     @IBAction func callUsBtnClicked(_ sender: Any) {
         if let url = URL(string: "tel://+0000000)"), UIApplication.shared.canOpenURL(url){
-            if #available(iOS 10, *)
-            {
+            if #available(iOS 10, *) {
                 UIApplication.shared.open(url)
-            }
-            else
-            {
+            } else {
                 UIApplication.shared.openURL(url)
             }
         }
@@ -62,24 +56,19 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func emailUsBtnClicked(_ sender: Any) {
         if MFMailComposeViewController.canSendMail() {
-        
             let picker = MFMailComposeViewController()
             picker.mailComposeDelegate = self
             picker.setSubject("Subject")
             picker.setMessageBody("Type Msg...", isHTML: true)
-        
+            
             present(picker, animated: true, completion: nil)
-        }else{
-            self.showAlert(title: "EF", message: "Not allowed")
+        } else {
+            showAlert(title: "EF", message: "Not allowed")
         }
     }
     
     @IBAction func aboutUsBtnClicked(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "EFAboutUsVC") as! EFAboutUsVC
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(EFAboutUsVC.control, animated: true)
     }
     
     // MFMailComposeViewControllerDelegate
