@@ -289,19 +289,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="4PK-SF-vuF"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hW4-eA-pwb">
+                                <rect key="frame" x="188.5" y="432" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="hW4-eA-pwb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EtM-1O-tZL"/>
                             <constraint firstItem="ZJr-EJ-yVJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hpl-IF-Byn"/>
                             <constraint firstItem="ZJr-EJ-yVJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hs4-OM-9af"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZJr-EJ-yVJ" secondAttribute="bottom" id="RCY-oy-hZc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZJr-EJ-yVJ" secondAttribute="trailing" id="Td5-hR-Qew"/>
+                            <constraint firstItem="hW4-eA-pwb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tlw-P9-RlR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="B5A-c6-HKP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="indicator" destination="hW4-eA-pwb" id="iDr-PQ-tUO"/>
                         <outlet property="tableView" destination="ZJr-EJ-yVJ" id="GqN-Y3-OHH"/>
                     </connections>
                 </viewController>

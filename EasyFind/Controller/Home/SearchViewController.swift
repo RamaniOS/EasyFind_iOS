@@ -21,6 +21,7 @@ class SearchViewController: AbstractViewController {
     private let persistent = PersistenceManager.shared
     var locationManager: CLLocationManager! = nil
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -146,7 +147,9 @@ class SearchViewController: AbstractViewController {
                     if (placemark.locality != nil) {
                         self.address = placemark.locality ?? ""
                     }
+                    self.indicator.startAnimating()
                     YelpManager.fetchYelpBusinesses(with: self.offset, location: self.address ?? "Toronto") { (baseModel) in
+                        self.indicator.stopAnimating()
                         self.baseModel = baseModel
                     }
                 }
