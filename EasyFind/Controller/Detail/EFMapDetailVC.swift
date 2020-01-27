@@ -15,6 +15,7 @@ class EFMapDetailVC: UIViewController {
     var locationManager = CLLocationManager()
     var moveType: String = "A"
     var passCoord: cordDetail!
+    var restLocation = CLLocationCoordinate2D()
     
     @IBOutlet var mapDView: MKMapView!
     @IBOutlet var segmentBtn: UISegmentedControl!
@@ -46,10 +47,10 @@ class EFMapDetailVC: UIViewController {
         let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
         
         // define location
-        let location = CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
+        restLocation = CLLocationCoordinate2D(latitude: passCoord.latitude ?? 0.00, longitude: passCoord.longitude ?? 0.00)
         
         // define region
-        let region = MKCoordinateRegion(center: location, span: span)
+        let region = MKCoordinateRegion(center: restLocation, span: span)
         
         // set the region on the map
         mapDView.setRegion(region, animated: true)
@@ -58,7 +59,7 @@ class EFMapDetailVC: UIViewController {
         
         drawRoute()
         
-        addRegion(coordinate: location)
+       
         
         
     }
@@ -128,6 +129,9 @@ class EFMapDetailVC: UIViewController {
         // remove previous overlays
         let overlays = mapDView.overlays
         mapDView.removeOverlays(overlays)
+        
+        //
+         addRegion(coordinate: restLocation)
         
         // draw route
         let request = MKDirections.Request()
@@ -233,4 +237,5 @@ extension EFMapDetailVC: MKMapViewDelegate {
     }
     
 }
+
 
