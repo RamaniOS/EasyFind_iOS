@@ -27,7 +27,7 @@ class UserStore {
     
     public static var loginEmail: String {
         get {
-            return UserDefaults.standard.value(forKey: loginEmailKey) as! String
+            return UserDefaults.standard.string(forKey: loginEmailKey) ?? ""
         }
         set {
             UserDefaults.standard.set(newValue, forKey: loginEmailKey)

@@ -173,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFG-T9-ba0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602.89855072463774" y="1521.4285714285713"/>
+            <point key="canvasLocation" x="603" y="923"/>
         </scene>
         <!--About UsVC-->
         <scene sceneID="PG9-uU-Bls">
@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQx-hY-zgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="1521"/>
+            <point key="canvasLocation" x="1512" y="923"/>
         </scene>
         <!--Favorite View Controller-->
         <scene sceneID="XQr-vr-6rB">
@@ -277,7 +277,6 @@
                     <connections>
                         <segue destination="wUE-GX-7Kf" kind="relationship" relationship="viewControllers" id="GC0-rd-cf4"/>
                         <segue destination="2aS-en-h1H" kind="relationship" relationship="viewControllers" id="4z3-4i-s94"/>
-                        <segue destination="bd7-5Q-WDk" kind="relationship" relationship="viewControllers" id="c3B-LK-Wvq"/>
                         <segue destination="CqA-ii-KoN" kind="relationship" relationship="viewControllers" id="cGr-jc-pWx"/>
                     </connections>
                 </tabBarController>
@@ -1237,66 +1236,11 @@
             </objects>
             <point key="canvasLocation" x="603" y="-619"/>
         </scene>
-        <!--Saved-->
-        <scene sceneID="pvy-9g-aSO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bd7-5Q-WDk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved" image="bookmark.fill" catalog="system" id="JPw-JT-KfI"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sam-jA-Qe4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xJw-HN-Y8C" kind="relationship" relationship="rootViewController" id="LwY-7k-bT6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K5v-cD-TTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="603" y="812"/>
-        </scene>
-        <!--Saved View Controller-->
-        <scene sceneID="MLg-4L-SQk">
-            <objects>
-                <viewController storyboardIdentifier="SavedViewController" id="xJw-HN-Y8C" customClass="SavedViewController" customModule="EasyFind" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kuc-yF-r9H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6f-Df-8Cg">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="xJw-HN-Y8C" id="fLJ-Qm-8P3"/>
-                                    <outlet property="delegate" destination="xJw-HN-Y8C" id="QvP-yL-hEl"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="AKO-I2-1PN" firstAttribute="bottom" secondItem="G6f-Df-8Cg" secondAttribute="bottom" id="8FC-9m-RM9"/>
-                            <constraint firstItem="AKO-I2-1PN" firstAttribute="trailing" secondItem="G6f-Df-8Cg" secondAttribute="trailing" id="9es-Ks-R1y"/>
-                            <constraint firstItem="G6f-Df-8Cg" firstAttribute="leading" secondItem="AKO-I2-1PN" secondAttribute="leading" id="C0y-lw-fh6"/>
-                            <constraint firstItem="G6f-Df-8Cg" firstAttribute="top" secondItem="AKO-I2-1PN" secondAttribute="top" id="D0E-rO-NvU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="AKO-I2-1PN"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="mOZ-gq-AUM"/>
-                    <connections>
-                        <outlet property="tableView" destination="G6f-Df-8Cg" id="4y2-fE-Hxa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0rT-Ww-Gss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1513" y="812"/>
-        </scene>
     </scenes>
     <resources>
         <image name="UnFav" width="17.5" height="17.5"/>
         <image name="backIcon" width="24" height="24"/>
         <image name="backWIcon" width="24" height="24"/>
-        <image name="bookmark.fill" catalog="system" width="56" height="64"/>
         <image name="cameraIcon" width="30" height="30"/>
         <image name="checkIcon" width="17" height="17"/>
         <image name="favTabIcon" width="24" height="24"/>
