@@ -89,6 +89,7 @@ class EFSignInVC: UIViewController {
             self.checkUserDefaults()
             if userDefaultBool {
                 UserStore.isLogin = true
+                UserStore.loginEmail = userN_tf.text ?? ""
                 ActionShowHome.execute()
             } else {
                 self.showAlert(title: "EF", message: "Invalid Info")
