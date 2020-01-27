@@ -21,6 +21,9 @@ class SearchViewController: AbstractViewController {
     private let persistent = PersistenceManager.shared
     var locationManager: CLLocationManager! = nil
     
+    @IBOutlet weak var tableView: UITableView!
+    private let searchController = UISearchController(searchResultsController: nil)
+    
     var baseModel: BaseBusiness? = nil {
         didSet {
             guard let base = baseModel, base.businesses!.count > 0 else {
@@ -40,12 +43,6 @@ class SearchViewController: AbstractViewController {
         }
     }
     
-    @IBOutlet var img_view: UIImageView!
-    @IBOutlet var title_lbl: UILabel!
-    @IBOutlet weak var tableView: UITableView!
-    
-    let searchController = UISearchController(searchResultsController: nil)
-    
     // MARK: -  Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +52,7 @@ class SearchViewController: AbstractViewController {
         }
         fetchUseDetails()
         initViews()
-        
-        self.initLocation()
-        
+        initLocation()
     }
     
     private func initLocation() {
@@ -100,26 +95,14 @@ class SearchViewController: AbstractViewController {
        }
     
     private func initViews() {
-        guard let user = Singelton.sharedObj.userInfoDict else {
-            return
-        }
-        let possibleOldImagePath = user.imagePath
-        let oldImagePath = possibleOldImagePath
-        let oldFullPath = self.documentsPathForFileName(name: oldImagePath)
-        let oldImageData = NSData(contentsOfFile: oldFullPath)
-        // here is your saved image:
-        img_view.image = UIImage(data: oldImageData! as Data)
-        
-        let welcome = "Welcome \(user.userName)"
-        title_lbl.text = welcome
         initTableView()
         fetchList()
         addObserver()
-        title = welcome
+        title = "Search"
         navigationController?.navigationBar.prefersLargeTitles = true
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.placeholder = "Enter location name"
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -260,7 +243,6 @@ extension SearchViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error :\(error)")
     }
-    //
 }
 
 
