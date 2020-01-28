@@ -1,4 +1,4 @@
-//
+// //
 //  Businesses+CoreDataClass.swift
 //  EasyFind
 //
@@ -19,6 +19,7 @@ public class Businesses: NSManagedObject, Codable {
     
     convenience init?(business: Businesses, insertInto context: NSManagedObjectContext) {
         self.init(entity: Businesses.entity(), insertInto: context)
+        
         alias = business.alias
         display_phone = business.display_phone
         id = business.id
@@ -33,6 +34,7 @@ public class Businesses: NSManagedObject, Codable {
         url = business.url
         coordinates = Coordinates(business: business, insertInto: context)
         location = Location(business: business, insertInto: context)
+        
         var localCategories = [Categories]()
         for category in business.categories! {
             if let localCategory = Categories(category: category, insertInto: context) {
@@ -47,6 +49,7 @@ public class Businesses: NSManagedObject, Codable {
     // MARK: - Decodable
     required convenience public init(from decoder: Decoder) throws {
         self.init(entity: Businesses.entity(), insertInto: nil)
+        
         let container = try decoder.container(keyedBy: CodingKeys.self)
         if let ali = try container.decodeIfPresent(String.self, forKey: .alias) {
             alias = ali
