@@ -25,6 +25,14 @@ class EFSettingVC: UIViewController, MFMailComposeViewControllerDelegate {
         initViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .always
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+    }
+    
     private func initViews() {
         title = "Settings"
         Helper.applyGradient(to: aboutUsButton)

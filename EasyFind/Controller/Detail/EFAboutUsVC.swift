@@ -13,6 +13,13 @@ class EFAboutUsVC: AbstractViewController, WKNavigationDelegate {
     
     @IBOutlet var myWebKit: WKWebView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
+    }
+    
     // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,5 +69,5 @@ class EFAboutUsVC: AbstractViewController, WKNavigationDelegate {
         let urlReq = URLRequest(url: url!)
         myWebKit.load(urlReq)
     }
-
+    
 }
