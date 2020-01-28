@@ -78,22 +78,22 @@ class SearchViewController: AbstractViewController {
     
     // MARK: - Helpers
     func showLocationDisabledPopUp() {
-           let alertController = UIAlertController(title: "Background Location Access Disabled",
-                                                   message: "We need location access.",
-                                                   preferredStyle: .alert)
-           
-           let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-           alertController.addAction(cancelAction)
-           
-           let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
-               if let url = URL(string: UIApplication.openSettingsURLString) {
-                   UIApplication.shared.open(url, options: [:], completionHandler: nil)
-               }
-           }
-           alertController.addAction(openAction)
-           
-           self.present(alertController, animated: true, completion: nil)
-       }
+        let alertController = UIAlertController(title: "Background Location Access Disabled",
+                                                message: "We need location access.",
+                                                preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        alertController.addAction(openAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     private func initViews() {
         initTableView()
