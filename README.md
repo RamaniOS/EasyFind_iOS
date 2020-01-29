@@ -24,7 +24,7 @@ EasyFind uses a number of open source projects to work properly:
 
 * [Swift] - Language used to build this app. 
 * [Yelp API] - The Yelp Fusion API allows you to get the best local content and user reviews from millions of businesses across 32 countries. This tutorial provides an overview of the capabilities our suite of APIs offer, provides instructions for how to authenticate API calls, and walks through a simple scenario using the API.
-* 
+
 And of course EasyFind itself is open source with a [public repository][git]
  on GitHub.
 
