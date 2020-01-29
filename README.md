@@ -2,7 +2,7 @@
 
 Find local restaurants, read expert customer reviews, and start searching for restaurants near you with Yelp.
   - **Swift 5**
-  - **Coredata**
+  - **Core Data**
   - **Mapkit**
   
   #  Features!
