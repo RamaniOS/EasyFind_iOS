@@ -22,6 +22,17 @@ EasyFind uses a number of open source projects to work properly:
 And of course EasyFind itself is open source with a [public repository][dill]
  on GitHub.
 
+### Libraries
+
+EasyFind is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+
+| Pods | Repository |
+| ------ | ------ |
+| Alamofire | [Alamofire] |
+| Cosmos | [Cosmos] |
+| IQKeyboardManagerSwift | [IQKeyBoard] |
+| SDWebImage | [SDWebImage] |
+
 License
 ----
 
@@ -35,3 +46,10 @@ MIT
    [dill]: <https://github.com/RamaniOS/EasyFind.git>
    [swift]: <https://developer.apple.com/documentation/swift>
    [yelp API]: <https://www.yelp.com/developers/v3/manage_app>
+   [alamofire]: <https://github.com/Alamofire/Alamofire>
+   [cosmos]: <https://github.com/evgenyneu/Cosmos>
+   [SDWebImage]: <https://github.com/SDWebImage/SDWebImage>
+   [IQKeyboard]: <https://github.com/hackiftekhar/IQKeyboardManager/tree/master/IQKeyboardManagerSwift>
+   
+   
+   
